@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GADS PRO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0a0a0a;color:#fff;font-family:Arial;padding-bottom:120px;}
+
+header{
+position:sticky;top:0;display:flex;
+gap:10px;padding:10px;background:#111;
+border-bottom:2px solid #00b7ff;
+z-index:10;
+}
+
+.logo{color:#00b7ff;font-weight:bold;}
+
+.searchBox{display:flex;flex:1;}
+.searchBox input{
+flex:1;padding:10px;border:none;
+border-radius:20px;background:#1b1b1b;color:#fff;
+}
+.searchBox button{
+background:#00b7ff;border:none;padding:10px;
+border-radius:20px;
+}
+
+.menu{
+display:flex;
+gap:10px;
+padding:10px;
+overflow:auto;
+}
+
+.menu div{
+background:#1a1a1a;
+padding:8px 12px;
+border-radius:20px;
+cursor:pointer;
+}
+
+#videos{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+gap:10px;padding:10px;
+}
+
+.card{background:#111;border-radius:10px;cursor:pointer;}
+.card img{width:100%;border-radius:10px;}
+.card h3{font-size:13px;padding:8px;}
+
+#player{
+position:fixed;bottom:0;left:0;
+width:100%;height:100%;
+background:#000;
+display:none;
+z-index:999;
+}
+
+#player.mini{
+width:300px;height:170px;
+bottom:80px;right:10px;left:auto;
+border-radius:10px;overflow:hidden;
+}
+
+.videoBox iframe{width:100%;height:40vh;border:none;}
+#player.mini iframe{height:100%;}
+
+.videoInfo{padding:15px;background:#111;}
+#player.mini .videoInfo,
+#player.mini .related{display:none;}
+
+.actions{display:flex;gap:15px;margin:10px 0;}
+.actions span{
+background:#222;
+padding:8px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.related{padding:10px;}
+.relCard{display:flex;gap:10px;margin-bottom:10px;cursor:pointer;}
+.relCard img{width:120px;border-radius:8px;}
+
+#topBtns{
+position:absolute;top:10px;right:10px;
+display:flex;gap:5px;
+}
+#topBtns button{
+background:#00b7ff;border:none;padding:6px;border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">▶ GADS PRO</div>
+
+<div class="searchBox">
+<input id="search" placeholder="Buscar..." onkeypress="if(event.key==='Enter') searchVideos()">
+<button onclick="searchVideos()">🔍</button>
+</div>
+</header>
+
+<div class="menu">
+<div onclick="setCategory('popular')">Inicio</div>
+<div onclick="setCategory('gaming')">Gaming</div>
+<div onclick="setCategory('trending')">Tendencias</div>
+<div onclick="setCategory('music')">Música</div>
+</div>
+
+<div id="videos"></div>
+
+<div id="player">
+<div id="topBtns">
+<button onclick="toggleMini()">➖</button>
+<button onclick="closePlayer()">✖</button>
+</div>
+
+<div class="videoBox">
+<iframe id="frame" allow="autoplay"></iframe>
+</div>
+
+<div class="videoInfo">
+<h2 id="title"></h2>
+
+<div class="actions">
+<span onclick="like()">👍</span>
+<span onclick="dislike()">👎</span>
+<span onclick="generateMix()">🔥 Mix</span>
+</div>
+</div>
+
+<div class="related" id="related"></div>
+</div>
+
+<script>
+
+const API_KEY="AIzaSyA0fv75LJxZGRsRSlpkSX0OO1Dw0FP3NNs";
+
+let nextPage="";
+let loading=false;
+let currentQuery="popular";
+
+const container=document.getElementById("videos");
+
+const categoryMap={
+gaming:"20",
+music:"10",
+trending:"0"
+};
+
+/* FIX: seguridad de datos */
+function safeMap(items){
+if(!Array.isArray(items)) return [];
+return items;
+}
+
+/* CATEGORÍA */
+function setCategory(cat){
+currentQuery=cat;
+container.innerHTML="";
+nextPage="";
+fetchVideos();
+}
+
+/* BUSCADOR FIX REAL */
+function searchVideos(){
+let q=document.getElementById("search").value.trim();
+if(!q) return;
+
+currentQuery=encodeURIComponent(q); // 🔥 FIX IMPORTANTE
+container.innerHTML="";
+nextPage="";
+fetchVideos();
+}
+
+/* FETCH FIX */
+async function fetchVideos(){
+
+if(loading) return;
+loading=true;
+
+let url="";
+
+if(currentQuery==="popular" || currentQuery==="trending"){
+url=`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular®ionCode=US&maxResults=10&pageToken=${nextPage}&key=${API_KEY}`;
+}else if(categoryMap[currentQuery]){
+url=`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&videoCategoryId=${categoryMap[currentQuery]}®ionCode=US&maxResults=10&pageToken=${nextPage}&key=${API_KEY}`;
+}else{
+url=`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=10&q=${currentQuery}&pageToken=${nextPage}&key=${API_KEY}`;
+}
+
+try{
+let res=await fetch(url);
+let data=await res.json();
+
+if(!data || data.error){
+console.log("API ERROR:", data?.error?.message);
+loading=false;
+return;
+}
+
+nextPage=data.nextPageToken||"";
+
+let videos=[];
+
+if(url.includes("search")){
+videos = safeMap(data.items)
+.filter(i=>i.id && i.id.videoId)
+.map(i=>({
+id:i.id.videoId,
+snippet:i.snippet
+}));
+}else{
+videos = safeMap(data.items).map(v=>({
+id:v.id,
+snippet:v.snippet
+}));
+}
+
+render(videos);
+
+}catch(e){
+console.log("ERROR FETCH:",e);
+}
+
+loading=false;
+}
+
+/* RENDER */
+function render(list){
+
+list.forEach(v=>{
+
+if(!v || !v.snippet) return;
+
+let div=document.createElement("div");
+div.className="card";
+
+div.innerHTML=`
+<img src="${v.snippet.thumbnails.medium.url}">
+<h3>${v.snippet.title}</h3>
+`;
+
+div.onclick=()=>playVideo(v.id,v.snippet.title);
+
+container.appendChild(div);
+
+});
+}
+
+/* SCROLL INFINITO */
+window.addEventListener("scroll",()=>{
+if((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200){
+fetchVideos();
+}
+});
+
+/* PLAY */
+function playVideo(id,title){
+document.getElementById("player").style.display="block";
+document.getElementById("player").classList.remove("mini");
+document.getElementById("frame").src=`https://www.youtube.com/embed/${id}?autoplay=1`;
+document.getElementById("title").innerText=title;
+loadRelated(title);
+}
+
+/* RELATED FIX */
+async function loadRelated(title){
+
+try{
+let res=await fetch(
+`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=5&q=${encodeURIComponent(title)}&key=${API_KEY}`
+);
+let data=await res.json();
+
+if(!data.items) return;
+
+let div=document.getElementById("related");
+div.innerHTML="<h3>Recomendados</h3>";
+
+data.items.forEach(v=>{
+if(!v.id.videoId) return;
+
+let d=document.createElement("div");
+d.className="relCard";
+
+d.innerHTML=`
+<img src="${v.snippet.thumbnails.medium.url}">
+<h4>${v.snippet.title}</h4>
+`;
+
+d.onclick=()=>playVideo(v.id.videoId,v.snippet.title);
+
+div.appendChild(d);
+});
+
+}catch(e){
+console.log("related error",e);
+}
+}
+
+/* CONTROLES */
+function toggleMini(){
+document.getElementById("player").classList.toggle("mini");
+}
+
+function closePlayer(){
+document.getElementById("player").style.display="none";
+document.getElementById("frame").src="";
+}
+
+function like(){alert("👍");}
+function dislike(){alert("👎");}
+function generateMix(){
+let text=document.getElementById("title").innerText;
+document.getElementById("search").value=text;
+searchVideos();
+}
+
+setCategory("popular");
+
+</script>
+
+</body>
+</html>
