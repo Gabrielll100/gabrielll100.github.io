@@ -11,25 +11,26 @@ body{
     color:#fff;
     font-family:Arial;
     text-align:center;
-    padding:30px;
+    padding:20px;
 }
+
 .btn{
+    background:#00ff99;
+    color:#000;
+    padding:15px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
     display:inline-block;
     margin-top:20px;
-    padding:15px 25px;
-    background:#00b7ff;
-    color:#000;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
-    opacity:0.5;
 }
-#contador{
-    font-size:40px;
-    color:#00b7ff;
+
+.hidden{
+    display:none;
 }
 </style>
 
+<!-- Adsense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6972125988436418"
 crossorigin="anonymous"></script>
 
@@ -37,55 +38,65 @@ crossorigin="anonymous"></script>
 
 <body>
 
-<h2>🚀 Preparando descarga...</h2>
-<p>No cierres esta página</p>
+<h2>🚀 Preparando tu descarga...</h2>
+<p>Tu archivo estará listo en <span id="count">8</span> segundos</p>
 
-<div id="contador">5</div>
-
-<!-- 🔥 ANUNCIO 1 -->
+<!-- 🔥 ANUNCIO ARRIBA -->
+<div style="margin:20px;">
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-6972125988436418"
-     data-ad-slot="9668197918"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+     data-ad-slot="6274225309"
+     data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
 
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<p>⚠️ Si no inicia, presiona el botón cuando aparezca</p>
 
-<!-- 🔥 ANUNCIO 2 -->
-<div style="margin-top:20px;">
+<!-- 🔥 ANUNCIO MEDIO -->
+<div style="margin:20px;">
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-6972125988436418"
      data-ad-slot="9668197918"
      data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<a id="btnDownload" class="btn" href="#">Descargar ahora</a>
+<!-- BOTÓN OCULTO -->
+<a id="downloadBtn" href="TU-APK-AQUI.apk" class="btn hidden">📥 DESCARGAR AHORA</a>
+
+<!-- 🔥 ANUNCIO ABAJO -->
+<div style="margin:20px;">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6972125988436418"
+     data-ad-slot="9057823826"
+     data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
 
 <script>
-let tiempo = 5;
-let contador = document.getElementById("contador");
-let boton = document.getElementById("btnDownload");
+let time = 8;
+let count = document.getElementById("count");
+let btn = document.getElementById("downloadBtn");
 
-let intervalo = setInterval(() => {
-    tiempo--;
-    contador.innerHTML = tiempo;
+let timer = setInterval(()=>{
+    time--;
+    count.innerText = time;
 
-    if(tiempo <= 0){
-        clearInterval(intervalo);
-        boton.style.opacity = "1";
-        boton.href = "https://www.appcreator24.com/app4101108-ruxlj5";
-
-        // redirección automática
-        window.location.href = "https://www.appcreator24.com/app4101108-ruxlj5";
+    if(time <= 0){
+        clearInterval(timer);
+        btn.classList.remove("hidden");
     }
-}, 1000);
+},1000);
+    
+    btn.onclick = function(){
+    setTimeout(()=>{
+        window.location.href="gracias.html";
+    }, 3000);
+};
+
 </script>
 
 </body>
