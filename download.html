@@ -22,10 +22,14 @@ body{
     text-decoration:none;
     border-radius:10px;
     font-weight:bold;
+    opacity:0.5;
+}
+#contador{
+    font-size:40px;
+    color:#00b7ff;
 }
 </style>
 
-<!-- Adsense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6972125988436418"
 crossorigin="anonymous"></script>
 
@@ -33,10 +37,12 @@ crossorigin="anonymous"></script>
 
 <body>
 
-<h2>🚀 Tu descarga está lista</h2>
-<p>Espera unos segundos y luego presiona el botón 👇</p>
+<h2>🚀 Preparando descarga...</h2>
+<p>No cierres esta página</p>
 
-<!-- 🔥 ANUNCIO -->
+<div id="contador">5</div>
+
+<!-- 🔥 ANUNCIO 1 -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-6972125988436418"
@@ -48,14 +54,38 @@ crossorigin="anonymous"></script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<!-- BOTÓN -->
+<!-- 🔥 ANUNCIO 2 -->
+<div style="margin-top:20px;">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6972125988436418"
+     data-ad-slot="9668197918"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
 <a id="btnDownload" class="btn" href="#">Descargar ahora</a>
 
 <script>
-// Espera 5 segundos
-setTimeout(function(){
-    document.getElementById("btnDownload").href = "https://www.appcreator24.com/app4101108-ruxlj5";
-}, 5000);
+let tiempo = 5;
+let contador = document.getElementById("contador");
+let boton = document.getElementById("btnDownload");
+
+let intervalo = setInterval(() => {
+    tiempo--;
+    contador.innerHTML = tiempo;
+
+    if(tiempo <= 0){
+        clearInterval(intervalo);
+        boton.style.opacity = "1";
+        boton.href = "https://www.appcreator24.com/app4101108-ruxlj5";
+
+        // redirección automática
+        window.location.href = "https://www.appcreator24.com/app4101108-ruxlj5";
+    }
+}, 1000);
 </script>
 
 </body>
