@@ -7,6 +7,7 @@
 <title>Descargar GADS PRO</title>
 
 <style>
+
 body {
     margin: 0;
     padding: 0;
@@ -17,17 +18,27 @@ body {
 }
 
 .container {
-    padding: 40px 20px;
+    padding: 35px 20px;
 }
 
 .logo {
     width: 120px;
     margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px #00b7ff);
+    }
+    to {
+        filter: drop-shadow(0 0 20px #00b7ff);
+    }
 }
 
 h1 {
     color: #00b7ff;
-    font-size: 30px;
+    font-size: 32px;
 }
 
 p {
@@ -35,66 +46,235 @@ p {
     font-size: 16px;
 }
 
+
 .btn {
+
     display: block;
     max-width: 280px;
-    margin: 25px auto;
+    margin: 18px auto;
     padding: 14px 20px;
+
     background: #008cff;
     color: white;
+
     text-decoration: none;
-    border-radius: 12px;
+
+    border-radius: 15px;
+
     font-size: 17px;
     font-weight: bold;
+
+    transition: 0.3s;
+
 }
+
 
 .btn:hover {
-    background: #00b7ff;
+
+    background:#00b7ff;
+    transform: scale(1.05);
+
 }
 
-.info {
-    font-size: 13px;
-    color: #888;
+
+.web {
+
+    background:#222;
+    border:1px solid #00b7ff;
+
 }
+
+
+/* Barra de descarga */
+
+.loader-box {
+
+    max-width:320px;
+    margin:30px auto;
+
+}
+
+
+.progress {
+
+    width:100%;
+    height:14px;
+
+    background:#222;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+#progressBar {
+
+    width:0%;
+
+    height:100%;
+
+    background:#00b7ff;
+
+    border-radius:20px;
+
+    transition:1s linear;
+
+}
+
+
+#countdown {
+
+    color:#00b7ff;
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+
+.info {
+
+    font-size:13px;
+    color:#777;
+
+}
+
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
+
 <img class="logo" src="logo.png">
+
 
 <h1>GADS PRO</h1>
 
-<p>La descarga comenzará automáticamente.</p>
 
-<a id="downloadBtn"
-href="https://github.com/Gabrielll100/gabrielll100.github.io/releases/download/v1.0/app4101108-ruxlj5.6.apk"
-class="btn">
-📥 Descargar GADS PRO APK
-</a>
-
-<p class="info">
-Versión 1.0 • Android
+<p>
+Preparando descarga...
 </p>
+
+
+
+<div class="loader-box">
+
+
+<div class="progress">
+
+<div id="progressBar"></div>
 
 </div>
 
 
+<p>
+
+Descarga automática en 
+<span id="countdown">10</span>
+segundos
+
+</p>
+
+
+</div>
+
+
+
+
+<a href="https://github.com/Gabrielll100/gabrielll100.github.io/releases/download/v1.0/app4101108-ruxlj5.6.apk"
+class="btn">
+
+📥 Descargar APK
+
+</a>
+
+
+
+
+<a href="TU_LINK_DE_VERSION_WEB"
+class="btn web">
+
+🌐 Versión Web
+
+</a>
+
+
+
+
+<p class="info">
+
+GADS PRO v1.0 • Android
+
+</p>
+
+
+
+</div>
+
+
+
 <script>
 
-// descarga automática después de 2 segundos
 
-setTimeout(function(){
+let seconds = 10;
+
+let progress = 0;
+
+
+let countdown =
+document.getElementById("countdown");
+
+
+let bar =
+document.getElementById("progressBar");
+
+
+
+let timer = setInterval(function(){
+
+
+seconds--;
+
+
+countdown.innerHTML = seconds;
+
+
+progress += 10;
+
+
+bar.style.width = progress + "%";
+
+
+
+if(seconds <= 0){
+
+
+clearInterval(timer);
+
+
 
 window.location.href =
+
 "https://github.com/Gabrielll100/gabrielll100.github.io/releases/download/v1.0/app4101108-ruxlj5.6.apk";
 
-},2000);
+
+
+}
+
+
+},1000);
+
+
 
 </script>
+
 
 
 </body>
