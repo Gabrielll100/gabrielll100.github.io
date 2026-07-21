@@ -1,591 +1,1215 @@
+
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GADS PRO - Apps, Videos y Tecnología</title>
+<title>GADS PRO | Aplicaciones, Tecnología y Contenido Digital</title>
 
-<meta name="description" content="GADS PRO es una plataforma multimedia con aplicaciones, videos y tecnología digital. Descubre herramientas, contenido y novedades tecnológicas.">
+<meta name="description" content="Descubre GADS PRO, una plataforma digital con aplicaciones, tecnología, herramientas y contenido multimedia para usuarios Android.">
 
-<meta name="keywords" content="GADS PRO, aplicaciones, tecnología, videos, apps Android">
+<meta name="robots" content="index, follow">
+
+<meta name="theme-color" content="#080b12">
+
+<link rel="icon" href="logo.png">
+
+<!-- Google AdSense -->
+
+<script async
+
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6972125988436418"
+
+crossorigin="anonymous"></script>
 
 <style>
 
-body{
+:root{
+
+--primary:#00b7ff;
+
+--primary-dark:#008dcc;
+
+--background:#07090d;
+
+--card:#10141b;
+
+--card-light:#161c25;
+
+--text:#ffffff;
+
+--muted:#aeb7c4;
+
+--border:rgba(255,255,255,.08);
+
+}
+
+*{
+
+box-sizing:border-box;
+
 margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#080808;
-color:white;
+
+padding:0;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:Arial, Helvetica, sans-serif;
+
+background:
+
+radial-gradient(circle at top right, rgba(0,183,255,.12), transparent 35%),
+
+var(--background);
+
+color:var(--text);
+
+line-height:1.6;
+
+}
+
+a{
+
+text-decoration:none;
+
 }
 
 header{
-background:#111;
-padding:25px;
-text-align:center;
-border-bottom:1px solid #222;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+background:rgba(7,9,13,.95);
+
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid var(--border);
+
 }
 
-.logo img{
-width:130px;
-border-radius:20px;
-}
+.navbar{
 
-h1{
-color:#00b7ff;
-}
+max-width:1150px;
 
-h2{
-color:#00b7ff;
-}
-
-h3{
-color:#00b7ff;
-}
-
-nav{
-margin-top:20px;
-}
-
-nav a{
-color:#ddd;
-text-decoration:none;
-margin:8px;
-font-size:14px;
-}
-
-nav a:hover{
-color:#00b7ff;
-}
-
-
-.container{
-
-max-width:1000px;
 margin:auto;
-padding:20px;
+
+padding:18px 25px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
 
 }
 
+.brand{
 
-.card{
+display:flex;
 
-background:#111;
-padding:25px;
-border-radius:15px;
-margin-bottom:30px;
-box-shadow:0 0 15px rgba(0,183,255,0.15);
+align-items:center;
 
-}
+gap:12px;
 
+color:white;
 
-p{
+font-size:21px;
 
-color:#ccc;
-line-height:1.7;
+font-weight:bold;
 
 }
 
+.brand img{
+
+width:48px;
+
+height:48px;
+
+border-radius:14px;
+
+object-fit:cover;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.nav-links a{
+
+color:#d8dee8;
+
+font-size:14px;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:var(--primary);
+
+}
+
+.menu-btn{
+
+display:none;
+
+font-size:26px;
+
+cursor:pointer;
+
+color:var(--primary);
+
+}
+
+.hero{
+
+max-width:1150px;
+
+margin:auto;
+
+padding:90px 25px 70px;
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+gap:50px;
+
+align-items:center;
+
+}
+
+.hero h1{
+
+font-size:clamp(38px,6vw,68px);
+
+line-height:1.05;
+
+margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+color:var(--primary);
+
+}
+
+.hero p{
+
+color:var(--muted);
+
+font-size:18px;
+
+max-width:650px;
+
+margin-bottom:25px;
+
+}
+
+.hero-image{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.hero-image img{
+
+width:min(320px,80%);
+
+border-radius:35px;
+
+box-shadow:0 0 60px rgba(0,183,255,.22);
+
+}
 
 .btn{
 
-background:#00b7ff;
-color:#000;
-padding:15px 25px;
-border-radius:12px;
-text-decoration:none;
 display:inline-block;
+
+padding:14px 23px;
+
+border-radius:12px;
+
 font-weight:bold;
-margin-top:15px;
+
+transition:.3s;
+
+margin:5px;
 
 }
 
+.btn-primary{
 
-.btn:hover{
+background:var(--primary);
 
-background:#0099cc;
+color:#001018;
 
 }
 
+.btn-primary:hover{
 
-/* GALERIA */
+background:#42caff;
+
+transform:translateY(-2px);
+
+}
+
+.btn-secondary{
+
+border:1px solid var(--primary);
+
+color:var(--primary);
+
+}
+
+.btn-secondary:hover{
+
+background:rgba(0,183,255,.1);
+
+}
+
+.container{
+
+max-width:1150px;
+
+margin:auto;
+
+padding:20px 25px 60px;
+
+}
+
+.section{
+
+margin:65px 0;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.section-title h2{
+
+font-size:32px;
+
+color:var(--primary);
+
+margin-bottom:10px;
+
+}
+
+.section-title p{
+
+color:var(--muted);
+
+}
+
+.card{
+
+background:linear-gradient(145deg,var(--card),var(--card-light));
+
+border:1px solid var(--border);
+
+border-radius:20px;
+
+padding:30px;
+
+margin-bottom:25px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+.card h3{
+
+color:var(--primary);
+
+margin-bottom:12px;
+
+}
+
+.card p{
+
+color:var(--muted);
+
+margin-bottom:15px;
+
+}
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.feature{
+
+text-align:center;
+
+padding:25px 15px;
+
+}
+
+.feature-icon{
+
+font-size:35px;
+
+margin-bottom:12px;
+
+}
+
+.feature h3{
+
+color:white;
+
+font-size:18px;
+
+margin-bottom:8px;
+
+}
+
+.feature p{
+
+font-size:14px;
+
+}
 
 .gallery{
 
-display:flex;
-gap:15px;
-overflow-x:auto;
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:18px;
 
 }
-
 
 .gallery img{
 
-width:220px;
+width:100%;
+
 border-radius:15px;
+
+border:1px solid var(--border);
+
+transition:.3s;
 
 }
 
+.gallery img:hover{
 
+transform:scale(1.03);
 
-/* ANUNCIOS */
+}
+
+.video-wrapper{
+
+position:relative;
+
+width:100%;
+
+max-width:500px;
+
+margin:25px auto;
+
+aspect-ratio:9/16;
+
+overflow:hidden;
+
+border-radius:20px;
+
+background:#000;
+
+}
+
+.video-wrapper iframe{
+
+width:100%;
+
+height:100%;
+
+border:0;
+
+}
+
+.download-box{
+
+text-align:center;
+
+}
+
+.download-box strong{
+
+color:var(--primary);
+
+}
+
+.requirements{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.requirement{
+
+background:rgba(255,255,255,.04);
+
+padding:15px;
+
+border-radius:12px;
+
+color:var(--muted);
+
+}
+
+.faq-item{
+
+border-bottom:1px solid var(--border);
+
+padding:20px 0;
+
+}
+
+.faq-item:last-child{
+
+border-bottom:none;
+
+}
+
+.faq-item h3{
+
+color:white;
+
+margin-bottom:8px;
+
+}
+
+.faq-item p{
+
+margin:0;
+
+}
 
 .ads{
 
-margin:40px 0;
+margin:45px auto;
+
+max-width:900px;
+
+text-align:center;
 
 }
 
+.ads-label{
 
+color:#777;
 
-/* FOOTER */
+font-size:11px;
 
+margin-bottom:8px;
+
+}
 
 footer{
 
-background:#111;
+border-top:1px solid var(--border);
+
+background:#080a0e;
+
+padding:40px 25px;
+
 text-align:center;
-padding:30px;
-border-top:1px solid #222;
-color:#aaa;
 
 }
 
+footer p{
+
+color:#8d96a3;
+
+margin:8px;
+
+}
+
+footer a{
+
+color:var(--primary);
+
+}
+
+@media(max-width:850px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero p{
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.features{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.nav-links{
+
+display:none;
+
+position:absolute;
+
+top:80px;
+
+left:0;
+
+width:100%;
+
+background:#0b0e13;
+
+flex-direction:column;
+
+padding:25px;
+
+text-align:center;
+
+border-bottom:1px solid var(--border);
+
+}
+
+.nav-links.active{
+
+display:flex;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.hero{
+
+padding-top:60px;
+
+}
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+.requirements{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+padding:22px;
+
+}
+
+}
 
 </style>
 
-
-<!-- GOOGLE ADSENSE -->
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6972125988436418"
-crossorigin="anonymous"></script>
-
-
 </head>
-
 
 <body>
 
-
 <header>
 
+<nav class="navbar">
 
-<div class="logo">
+<a href="#inicio" class="brand">
 
-<img src="logo.png" alt="Logo GADS PRO">
+<img src="logo.png" alt="Logo de GADS PRO">
+
+<span>GADS PRO</span>
+
+</a>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="#inicio">Inicio</a> <a href="#app">Aplicación</a> <a href="#tutorial">Tutorial</a> <a href="#capturas">Capturas</a> <a href="#descarga">Descargar</a> <a href="#faq">FAQ</a> <a href="#contacto">Contacto</a>
 
 </div>
-
-
-<h1>GADS PRO</h1>
-
-<p>
-Apps, videos y tecnología en un solo lugar.
-</p>
-
-
-<nav>
-
-<a href="#inicio">Inicio</a>
-
-<a href="#app">App</a>
-
-<a href="#capturas">Capturas</a>
-
-<a href="#descarga">Descargar</a>
-
-<a href="#faq">FAQ</a>
-
-<a href="#contacto">Contacto</a>
-
-<a href="#legal">Legal</a>
 
 </nav>
 
-
 </header>
 
+<main id="inicio">
 
+<section class="hero">
+
+<div>
+
+<h1>Descubre el mundo de <span>GADS PRO</span></h1>
+
+<p>
+
+Una plataforma digital enfocada en aplicaciones, tecnología, herramientas y contenido multimedia para usuarios que buscan descubrir nuevas experiencias digitales.
+
+</p>
+
+<a href="#descarga" class="btn btn-primary">
+
+📥 Descargar aplicación
+
+</a>
+
+<a href="#tutorial" class="btn btn-secondary">
+
+▶ Ver tutorial
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="logo.png" alt="Aplicación GADS PRO">
+
+</div>
+
+</section>
 
 <div class="container">
 
+<section class="section">
 
+<div class="section-title">
 
-<section id="inicio">
+<h2>¿Por qué utilizar GADS PRO?</h2>
 
-<div class="card">
+<p>Una experiencia sencilla, rápida y diseñada para dispositivos modernos.</p>
 
-<h2>🚀 Bienvenido a GADS PRO</h2>
+</div>
 
+<div class="features">
 
-<p>
-GADS PRO es una plataforma multimedia creada para ofrecer contenido relacionado con aplicaciones, videos, herramientas digitales y tecnología.
-</p>
+<div class="card feature">
 
+<div class="feature-icon">📱</div>
 
-<p>
-Nuestro objetivo es brindar una experiencia rápida, sencilla y accesible para usuarios que buscan descubrir nuevas herramientas digitales.
-</p>
+<h3>Diseño moderno</h3>
 
+<p>Interfaz sencilla y fácil de utilizar.</p>
+
+</div>
+
+<div class="card feature">
+
+<div class="feature-icon">⚡</div>
+
+<h3>Experiencia rápida</h3>
+
+<p>Diseñada para ofrecer una navegación cómoda.</p>
+
+</div>
+
+<div class="card feature">
+
+<div class="feature-icon">🛠️</div>
+
+<h3>Actualizaciones</h3>
+
+<p>El proyecto puede recibir mejoras y nuevas funciones.</p>
+
+</div>
+
+<div class="card feature">
+
+<div class="feature-icon">🌐</div>
+
+<h3>Accesible</h3>
+
+<p>La plataforma está optimizada para diferentes dispositivos.</p>
+
+</div>
 
 </div>
 
 </section>
 
+<section id="app" class="section">
 
+<div class="section-title">
 
-<section id="app">
+<h2>📱 Sobre GADS PRO</h2>
 
+<p>Conoce más sobre el proyecto.</p>
+
+</div>
 
 <div class="card">
 
-
-<h2>📱 Sobre la aplicación</h2>
-
-
 <p>
-GADS PRO ofrece una experiencia multimedia con acceso a contenido digital, herramientas y funciones diseñadas para dispositivos Android.
+
+GADS PRO es una plataforma digital enfocada en aplicaciones, herramientas y contenido relacionado con la tecnología.
+
 </p>
 
+<p>
+
+El proyecto busca ofrecer una experiencia sencilla para que los usuarios puedan conocer la aplicación, consultar información, ver tutoriales y acceder a los recursos oficiales disponibles.
+
+</p>
+
+<h3>Características principales</h3>
 
 <ul>
 
-<li>✔ Interfaz moderna y sencilla</li>
+<li>✔ Interfaz moderna y sencilla.</li>
 
-<li>✔ Optimizada para dispositivos móviles</li>
+<li>✔ Diseño adaptado a dispositivos móviles.</li>
 
-<li>✔ Contenido tecnológico</li>
+<li>✔ Información sobre la aplicación.</li>
 
-<li>✔ Mejoras y actualizaciones constantes</li>
+<li>✔ Tutorial de instalación.</li>
+
+<li>✔ Acceso a recursos oficiales del proyecto.</li>
 
 </ul>
 
-
 </div>
 
-
 </section>
-<!-- CAPTURAS -->
 
-<section id="capturas">
+<section id="tutorial" class="section">
+
+<div class="section-title">
+
+<h2>🎥 Tutorial de instalación</h2>
+
+<p>Aprende cómo instalar GADS PRO paso a paso.</p>
+
+</div>
 
 <div class="card">
 
-<h2>📸 Capturas de GADS PRO</h2>
-
 <p>
-Conoce la interfaz y algunas funciones principales de nuestra aplicación.
+
+En el siguiente video puedes observar el proceso de instalación de la aplicación en un dispositivo Android.
+
 </p>
 
+<div class="video-wrapper">
 
-<div class="gallery">
+<iframe
 
-<img src="screen1.jpg" alt="Captura GADS PRO 1">
+src="https://www.youtube.com/embed/WkRgCIsoYO4"
 
-<img src="screen2.jpg" alt="Captura GADS PRO 2">
+title="Tutorial de instalación de GADS PRO"
 
-<img src="screen3.jpg" alt="Captura GADS PRO 3">
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+
+allowfullscreen>
+
+</iframe>
 
 </div>
 
+<p>
 
-<p style="font-size:13px;">
-Las imágenes muestran una vista previa de la aplicación.
+Si tienes problemas durante la instalación, puedes comunicarte con nosotros mediante la sección de contacto.
+
 </p>
-
 
 </div>
 
 </section>
 
+<section id="capturas" class="section">
 
+<div class="section-title">
 
+<h2>📸 Capturas de la aplicación</h2>
+
+<p>Observa parte de la interfaz y experiencia de GADS PRO.</p>
+
+</div>
+
+<div class="card">
+
+<div class="gallery">
+
+<img src="screen1.jpg" alt="Captura de pantalla de GADS PRO">
+
+<img src="screen2.jpg" alt="Interfaz de la aplicación GADS PRO">
+
+<img src="screen3.jpg" alt="Función de GADS PRO">
+
+</div>
+
+</div>
+
+</section>
 
 <!-- ANUNCIO ADSENSE -->
 
 <div class="ads">
 
+<div class="ads-label">PUBLICIDAD</div>
+
 <ins class="adsbygoogle"
+
 style="display:block"
+
 data-ad-client="ca-pub-6972125988436418"
+
 data-ad-slot="6274225309"
+
 data-ad-format="auto"
+
 data-full-width-responsive="true"></ins>
 
-
 <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+</script>
 
 </div>
 
+<section id="descarga" class="section">
 
-
-
-
-<!-- DESCARGA -->
-
-
-<section id="descarga">
-
-
-<div class="card">
-
+<div class="section-title">
 
 <h2>📥 Descargar GADS PRO</h2>
 
-
-<p>
-Puedes descargar la aplicación desde nuestro enlace oficial de distribución.
-</p>
-
-
-<p>
-Recomendamos descargar siempre desde fuentes oficiales para mantener una experiencia segura.
-</p>
-
-
-
-<a href="https://www.appcreator24.com/app4101108-ruxlj5"
-target="_blank"
-class="btn">
-
-⬇ Descargar APK
-
-</a>
-
-
+<p>Accede al recurso oficial de descarga de la aplicación.</p>
 
 </div>
 
+<div class="card download-box">
+
+<p>
+
+GADS PRO está diseñado principalmente para dispositivos Android compatibles.
+
+</p>
+
+<p>
+
+Antes de instalar aplicaciones desde fuentes externas, asegúrate de descargar únicamente desde fuentes confiables y revisa los requisitos de tu dispositivo.
+
+</p>
+
+<p>
+
+<strong>Recomendación:</strong> consulta el tutorial de instalación antes de comenzar.
+
+</p>
+
+<a
+
+href="https://www.appcreator24.com/app4101108-ruxlj5"
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+class="btn btn-primary">
+
+⬇ Descargar GADS PRO
+
+</a>
+
+</div>
 
 </section>
 
+<section class="section">
 
+<div class="section-title">
 
+<h2>⚙️ Requisitos</h2>
 
+<p>Información general para utilizar la aplicación.</p>
 
+</div>
 
-<!-- FAQ -->
+<div class="requirements">
 
+<div class="requirement">📱 Dispositivo Android compatible.</div>
 
-<section id="faq">
+<div class="requirement">🌐 Conexión a Internet para funciones online.</div>
 
+<div class="requirement">💾 Espacio de almacenamiento disponible.</div>
 
-<div class="card">
+<div class="requirement">🔄 Sistema actualizado para una mejor experiencia.</div>
 
+</div>
+
+</section>
+
+<section id="faq" class="section">
+
+<div class="section-title">
 
 <h2>❓ Preguntas frecuentes</h2>
 
+<p>Respuestas a las preguntas más comunes.</p>
 
+</div>
+
+<div class="card">
+
+<div class="faq-item">
 
 <h3>¿Qué es GADS PRO?</h3>
 
 <p>
-GADS PRO es una plataforma multimedia enfocada en aplicaciones, videos y tecnología digital.
+
+GADS PRO es una plataforma digital relacionada con aplicaciones, herramientas y tecnología.
+
 </p>
 
+</div>
 
+<div class="faq-item">
 
 <h3>¿La aplicación es gratuita?</h3>
 
 <p>
-Sí, puedes utilizar la versión disponible gratuitamente.
+
+La versión disponible actualmente puede utilizarse gratuitamente.
+
 </p>
 
+</div>
 
+<div class="faq-item">
 
 <h3>¿En qué dispositivos funciona?</h3>
 
 <p>
+
 Está diseñada principalmente para dispositivos Android compatibles.
+
 </p>
-
-
-
-<h3>¿Cómo puedo contactar con GADS PRO?</h3>
-
-<p>
-Puedes escribirnos desde la sección de contacto.
-</p>
-
-
 
 </div>
 
+<div class="faq-item">
+
+<h3>¿Cómo puedo instalarla?</h3>
+
+<p>
+
+Puedes consultar el tutorial de instalación disponible en esta página.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>¿Cómo puedo contactar al equipo?</h3>
+
+<p>
+
+Puedes comunicarte mediante el correo electrónico disponible en la sección de contacto.
+
+</p>
+
+</div>
+
+</div>
 
 </section>
 
+<section id="contacto" class="section">
 
-
-
-
-
-
-<!-- CONTACTO -->
-
-
-<section id="contacto">
-
-
-<div class="card">
-
+<div class="section-title">
 
 <h2>📩 Contacto</h2>
 
+<p>¿Tienes preguntas o sugerencias?</p>
+
+</div>
+
+<div class="card">
 
 <p>
-Si tienes preguntas, sugerencias o deseas comunicarte con nuestro equipo, puedes escribirnos.
+
+Para consultas, sugerencias o información relacionada con GADS PRO, puedes escribirnos al siguiente correo:
+
 </p>
 
+<a
 
-<p>
-Correo oficial:
-</p>
+href="mailto:kelvinespi1924h@gmail.com"
 
+class="btn btn-secondary">
 
-<a href="mailto:kelvinespi1924h@gmail.com"
-class="btn">
-
-Enviar correo
+✉️ Contactar por correo
 
 </a>
 
-
-
 </div>
 
-
 </section>
-<!-- SOBRE NOSOTROS -->
 
-<section id="nosotros">
+<section class="section">
+
+<div class="section-title">
+
+<h2>👥 Sobre nosotros</h2>
+
+</div>
 
 <div class="card">
 
-<h2>👥 Sobre Nosotros</h2>
-
 <p>
-GADS PRO es una plataforma multimedia enfocada en ofrecer contenido relacionado con aplicaciones, videos, herramientas digitales y tecnología.
+
+GADS PRO es un proyecto digital enfocado en ofrecer una experiencia sencilla y accesible relacionada con aplicaciones, tecnología y contenido multimedia.
+
 </p>
 
 <p>
-Trabajamos para mejorar la experiencia de nuestros usuarios mediante una interfaz sencilla, rápida y accesible.
+
+Nuestro objetivo es continuar mejorando el proyecto y ofrecer información clara a los usuarios mediante una plataforma moderna, rápida y compatible con diferentes dispositivos.
+
 </p>
 
 </div>
 
 </section>
 
+<section class="section">
 
+<div class="section-title">
 
+<h2>📜 Información legal</h2>
 
-
-<!-- LEGAL -->
-
-<section id="legal">
+</div>
 
 <div class="card">
 
-
-<h2>📜 Información Legal</h2>
-
-
-
-<h3>Política de Privacidad</h3>
+<h3>Política de privacidad</h3>
 
 <p>
-En GADS PRO respetamos la privacidad de nuestros usuarios.
-Este sitio puede utilizar tecnologías como cookies y servicios de terceros para mejorar la experiencia y mostrar contenido relevante.
+
+GADS PRO respeta la privacidad de sus visitantes. Este sitio puede utilizar servicios de terceros, cookies y tecnologías similares para mejorar la experiencia del usuario y mostrar contenido relevante.
+
 </p>
 
 <p>
-Los servicios publicitarios pueden recopilar información no personal, como datos de navegación, para ofrecer anuncios personalizados según las preferencias del usuario.
-</p>
 
+Los servicios publicitarios de terceros pueden utilizar tecnologías como cookies para mostrar anuncios basados en visitas anteriores u otros factores permitidos por sus políticas.
 
-<h3>Términos de Uso</h3>
-
-<p>
-Al utilizar este sitio aceptas utilizarlo de manera responsable y respetar las condiciones establecidas.
 </p>
 
 <p>
-GADS PRO puede actualizar, modificar o mejorar sus contenidos y servicios en cualquier momento.
+
+Los usuarios pueden administrar determinadas preferencias relacionadas con la publicidad y las cookies mediante las herramientas proporcionadas por los servicios correspondientes.
+
 </p>
 
-
-<h3>Descargo de Responsabilidad</h3>
+<h3>Términos de uso</h3>
 
 <p>
-GADS PRO proporciona información y enlaces externos con fines informativos.
-No somos responsables del contenido, funcionamiento o políticas de sitios externos enlazados desde nuestra plataforma.
+
+Al utilizar este sitio, el usuario acepta hacerlo de forma responsable y respetar las leyes aplicables. El contenido y los recursos de GADS PRO pueden actualizarse, modificarse o retirarse sin previo aviso.
+
 </p>
 
+<h3>Enlaces externos</h3>
+
+<p>
+
+Este sitio puede incluir enlaces hacia servicios externos. GADS PRO no controla las políticas, contenido o funcionamiento de sitios de terceros.
+
+</p>
+
+<h3>Política de cookies</h3>
+
+<p>
+
+Este sitio puede utilizar cookies y tecnologías similares para mejorar la navegación, analizar el funcionamiento del sitio y permitir servicios de publicidad de terceros cuando corresponda.
+
+</p>
 
 </div>
 
 </section>
 
-
-
-
-
-
-
-<!-- ANUNCIO FINAL ADSENSE -->
-
-
-<div class="ads">
-
-
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-6972125988436418"
-data-ad-slot="6274225309"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-
-
-<script>
-
-(adsbygoogle = window.adsbygoogle || []).push({});
-
-</script>
-
-
 </div>
 
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-<!-- FOOTER -->
-
+</main>
 
 <footer>
 
-
-<p>
-© 2026 GADS PRO - Todos los derechos reservados
-</p>
-
+<p>© 2026 GADS PRO. Todos los derechos reservados.</p>
 
 <p>
 
 Contacto:
-<a href="mailto:kelvinespi1924h@gmail.com" style="color:#00b7ff;">
+
+<a href="mailto:kelvinespi1924h@gmail.com">
 
 kelvinespi1924h@gmail.com
 
@@ -593,13 +1217,31 @@ kelvinespi1924h@gmail.com
 
 </p>
 
-
 </footer>
 
+<script>
 
+function toggleMenu(){
 
+const nav = document.getElementById("navLinks");
 
+nav.classList.toggle("active");
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("navLinks").classList.remove("active");
+
+});
+
+});
+
+</script>
 
 </body>
 
 </html>
+
