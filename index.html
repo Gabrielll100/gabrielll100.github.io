@@ -4,64 +4,100 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GADS PRO - Tecnología, Apps y Plataforma Multimedia</title>
-
-<meta name="description" content="Explora GADS PRO, un blog y plataforma informativa sobre aplicaciones, tecnología y contenido multimedia optimizado.">
+<title>GADS PRO - Apps y Tecnología</title>
+<meta name="description" content="Descubre apps, tecnología y herramientas digitales seguras. Plataforma optimizada tipo Play Store.">
 
 <style>
-body{margin:0;font-family:Arial;background:#0a0a0a;color:#fff;}
+body{
+margin:0;
+font-family:Arial;
+background:#0a0a0a;
+color:#fff;
+}
 
-/* HEADER */
-header{background:#111;padding:15px;text-align:center;}
-
-/* LOGO PRO */
-.logo{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+header{
+background:#111;
+padding:20px;
+text-align:center;
+border-bottom:1px solid #222;
 }
 
 .logo img{
-    width:140px;
-    height:auto;
-    transition:0.3s;
+width:120px;
+margin-bottom:10px;
 }
 
-.logo img:hover{
-    transform:scale(1.05);
+nav a{
+color:#ccc;
+margin:0 10px;
+text-decoration:none;
+font-size:14px;
 }
 
-.tagline{
-    font-size:13px;
-    color:#aaa;
-    margin-top:5px;
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
 }
 
-/* NAV */
-nav{margin-top:10px;}
-nav a{color:#ccc;margin:0 10px;text-decoration:none;font-size:14px;}
+.section{
+margin-bottom:50px;
+}
 
-/* CONTENIDO */
-.container{max-width:1000px;margin:auto;padding:20px;}
-.section{margin-bottom:50px;}
-.post{background:#111;padding:20px;border-radius:10px;margin-bottom:20px;}
-h1,h2,h3{color:#00b7ff;}
-p{color:#ccc;line-height:1.7;}
+.card{
+background:#111;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
 
-/* BOTONES */
+h1,h2,h3{
+color:#00b7ff;
+}
+
+p{
+color:#ccc;
+line-height:1.7;
+}
+
 .btn{
 background:#00b7ff;
 color:#000;
-padding:12px 20px;
-border-radius:10px;
+padding:14px 25px;
+border-radius:12px;
 text-decoration:none;
 display:inline-block;
-margin-top:10px;
+margin-top:15px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#0099cc;
+}
+
+/* GALERIA */
+.gallery{
+display:flex;
+gap:10px;
+overflow-x:auto;
+}
+
+.gallery img{
+width:200px;
+border-radius:10px;
 }
 
 /* FOOTER */
-footer{background:#111;text-align:center;padding:30px;color:#aaa;}
+footer{
+background:#111;
+text-align:center;
+padding:30px;
+color:#aaa;
+margin-top:50px;
+border-top:1px solid #222;
+}
 </style>
 
 <!-- ADSENSE -->
@@ -73,19 +109,18 @@ footer{background:#111;text-align:center;padding:30px;color:#aaa;}
 
 <header>
 
-<!-- LOGO CLICKABLE -->
-<a href="#" class="logo">
-  <img src="logo.png" alt="GADS PRO - Plataforma multimedia">
-</a>
+<div class="logo">
+<img src="logo.png" alt="GADS PRO LOGO">
+</div>
 
-<p class="tagline">Plataforma Multimedia Segura</p>
+<h1>GADS PRO</h1>
 
 <nav>
 <a href="#inicio">Inicio</a>
-<a href="#blog">Blog</a>
-<a href="#app">Aplicación</a>
+<a href="#app">App</a>
+<a href="#capturas">Capturas</a>
+<a href="#descarga">Descargar</a>
 <a href="#faq">FAQ</a>
-<a href="#contacto">Contacto</a>
 <a href="#legal">Legal</a>
 </nav>
 
@@ -93,132 +128,112 @@ footer{background:#111;text-align:center;padding:30px;color:#aaa;}
 
 <div class="container">
 
-<!-- HERO -->
+<!-- INICIO -->
 <section id="inicio" class="section">
-<h2>🚀 Bienvenido a GADS PRO</h2>
+<div class="card">
+<h2>🚀 Bienvenido</h2>
 <p>
-GADS PRO es un espacio digital enfocado en compartir contenido sobre tecnología,
-aplicaciones y plataformas multimedia. Nuestro objetivo es brindar información útil,
-segura y actualizada para todos los usuarios.
+GADS PRO es una plataforma informativa sobre aplicaciones, tecnología y herramientas digitales.
+Nuestro objetivo es ofrecer contenido seguro, optimizado y útil para todos los usuarios.
 </p>
+</div>
 </section>
 
-<!-- BLOG -->
-<section id="blog" class="section">
+<!-- APP -->
+<section id="app" class="section">
+<div class="card">
+<h2>📱 Sobre la Aplicación</h2>
+<p>
+Nuestra app ofrece funciones multimedia, optimización y acceso a contenido digital de forma rápida y segura.
+</p>
 
-<div class="post">
-<h2>📱 Evolución de las apps multimedia</h2>
-<p>
-Las aplicaciones multimedia han cambiado radicalmente en los últimos años,
-adaptándose a nuevas tecnologías y necesidades del usuario moderno.
-</p>
-<p>
-Hoy en día, la optimización del rendimiento, el consumo eficiente de datos y la
-compatibilidad con múltiples dispositivos son aspectos clave en el desarrollo.
-</p>
+<ul>
+<li>✔ Interfaz rápida</li>
+<li>✔ Bajo consumo</li>
+<li>✔ Compatible con Android</li>
+<li>✔ Actualizaciones constantes</li>
+</ul>
+
+</div>
+</section>
+
+<!-- CAPTURAS -->
+<section id="capturas" class="section">
+<div class="card">
+<h2>📸 Capturas de la App</h2>
+
+<div class="gallery">
+<img src="screen1.jpg">
+<img src="screen2.jpg">
+<img src="screen3.jpg">
 </div>
 
-<div class="post">
-<h2>⚡ Mejora el rendimiento de tu móvil</h2>
-<p>
-Para mantener tu dispositivo funcionando correctamente, es importante eliminar
-archivos innecesarios, actualizar el sistema y evitar aplicaciones desconocidas.
+<p style="font-size:13px;">
+Vista previa de la aplicación en funcionamiento.
 </p>
-<p>
-Una buena gestión del almacenamiento puede mejorar considerablemente la velocidad.
-</p>
+
 </div>
+</section>
 
 <!-- ANUNCIO -->
 <div style="margin:30px 0;">
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6972125988436418"
-     data-ad-slot="6274225309"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+style="display:block"
+data-ad-client="ca-pub-6972125988436418"
+data-ad-slot="6274225309"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
 
-<div class="post">
-<h2>🔒 Seguridad digital básica</h2>
-<p>
-Siempre descarga aplicaciones desde fuentes confiables y revisa los permisos antes de instalar.
-</p>
-<p>
-El uso de contraseñas seguras y autenticación en dos pasos es altamente recomendado.
-</p>
-</div>
-
-<div class="post">
-<h2>🌐 Futuro de las plataformas digitales</h2>
-<p>
-El futuro apunta hacia experiencias personalizadas gracias a inteligencia artificial,
-mejorando la interacción del usuario con las aplicaciones.
-</p>
-</div>
-
-</section>
-
-<!-- APP -->
-<section id="app" class="section">
-<h2>📲 Sobre la Aplicación</h2>
-<p>
-GADS PRO es una herramienta diseñada para mejorar la experiencia multimedia,
-ofreciendo rapidez, estabilidad y facilidad de uso.
-</p>
-
-<a href="#descarga" class="btn">Opciones de descarga</a>
-</section>
-
 <!-- DESCARGA -->
 <section id="descarga" class="section">
-<h2>⬇️ Descargar</h2>
+<div class="card">
+<h2>📥 Descargar APK</h2>
+
 <p>
-Puedes acceder a la descarga desde la opción siguiente. Se recomienda leer toda la información.
+La aplicación se encuentra alojada en un proveedor externo seguro.
 </p>
 
-<a href="#" class="btn">Descargar aplicación</a>
+<p style="font-size:13px;color:#aaa;">
+Este sitio no almacena archivos directamente.
+</p>
+
+<a href="https://www.appcreator24.com/app4101108-ruxlj5" target="_blank" class="btn">
+⬇️ Descargar Aplicación
+</a>
+
+</div>
 </section>
 
 <!-- FAQ -->
 <section id="faq" class="section">
-<h2>❓ Preguntas frecuentes</h2>
+<div class="card">
+<h2>❓ Preguntas Frecuentes</h2>
 
-<h3>¿Es segura la aplicación?</h3>
-<p>Sí, siempre que se descargue desde fuentes confiables.</p>
+<h3>¿Es segura?</h3>
+<p>Sí, siempre que descargues desde el enlace oficial.</p>
 
-<h3>¿Funciona en todos los dispositivos?</h3>
-<p>La mayoría de dispositivos modernos son compatibles.</p>
+<h3>¿Funciona en todos los móviles?</h3>
+<p>Compatible con la mayoría de dispositivos Android.</p>
 
-<h3>¿Se necesita registro?</h3>
-<p>No necesariamente, depende de la funcionalidad utilizada.</p>
-
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="section">
-<h2>📩 Contacto</h2>
-<p>Email: kelvinespi1924h@gmail.com</p>
-<p>Horario de atención: Lunes a Viernes</p>
+</div>
 </section>
 
 <!-- LEGAL -->
 <section id="legal" class="section">
-<h2>📜 Información legal</h2>
+<div class="card">
+<h2>📜 Legal</h2>
 
 <h3>Política de Privacidad</h3>
-<p>
-Este sitio puede utilizar cookies para mejorar la experiencia del usuario.
-</p>
+<p>Este sitio puede usar cookies para mejorar la experiencia del usuario.</p>
 
-<h3>Términos y Condiciones</h3>
-<p>
-El uso del sitio implica la aceptación de los términos establecidos.
-</p>
+<h3>Términos</h3>
+<p>El uso del sitio implica la aceptación de nuestras condiciones.</p>
 
+</div>
 </section>
 
 </div>
