@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" role="img" aria-labelledby="t d">
+<title id="t">Flujo para revisar permisos de Android</title><desc id="d">Diagrama propio de GADS PRO: función, permiso, momento de uso y decisión.</desc>
+<rect width="1100" height="420" rx="28" fill="#0b1220"/><g font-family="Arial,sans-serif" text-anchor="middle"><text x="550" y="55" fill="#fff" font-size="28" font-weight="700">Revisión de permisos</text>
+<g fill="#121d2d" stroke="#2b3b55" stroke-width="2"><rect x="65" y="145" width="220" height="100" rx="18"/><rect x="325" y="145" width="220" height="100" rx="18"/><rect x="585" y="145" width="220" height="100" rx="18"/><rect x="845" y="145" width="190" height="100" rx="18"/></g>
+<g fill="#67d4ff" font-size="17" font-weight="700"><text x="175" y="185">Función</text><text x="435" y="185">Permiso</text><text x="695" y="185">Momento</text><text x="940" y="185">Decisión</text></g>
+<g fill="#cbd5e1" font-size="13"><text x="175" y="212">¿qué quieres usar?</text><text x="435" y="212">¿qué acceso pide?</text><text x="695" y="212">¿cuándo lo usa?</text><text x="940" y="212">permitir / denegar</text></g>
+<g stroke="#7c4dff" stroke-width="4"><path d="M285 195h40"/><path d="M545 195h40"/><path d="M805 195h40"/></g></g></svg>

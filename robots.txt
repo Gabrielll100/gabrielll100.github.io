@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /gracias.html
+Sitemap: https://gabrielll100.github.io/FINAL-GADS/sitemap.xml
