@@ -70,3 +70,11 @@ footer{max-width:var(--gp-max);margin:auto;padding:30px 20px}
 .decision-grid>div{padding:1rem;border-radius:12px;background:#f5f7fa}
 @media(max-width:720px){.decision-grid{grid-template-columns:1fr}}
 .sources-box{padding:1rem;border-left:4px solid #222;background:#f6f7f9;border-radius:8px}
+
+/* DESCARGA GADS PRO */
+.download-section{margin-top:42px}
+.downloadCard{background:linear-gradient(145deg,#111d30,#0b1422);border:1px solid #2a3a55;border-radius:22px;padding:30px;box-shadow:0 18px 55px #0005}
+.downloadCard h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:10px 0 12px}
+.downloadCard p{color:#c4cfdd;max-width:760px}
+.download-actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 8px}
+.download-btn{box-shadow:0 10px 30px #00b7ff22}
