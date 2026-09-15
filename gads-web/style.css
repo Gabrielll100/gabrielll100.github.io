@@ -1,0 +1,563 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #05080d;
+    --panel: #0c121b;
+    --panel2: #111a26;
+    --border: #203044;
+    --text: #ffffff;
+    --muted: #9eafc2;
+    --blue: #00b7ff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at top,
+            #10253c 0,
+            #05080d 45%
+        );
+
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 12px 25px;
+
+    background: rgba(5, 8, 13, 0.94);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: white;
+    text-decoration: none;
+
+    font-weight: bold;
+    font-size: 20px;
+
+    white-space: nowrap;
+}
+
+.brand img {
+    width: 40px;
+    height: 40px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   BUSCADOR
+========================= */
+
+.search {
+    display: flex;
+    flex: 1;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.search input {
+    width: 100%;
+
+    padding: 13px 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px 0 0 30px;
+
+    background: #101722;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.search input:focus {
+    border-color: var(--blue);
+}
+
+.search button {
+    width: 55px;
+
+    border: none;
+
+    border-radius: 0 30px 30px 0;
+
+    background: var(--blue);
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.categories {
+    display: flex;
+
+    gap: 10px;
+
+    padding: 15px 25px;
+
+    overflow-x: auto;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.categories button {
+    background: var(--panel);
+
+    color: white;
+
+    border: 1px solid var(--border);
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.categories button:hover {
+    background: var(--blue);
+
+    color: black;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 60px 25px 35px;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background: #0d2535;
+
+    color: var(--blue);
+
+    border: 1px solid #174e6a;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 65px);
+
+    line-height: 1.05;
+
+    margin: 20px 0;
+
+    max-width: 900px;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero p {
+    color: var(--muted);
+
+    font-size: 18px;
+
+    max-width: 750px;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.content {
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 20px 25px 80px;
+}
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 27px;
+}
+
+#status {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TARJETAS DE VIDEO
+========================= */
+
+.videos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(220px, 1fr)
+        );
+
+    gap: 18px;
+}
+
+.card {
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--blue);
+}
+
+.thumbnail {
+    position: relative;
+
+    aspect-ratio: 16 / 9;
+
+    background: #000;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.play {
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 45px;
+
+    opacity: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    transition: opacity 0.2s;
+}
+
+.card:hover .play {
+    opacity: 1;
+}
+
+.card-info {
+    padding: 13px;
+}
+
+.card-title {
+    font-size: 15px;
+
+    line-height: 1.4;
+}
+
+.channel {
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   BOTÓN CARGAR MÁS
+========================= */
+
+.load-more {
+    display: block;
+
+    margin: 35px auto;
+
+    padding: 13px 25px;
+
+    border: 1px solid var(--blue);
+
+    background: transparent;
+
+    color: var(--blue);
+
+    border-radius: 25px;
+
+    cursor: pointer;
+}
+
+.load-more:hover {
+    background: var(--blue);
+
+    color: black;
+}
+
+
+/* =========================
+   REPRODUCTOR
+========================= */
+
+.player {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999;
+
+    background: rgba(0, 0, 0, 0.96);
+
+    overflow-y: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.player-header {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding: 15px 20px;
+}
+
+.player-header button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #202833;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.player-content {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 20px 50px;
+}
+
+.video-container {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: black;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+#videoTitle {
+    margin-top: 20px;
+
+    font-size: 24px;
+}
+
+#videoChannel {
+    color: var(--muted);
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+footer a {
+    color: var(--blue);
+}
+
+
+/* =========================
+   IPHONE / MÓVIL
+========================= */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        flex-wrap: wrap;
+
+        padding: 10px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .search {
+        order: 3;
+
+        flex-basis: 100%;
+    }
+
+    .hero {
+        padding-top: 35px;
+    }
+
+    .videos {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .card-info {
+        padding: 9px;
+    }
+
+    .card-title {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================
+   TV / PANTALLAS GRANDES
+========================= */
+
+@media (min-width: 1600px) {
+
+    body {
+        font-size: 18px;
+    }
+
+    .videos {
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        gap: 25px;
+    }
+
+    .categories button {
+        font-size: 18px;
+
+        padding: 14px 24px;
+    }
+
+}
+
+
+/* =========================
+   CONTROL REMOTO / TECLADO
+========================= */
+
+button:focus,
+.card:focus {
+    outline: 3px solid var(--blue);
+
+    outline-offset: 3px;
+}
