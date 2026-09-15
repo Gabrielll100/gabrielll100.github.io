@@ -78,3 +78,84 @@ footer{max-width:var(--gp-max);margin:auto;padding:30px 20px}
 .downloadCard p{color:#c4cfdd;max-width:760px}
 .download-actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 8px}
 .download-btn{box-shadow:0 10px 30px #00b7ff22}
+/* =========================================
+   GADS PRO WEB
+========================================= */
+
+.gads-web-section {
+    margin: 50px auto;
+    padding: 50px 25px;
+    max-width: 1100px;
+    background: linear-gradient(135deg, #080808, #101722);
+    border: 1px solid #00b7ff;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 183, 255, 0.15);
+}
+
+.gads-web-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.badge-web {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: #00b7ff;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.gads-web-section h2 {
+    font-size: 42px;
+    margin: 10px 0;
+    color: #00b7ff;
+}
+
+.gads-web-section p {
+    color: #b8c4d1;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.btn-gads-web {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: #00b7ff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-gads-web:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 183, 255, 0.5);
+}
+
+@media (max-width: 700px) {
+
+    .gads-web-section {
+        margin: 30px 15px;
+        padding: 35px 20px;
+    }
+
+    .gads-web-section h2 {
+        font-size: 32px;
+    }
+
+    .gads-web-section p {
+        font-size: 16px;
+    }
+
+    .btn-gads-web {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
