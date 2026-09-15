@@ -726,15 +726,9 @@ function escapeHTML(text) {
 /* =========================================
    INICIAR GADS PRO WEB
 ========================================= */
-
 (async function init() {
 
-
-    if (
-        !API_KEY ||
-        API_KEY ===
-        "AIzaSyA0fv75LJxZGRsRSlpkSX0OO1Dw0FP3NNs"
-    ) {
+    if (!API_KEY) {
 
         showError(
             new Error(
@@ -742,19 +736,14 @@ function escapeHTML(text) {
             )
         );
 
-
         return;
-
     }
-
 
     try {
 
         await loadPopular();
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         showError(error);
 
