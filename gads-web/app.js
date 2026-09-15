@@ -16,7 +16,7 @@
    const API_KEY = "AIzaSyXXXXXXXXXXXX";
 */
 
-const API_KEY = "PEGA_AQUI_TU_API_KEY";
+const API_KEY = "AIzaSyA0fv75LJxZGRsRSlpkSX0OO1Dw0FP3NNs";
 
 
 const API_URL =
@@ -733,7 +733,7 @@ function escapeHTML(text) {
     if (
         !API_KEY ||
         API_KEY ===
-        "PEGA_AQUI_TU_API_KEY"
+        "AIzaSyA0fv75LJxZGRsRSlpkSX0OO1Dw0FP3NNs"
     ) {
 
         showError(
