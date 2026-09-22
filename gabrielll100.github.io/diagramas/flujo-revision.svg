@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="t d">
+<title id="t">Flujo de revisión de una aplicación Android</title><desc id="d">Diagrama propio de GADS PRO: origen, compatibilidad, permisos, verificación y decisión.</desc>
+<rect width="1200" height="420" rx="28" fill="#0b1220"/><g font-family="Arial,sans-serif" text-anchor="middle">
+<text x="600" y="55" fill="#fff" font-size="28" font-weight="700">Flujo de revisión GADS PRO</text>
+<g fill="#121d2d" stroke="#2b3b55" stroke-width="2"><rect x="55" y="145" width="190" height="100" rx="18"/><rect x="275" y="145" width="190" height="100" rx="18"/><rect x="495" y="145" width="190" height="100" rx="18"/><rect x="715" y="145" width="190" height="100" rx="18"/><rect x="935" y="145" width="190" height="100" rx="18"/></g>
+<g fill="#67d4ff" font-size="18" font-weight="700"><text x="150" y="185">1. Origen</text><text x="370" y="185">2. Compatibilidad</text><text x="590" y="185">3. Permisos</text><text x="810" y="185">4. Verificación</text><text x="1030" y="185">5. Decisión</text></g>
+<g fill="#cbd5e1" font-size="14"><text x="150" y="212">¿Quién lo publica?</text><text x="370" y="212">Android + CPU</text><text x="590" y="212">¿Tiene sentido?</text><text x="810" y="212">Firma + archivo</text><text x="1030" y="212">Instalar / detener</text></g>
+<g stroke="#7c4dff" stroke-width="4"><path d="M245 195h30"/><path d="M465 195h30"/><path d="M685 195h30"/><path d="M905 195h30"/></g></g></svg>

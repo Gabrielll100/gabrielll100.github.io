@@ -1,0 +1,13 @@
+GADS PRO — CHECKLIST DE INSTALACIÓN
+
+[ ] Fuente identificada
+[ ] Desarrollador identificado
+[ ] Versión comprobada
+[ ] Android compatible
+[ ] Arquitectura compatible
+[ ] Espacio suficiente
+[ ] Permisos coherentes
+[ ] Copia de seguridad realizada cuando corresponde
+[ ] Archivo descargado completamente
+[ ] Protección del dispositivo no desactivada sin una razón legítima
+[ ] Instalación verificada después

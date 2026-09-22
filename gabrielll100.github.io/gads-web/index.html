@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GADS PRO WEB</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../logo.png">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <a href="../index.html" class="brand">
+            <img src="../logo.png" alt="GADS PRO">
+            <span>GADS PRO</span>
+        </a>
+
+        <div class="search">
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="Buscar videos..."
+                autocomplete="off"
+            >
+
+            <button id="searchButton">🔍</button>
+        </div>
+
+    </header>
+
+
+    <nav class="categories">
+
+        <button data-category="popular">🏠 Inicio</button>
+        <button data-category="gaming">🎮 Gaming</button>
+        <button data-category="music">🎵 Música</button>
+        <button data-category="news">📰 Noticias</button>
+        <button data-category="technology">💻 Tecnología</button>
+
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div>
+
+                <span class="badge">GADS PRO WEB</span>
+
+                <h1>
+                    Tu experiencia multimedia,
+                    <span>en cualquier pantalla.</span>
+                </h1>
+
+                <p>
+                    Descubre videos, busca contenido y disfruta
+                    de una interfaz adaptada para teléfonos,
+                    computadoras y televisores.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="content">
+
+            <div class="section-header">
+
+                <h2 id="sectionTitle">
+                    Videos populares
+                </h2>
+
+                <span id="status">
+                    Cargando...
+                </span>
+
+            </div>
+
+
+            <!-- AQUÍ APARECERÁN LOS VIDEOS -->
+
+            <div id="videos" class="videos"></div>
+
+
+            <button id="loadMore" class="load-more">
+                Cargar más
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- REPRODUCTOR -->
+
+    <div id="player" class="player hidden">
+
+        <div class="player-header">
+
+            <button id="closePlayer">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="player-content">
+
+            <div class="video-container">
+
+                <iframe
+                    id="videoFrame"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <h2 id="videoTitle">
+                Video
+            </h2>
+
+            <p id="videoChannel"></p>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            © 2026 GADS PRO
+        </p>
+
+        <a href="../index.html">
+            Volver al sitio principal
+        </a>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+GADS PRO — IMÁGENES ORIGINALES
+Para reforzar la autenticidad del proyecto, reemplaza las imágenes conceptuales por capturas reales de GADS PRO:
+1. Pantalla de inicio
+2. Menú/búsqueda
+3. Reproductor
+4. Vista móvil
+5. Vista PC
+6. Vista TV
+7. Página de información
+8. Logo
+No se recomienda presentar imágenes generadas como si fueran capturas reales del producto.

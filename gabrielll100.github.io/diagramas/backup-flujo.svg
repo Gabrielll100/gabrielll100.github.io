@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" role="img" aria-labelledby="t d">
+<title id="t">Flujo de copia de seguridad antes de cambiar de teléfono</title><desc id="d">Diagrama propio de GADS PRO: identificar datos, respaldar, verificar, transferir y comprobar.</desc>
+<rect width="1100" height="420" rx="28" fill="#0b1220"/><g font-family="Arial,sans-serif" text-anchor="middle"><text x="550" y="55" fill="#fff" font-size="28" font-weight="700">Copia de seguridad en cinco comprobaciones</text>
+<g fill="#121d2d" stroke="#2b3b55" stroke-width="2"><circle cx="130" cy="210" r="70"/><circle cx="340" cy="210" r="70"/><circle cx="550" cy="210" r="70"/><circle cx="760" cy="210" r="70"/><circle cx="970" cy="210" r="70"/></g>
+<g fill="#67d4ff" font-size="16" font-weight="700"><text x="130" y="205">Identificar</text><text x="340" y="205">Respaldar</text><text x="550" y="205">Verificar</text><text x="760" y="205">Transferir</text><text x="970" y="205">Comprobar</text></g>
+<g fill="#cbd5e1" font-size="13"><text x="130" y="228">datos críticos</text><text x="340" y="228">copia reciente</text><text x="550" y="228">que terminó</text><text x="760" y="228">al nuevo equipo</text><text x="970" y="228">datos y apps</text></g></g></svg>

@@ -1,0 +1,23 @@
+GADS PRO — REPORTE DE ERROR
+
+Modelo del dispositivo:
+Versión de Android:
+Aplicación y versión:
+Conexión utilizada:
+
+Pasos para reproducir:
+1.
+2.
+3.
+
+Resultado esperado:
+
+Resultado real:
+
+Mensaje exacto del sistema:
+
+¿Ocurre siempre?:
+
+Pruebas realizadas y resultado:
+
+Capturas adjuntas (sin datos privados):
