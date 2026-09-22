@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /gracias.html
-Disallow: /adsense-checklist.html
 Sitemap: https://gabrielll100.github.io/sitemap.xml

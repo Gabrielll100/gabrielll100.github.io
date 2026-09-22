@@ -1,0 +1,21 @@
+AUDITORÍA DE ESTRUCTURA GADS PRO
+Fecha: 22 de septiembre de 2026
+
+Páginas HTML existentes: 146
+URLs incluidas en sitemap: 100
+Buscador: buscar.html + search.js + search-index.json
+Propietario: Kelvin Gabriel Hernandez
+Contacto: kelvinespi1924h@gmail.com
+
+Criterios de esta versión:
+- contenido útil y original antes que repetición de palabras clave
+- navegación clara y enlaces funcionales
+- páginas legales visibles
+- búsqueda interna por palabras clave
+- imágenes y capturas como apoyo visual, no como sustituto del contenido
+- reseñas solo si son experiencias reales y autorizadas
+- no se publican testimonios inventados
+- el sitio no promete aprobación de AdSense; la aprobación depende de la revisión de Google y del cumplimiento de sus políticas
+
+Nota sobre imágenes de IA:
+Las imágenes generadas por IA no implican por sí solas que una web sea rechazada; sin embargo, conviene priorizar capturas propias y material original cuando sirvan para demostrar el producto real. Esta versión deja el portfolio preparado para sustituir las imágenes conceptuales por capturas propias.
