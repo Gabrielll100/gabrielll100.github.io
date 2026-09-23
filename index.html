@@ -3,169 +3,3138 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>GADS PRO | Centro oficial, instalación, compatibilidad, ayuda y novedades</title>
-<meta name="description" content="Centro oficial de GADS PRO: descarga, instalación, compatibilidad, características, pruebas, seguridad, guías, ayuda, preguntas frecuentes, novedades y GADS PRO Premium.">
+
+<meta name="description" content="Centro oficial de GADS PRO: descarga, instalación, compatibilidad, características, pruebas, seguridad, guías, ayuda, preguntas frecuentes, novedades, GADS PRO WEB y GADS PRO Premium.">
+
 <meta name="theme-color" content="#f4f9ff">
+
 <style>
-:root{--bg:#f4f9ff;--panel:#fff;--panel2:#eef7ff;--line:#d7e6f3;--text:#102033;--muted:#61758a;--blue:#12a88a;--cyan:#24c7a6;--violet:#4f46a5;--green:#18a878;--shadow:0 18px 55px rgba(34,91,135,.12);--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(800px 500px at 85% 0,#d9f7ef,transparent),radial-gradient(700px 500px at 5% 20%,#e6e5fb,transparent),var(--bg);color:var(--text);font:15.5px/1.7 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
-a{color:#087f6a;text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:var(--max);margin:auto;padding:0 22px}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.nav{min-height:70px;display:flex;align-items:center;gap:14px}.brand{display:flex;align-items:center;gap:10px;color:#102033;font-size:20px;font-weight:900}.brand img{width:40px;height:40px;border-radius:12px}
-.navlinks{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}.navlinks a{color:#38536b;font-size:13px;padding:8px 10px;border-radius:9px}.navlinks a:hover{background:#e7f8f3;text-decoration:none}
-.hero{padding:76px 0 52px}.heroGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:45px;align-items:center}.eyebrow{color:#0b9277;text-transform:uppercase;letter-spacing:1.5px;font-size:11px;font-weight:900}
-.hero h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-3px;margin:13px 0 18px}.gradient{background:linear-gradient(90deg,var(--blue),var(--violet));color:transparent;background-clip:text;-webkit-background-clip:text}
-.lead{font-size:19px;color:#526b81;max-width:730px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:27px 0}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border-radius:11px;border:1px solid var(--line);background:#fff;color:#102033;font-weight:850;box-shadow:0 5px 18px rgba(31,83,125,.07)}.btn:hover{text-decoration:none;transform:translateY(-1px)}.primary{border:0;background:linear-gradient(135deg,var(--violet),var(--blue));color:#fff;box-shadow:0 10px 25px rgba(0,140,255,.22)}
-.heroCard,.premium{border:1px solid var(--line);background:linear-gradient(145deg,#fff,#edf7ff);border-radius:26px;padding:22px;box-shadow:var(--shadow)}.heroCard img{display:block;width:100%;height:520px;object-fit:cover;object-position:top;border-radius:18px}
-.stats,.cards,.links,.gallery{display:grid;gap:16px}.stats{grid-template-columns:repeat(3,1fr);gap:9px;margin-top:10px}.stat{padding:13px;border:1px solid var(--line);border-radius:13px;background:#f5fbf9}.stat strong{display:block;font-size:19px}.stat span{font-size:11px;color:var(--muted)}
-section{padding:65px 0 0}.sectionTitle h2{font-size:35px;line-height:1.15;margin:4px 0 8px}.intro{color:var(--muted);max-width:850px}.cards{grid-template-columns:repeat(3,1fr);margin-top:23px}.card{background:linear-gradient(180deg,#fff,#f4faff);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 28px rgba(32,88,130,.06)}.card h3{margin:4px 0 8px;font-size:20px}.card p{color:#62788d}.icon{font-size:26px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.check{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}.check div{padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;color:#456077}.check b{color:#12a88a}
-.notice{margin-top:18px;padding:16px 18px;border-left:4px solid var(--blue);background:#e8f8f3;border-radius:0 13px 13px 0;color:#526b81}
-.gallery{grid-template-columns:repeat(3,1fr);margin-top:22px}.gallery figure{margin:0;padding:10px;border:1px solid var(--line);border-radius:16px;background:#fff}.gallery img{display:block;width:100%;height:420px;object-fit:cover;object-position:top;border-radius:10px}.gallery figcaption{padding:9px 3px 2px;color:#70869a;font-size:13px}
-.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin:17px 0}.pill{padding:7px 11px;border:1px solid #c9e4dc;border-radius:999px;background:#edf8f5;color:#3f6259;font-size:12px}
-.faq details{border:1px solid var(--line);border-radius:14px;background:#fff;padding:15px 18px;margin:9px 0}.faq summary{cursor:pointer;font-weight:850}.faq p{color:#60778c}
-.links{grid-template-columns:repeat(3,1fr)}.linkCard{padding:17px;border:1px solid var(--line);border-radius:15px;background:#fff}.linkCard strong{display:block;color:#102033;margin-bottom:4px}.small{font-size:13px;color:#71869a}
-.featureGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}.feature{padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff}.feature .big{font-size:28px}.feature h3{margin:8px 0 4px}
-.tool{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#fff,#eef8ff);padding:22px;margin-top:22px;box-shadow:var(--shadow)}.toolRow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tool label{font-weight:800;display:block;margin-bottom:6px}.tool select,.tool input{width:100%;padding:12px;border-radius:10px;border:1px solid #cbddea;background:#fff;color:#102033}.result{margin-top:14px;padding:15px;border-radius:12px;background:#f5fbf9;border:1px solid var(--line);display:none}
-.timeline{display:grid;gap:12px;margin-top:22px}.update{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:17px;border:1px solid var(--line);border-radius:15px;background:#fff}.date{color:#0b9277;font-weight:900}
-.footer{margin-top:70px;border-top:1px solid var(--line);background:#eaf4fb}.footGrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px;padding:35px 22px}.footGrid a{display:block;color:#60778c;margin:5px 0}.backtop{position:fixed;right:18px;bottom:18px;background:#fff;border:1px solid var(--line);color:#102033;border-radius:999px;padding:10px 13px;box-shadow:var(--shadow)}
-@media(max-width:1000px){.featureGrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:900px){.heroGrid,.two{grid-template-columns:1fr}.cards,.links{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.heroCard img{height:430px}}
-@media(max-width:600px){.wrap{padding:0 15px}.hero{padding-top:48px}.hero h1{font-size:44px;letter-spacing:-2px}.cards,.links,.gallery,.check,.stats,.featureGrid,.toolRow{grid-template-columns:1fr}.gallery img{height:auto;max-height:600px}.footGrid{grid-template-columns:1fr;padding:30px 15px}.update{grid-template-columns:1fr}}
+:root{
+--bg:#f4f9ff;
+--panel:#fff;
+--panel2:#eef7ff;
+--line:#d7e6f3;
+--text:#102033;
+--muted:#61758a;
+--blue:#12a88a;
+--cyan:#24c7a6;
+--violet:#4f46a5;
+--green:#18a878;
+--shadow:0 18px 55px rgba(34,91,135,.12);
+--max:1180px
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+background:
+radial-gradient(800px 500px at 85% 0,#d9f7ef,transparent),
+radial-gradient(700px 500px at 5% 20%,#e6e5fb,transparent),
+var(--bg);
+color:var(--text);
+font:15.5px/1.7 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif
+}
+
+a{
+color:#087f6a;
+text-decoration:none
+}
+
+a:hover{text-decoration:underline}
+
+.wrap{
+max-width:var(--max);
+margin:auto;
+padding:0 22px
+}
+
+header{
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(255,255,255,.88);
+backdrop-filter:blur(18px);
+border-bottom:1px solid var(--line)
+}
+
+.nav{
+min-height:70px;
+display:flex;
+align-items:center;
+gap:14px
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+color:#102033;
+font-size:20px;
+font-weight:900
+}
+
+.brand img{
+width:40px;
+height:40px;
+border-radius:12px
+}
+
+.navlinks{
+margin-left:auto;
+display:flex;
+gap:4px;
+flex-wrap:wrap
+}
+
+.navlinks a{
+color:#38536b;
+font-size:13px;
+padding:8px 10px;
+border-radius:9px
+}
+
+.navlinks a:hover{
+background:#e7f8f3;
+text-decoration:none
+}
+
+.hero{
+padding:76px 0 52px
+}
+
+.heroGrid{
+display:grid;
+grid-template-columns:1.08fr .92fr;
+gap:45px;
+align-items:center
+}
+
+.eyebrow{
+color:#0b9277;
+text-transform:uppercase;
+letter-spacing:1.5px;
+font-size:11px;
+font-weight:900
+}
+
+.hero h1{
+font-size:clamp(42px,6vw,76px);
+line-height:1.02;
+letter-spacing:-3px;
+margin:13px 0 18px
+}
+
+.gradient{
+background:linear-gradient(90deg,var(--blue),var(--violet));
+color:transparent;
+background-clip:text;
+-webkit-background-clip:text
+}
+
+.lead{
+font-size:19px;
+color:#526b81;
+max-width:730px
+}
+
+.actions{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin:27px 0
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 17px;
+border-radius:11px;
+border:1px solid var(--line);
+background:#fff;
+color:#102033;
+font-weight:850;
+box-shadow:0 5px 18px rgba(31,83,125,.07)
+}
+
+.btn:hover{
+text-decoration:none;
+transform:translateY(-1px)
+}
+
+.primary{
+border:0;
+background:linear-gradient(135deg,var(--violet),var(--blue));
+color:#fff;
+box-shadow:0 10px 25px rgba(0,140,255,.22)
+}
+
+.heroCard,
+.premium{
+border:1px solid var(--line);
+background:linear-gradient(145deg,#fff,#edf7ff);
+border-radius:26px;
+padding:22px;
+box-shadow:var(--shadow)
+}
+
+.heroCard img{
+display:block;
+width:100%;
+height:520px;
+object-fit:cover;
+object-position:top;
+border-radius:18px
+}
+
+.stats,
+.cards,
+.links,
+.gallery{
+display:grid;
+gap:16px
+}
+
+.stats{
+grid-template-columns:repeat(3,1fr);
+gap:9px;
+margin-top:10px
+}
+
+.stat{
+padding:13px;
+border:1px solid var(--line);
+border-radius:13px;
+background:#f5fbf9
+}
+
+.stat strong{
+display:block;
+font-size:19px
+}
+
+.stat span{
+font-size:11px;
+color:var(--muted)
+}
+
+section{
+padding:65px 0 0
+}
+
+.sectionTitle h2{
+font-size:35px;
+line-height:1.15;
+margin:4px 0 8px
+}
+
+.intro{
+color:var(--muted);
+max-width:850px
+}
+
+.cards{
+grid-template-columns:repeat(3,1fr);
+margin-top:23px
+}
+
+.card{
+background:linear-gradient(180deg,#fff,#f4faff);
+border:1px solid var(--line);
+border-radius:18px;
+padding:22px;
+box-shadow:0 8px 28px rgba(32,88,130,.06)
+}
+
+.card h3{
+margin:4px 0 8px;
+font-size:20px
+}
+
+.card p{
+color:#62788d
+}
+
+.icon{
+font-size:26px
+}
+
+.two{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+align-items:center
+}
+
+.check{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:18px
+}
+
+.check div{
+padding:13px;
+border:1px solid var(--line);
+border-radius:12px;
+background:#fff;
+color:#456077
+}
+
+.check b{
+color:#12a88a
+}
+
+.notice{
+margin-top:18px;
+padding:16px 18px;
+border-left:4px solid var(--blue);
+background:#e8f8f3;
+border-radius:0 13px 13px 0;
+color:#526b81
+}
+
+.gallery{
+grid-template-columns:repeat(3,1fr);
+margin-top:22px
+}
+
+.gallery figure{
+margin:0;
+padding:10px;
+border:1px solid var(--line);
+border-radius:16px;
+background:#fff
+}
+
+.gallery img{
+display:block;
+width:100%;
+height:420px;
+object-fit:cover;
+object-position:top;
+border-radius:10px
+}
+
+.gallery figcaption{
+padding:9px 3px 2px;
+color:#70869a;
+font-size:13px
+}
+
+.pillrow{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:17px 0
+}
+
+.pill{
+padding:7px 11px;
+border:1px solid #c9e4dc;
+border-radius:999px;
+background:#edf8f5;
+color:#3f6259;
+font-size:12px
+}
+
+.faq details{
+border:1px solid var(--line);
+border-radius:14px;
+background:#fff;
+padding:15px 18px;
+margin:9px 0
+}
+
+.faq summary{
+cursor:pointer;
+font-weight:850
+}
+
+.faq p{
+color:#60778c
+}
+
+.links{
+grid-template-columns:repeat(3,1fr)
+}
+
+.linkCard{
+padding:17px;
+border:1px solid var(--line);
+border-radius:15px;
+background:#fff
+}
+
+.linkCard strong{
+display:block;
+color:#102033;
+margin-bottom:4px
+}
+
+.small{
+font-size:13px;
+color:#71869a
+}
+
+.featureGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin-top:22px
+}
+
+.feature{
+padding:18px;
+border:1px solid var(--line);
+border-radius:16px;
+background:#fff
+}
+
+.feature .big{
+font-size:28px
+}
+
+.feature h3{
+margin:8px 0 4px
+}
+
+.tool{
+border:1px solid var(--line);
+border-radius:20px;
+background:linear-gradient(180deg,#fff,#eef8ff);
+padding:22px;
+margin-top:22px;
+box-shadow:var(--shadow)
+}
+
+.toolRow{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px
+}
+
+.tool label{
+font-weight:800;
+display:block;
+margin-bottom:6px
+}
+
+.tool select,
+.tool input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:1px solid #cbddea;
+background:#fff;
+color:#102033
+}
+
+.result{
+margin-top:14px;
+padding:15px;
+border-radius:12px;
+background:#f5fbf9;
+border:1px solid var(--line);
+display:none
+}
+
+.timeline{
+display:grid;
+gap:12px;
+margin-top:22px
+}
+
+.update{
+display:grid;
+grid-template-columns:130px 1fr;
+gap:16px;
+padding:17px;
+border:1px solid var(--line);
+border-radius:15px;
+background:#fff
+}
+
+.date{
+color:#0b9277;
+font-weight:900
+}
+
+.footer{
+margin-top:70px;
+border-top:1px solid var(--line);
+background:#eaf4fb
+}
+
+.footGrid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:28px;
+padding:35px 22px
+}
+
+.footGrid a{
+display:block;
+color:#60778c;
+margin:5px 0
+}
+
+.backtop{
+position:fixed;
+right:18px;
+bottom:18px;
+background:#fff;
+border:1px solid var(--line);
+color:#102033;
+border-radius:999px;
+padding:10px 13px;
+box-shadow:var(--shadow)
+}
+
+
+/* =========================================
+   NUEVO · GADS PRO WEB
+========================================= */
+
+.webFeature{
+background:linear-gradient(145deg,#ffffff,#e8fbf6 55%,#eef0ff);
+border:1px solid #c9e4dc;
+border-radius:28px;
+padding:30px;
+box-shadow:var(--shadow);
+overflow:hidden
+}
+
+.webBadge{
+display:inline-block;
+padding:7px 12px;
+border-radius:999px;
+background:#e8f8f3;
+color:#087f6a;
+border:1px solid #c9e4dc;
+font-size:12px;
+font-weight:900
+}
+
+.webGrid{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:28px;
+align-items:center
+}
+
+.webPanel{
+background:#fff;
+border:1px solid var(--line);
+border-radius:20px;
+padding:22px
+}
+
+.webList{
+display:grid;
+gap:10px;
+margin:18px 0 0
+}
+
+.webList div{
+padding:12px 14px;
+border:1px solid var(--line);
+border-radius:12px;
+background:#f8fcff
+}
+
+.webList b{
+color:#0b9277
+}
+
+.price{
+font-size:42px;
+font-weight:950;
+line-height:1;
+color:#4f46a5;
+margin:15px 0
+}
+
+.price small{
+font-size:15px;
+color:var(--muted);
+font-weight:700
+}
+
+.stepGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin-top:22px
+}
+
+.step{
+padding:18px;
+border:1px solid var(--line);
+border-radius:16px;
+background:#fff
+}
+
+.stepNum{
+font-size:13px;
+font-weight:950;
+color:#0b9277
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1000px){
+.featureGrid{
+grid-template-columns:repeat(2,1fr)
+}
+}
+
+@media(max-width:900px){
+
+.heroGrid,
+.two,
+.webGrid{
+grid-template-columns:1fr
+}
+
+.cards,
+.links{
+grid-template-columns:repeat(2,1fr)
+}
+
+.navlinks{
+display:none
+}
+
+.heroCard img{
+height:430px
+}
+
+.stepGrid{
+grid-template-columns:repeat(2,1fr)
+}
+
+}
+
+@media(max-width:600px){
+
+.wrap{
+padding:0 15px
+}
+
+.hero{
+padding-top:48px
+}
+
+.hero h1{
+font-size:44px;
+letter-spacing:-2px
+}
+
+.cards,
+.links,
+.gallery,
+.check,
+.stats,
+.featureGrid,
+.toolRow{
+grid-template-columns:1fr
+}
+
+.gallery img{
+height:auto;
+max-height:600px
+}
+
+.footGrid{
+grid-template-columns:1fr;
+padding:30px 15px
+}
+
+.update{
+grid-template-columns:1fr
+}
+
+.webFeature,
+.premium{
+padding:22px
+}
+
+.stepGrid{
+grid-template-columns:1fr
+}
+
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap nav">
-<a class="brand" href="index.html"><img src="logo.png" alt="Logo GADS PRO">GADS <span style="color:#12a88a">PRO</span></a>
+
+<header>
+<div class="wrap nav">
+
+<a class="brand" href="index.html">
+<img src="logo.png" alt="Logo GADS PRO">
+GADS <span style="color:#12a88a">PRO</span>
+</a>
+
 <nav class="navlinks">
-<a href="#instalacion">Instalación</a><a href="#compatibilidad">Compatibilidad</a><a href="#caracteristicas">Características</a><a href="#pruebas">Pruebas</a><a href="#seguridad">Seguridad</a><a href="#premium">Premium</a><a href="#guias">Guías</a><a href="#ayuda">Ayuda</a><a href="#faq">FAQ</a><a href="#novedades">Novedades</a>
-</nav></div></header>
+
+<a href="#instalacion">Instalación</a>
+<a href="#compatibilidad">Compatibilidad</a>
+<a href="#caracteristicas">Características</a>
+<a href="#pruebas">Pruebas</a>
+<a href="#seguridad">Seguridad</a>
+
+<a href="#web">Versión Web</a>
+<a href="#segundo-plano">Segundo plano</a>
+<a href="#premium">Premium</a>
+
+<a href="#guias">Guías</a>
+<a href="#ayuda">Ayuda</a>
+<a href="#faq">FAQ</a>
+<a href="#novedades">Novedades</a>
+
+</nav>
+
+</div>
+</header>
+
 
 <main>
-<section class="hero"><div class="wrap heroGrid"><div>
-<div class="eyebrow">Centro oficial de información · Android</div>
-<h1>Todo sobre <span class="gradient">GADS PRO</span>, en un solo lugar.</h1>
-<p class="lead">Conoce la aplicación, instalación, compatibilidad, características, pruebas, seguridad, guías, centro de ayuda, novedades y el proyecto <b>GADS PRO PREMIUM</b>.</p>
-<div class="actions"><a class="btn" href="#compatibilidad">✓ Comprobar compatibilidad</a><a class="btn" href="#ayuda">Centro de ayuda</a></div>
-<p class="small">Compatibilidad anunciada: Android 6.0 o superior. El rendimiento puede variar según el dispositivo, memoria, almacenamiento, conexión y versión del sistema.</p>
+
+
+<section class="hero">
+
+<div class="wrap heroGrid">
+
+<div>
+
+<div class="eyebrow">
+Centro oficial de información · Android
 </div>
-<div class="heroCard"><img src="hero-gads-pro.svg" alt="Ilustración creada para GADS PRO">
-<div class="stats"><div class="stat"><strong>Android 6+</strong><span>Compatibilidad anunciada</span></div><div class="stat"><strong>Gama baja → alta</strong><span>Experiencia según hardware</span></div><div class="stat"><strong>GPP</strong><span>Versión premium en desarrollo</span></div></div>
-</div></div></section>
 
-<section id="instalacion"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">01 · Solución de instalación</div><h2>No puedo instalar el APK GADS PRO</h2><p class="intro">Si Android no permite instalar la aplicación, sigue estas comprobaciones antes de volver a intentarlo.</p></div>
-<div class="cards"><div class="card"><span class="icon">📦</span><h3>Revisa el archivo</h3><p>Comprueba que la descarga terminó correctamente y que el archivo corresponde a GADS PRO.</p></div><div class="card"><span class="icon">⚙️</span><h3>Permisos del sistema</h3><p>Android puede solicitar autorización para instalar aplicaciones desde una fuente externa. Revisa el aviso que muestra tu dispositivo.</p></div><div class="card"><span class="icon">💾</span><h3>Espacio disponible</h3><p>Libera almacenamiento si el teléfono indica que no hay espacio suficiente.</p></div></div>
-<div class="notice"><b>Si sigue fallando:</b> anota el mensaje exacto que aparece en Android. Ese mensaje ayuda a identificar si el problema está relacionado con el archivo, permisos, espacio o compatibilidad.</div></div></section>
+<h1>
+Todo sobre <span class="gradient">GADS PRO</span>, en un solo lugar.
+</h1>
 
-<section id="compatibilidad"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">02 · Comprobador de compatibilidad</div><h2>Comprueba rápidamente tu dispositivo</h2><p class="intro">Este comprobador es orientativo. La compatibilidad real puede depender de la versión concreta de la aplicación, fabricante, arquitectura y otros componentes del teléfono.</p></div>
-<div class="tool"><div class="toolRow"><div><label for="androidVersion">Versión de Android</label><select id="androidVersion"><option value="">Selecciona</option><option value="5">Android 5.x o anterior</option><option value="6">Android 6.x</option><option value="7">Android 7.x</option><option value="8">Android 8.x</option><option value="9">Android 9.x</option><option value="10">Android 10</option><option value="11">Android 11</option><option value="12">Android 12</option><option value="13">Android 13</option><option value="14">Android 14</option><option value="15">Android 15</option><option value="16">Android 16 o posterior</option></select></div>
-<div><label for="ram">RAM aproximada</label><select id="ram"><option value="">Selecciona</option><option value="2">2 GB o menos</option><option value="3">3 GB</option><option value="4">4 GB</option><option value="6">6 GB</option><option value="8">8 GB o más</option></select></div></div>
-<button class="btn primary" style="margin-top:14px" onclick="checkCompatibility()">Comprobar ahora</button><div id="compatResult" class="result"></div></div></div></section>
+<p class="lead">
+Conoce la aplicación, instalación, compatibilidad, características,
+pruebas, seguridad, guías, centro de ayuda, novedades,
+GADS PRO WEB y <b>GADS PRO PREMIUM</b>.
+</p>
 
-<section id="caracteristicas"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">03 · Características</div><h2>Qué puedes encontrar en GADS PRO</h2><p class="intro">Una presentación clara de la aplicación y de la experiencia que se busca ofrecer al usuario.</p></div>
-<div class="featureGrid"><div class="feature"><div class="big">🎬</div><h3>Contenido multimedia</h3><p class="small">Enfocada en ofrecer una experiencia de visualización multimedia.</p></div><div class="feature"><div class="big">📱</div><h3>Experiencia Android</h3><p class="small">Pensada para diferentes dispositivos compatibles.</p></div><div class="feature"><div class="big">🔎</div><h3>Navegación sencilla</h3><p class="small">Interfaz orientada a facilitar el acceso al contenido.</p></div><div class="feature"><div class="big">🚀</div><h3>Proyecto en evolución</h3><p class="small">Las características pueden cambiar mediante futuras actualizaciones.</p></div></div>
-<div class="cards"><div class="card"><span class="pill">Gama baja</span><h3>Prioriza lo esencial</h3><p>Conviene cerrar aplicaciones innecesarias y mantener espacio libre.</p></div><div class="card"><span class="pill">Gama media</span><h3>Equilibrio</h3><p>Puede ofrecer un buen equilibrio entre rendimiento, batería y almacenamiento.</p></div><div class="card"><span class="pill">Gama alta</span><h3>Más margen</h3><p>Mayor margen para multitarea y contenido multimedia, según software y conexión.</p></div></div>
-<div class="check"><div><b>✓</b> Android 6.0 o superior</div><div><b>✓</b> Gama baja, media y alta</div><div><b>✓</b> Depende de RAM y procesador</div><div><b>✓</b> Depende del almacenamiento</div><div><b>✓</b> La conexión puede afectar funciones online</div><div><b>✓</b> Las características pueden cambiar</div></div></div></section>
+<div class="actions">
 
-<section id="pruebas"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">04 · Pruebas de GADS PRO</div><h2>Revisa el funcionamiento de la aplicación</h2><p class="intro">Una zona de referencia para comprobar los aspectos básicos después de instalar GADS PRO.</p></div>
-<div class="cards"><div class="card"><h3>01 · Abrir la app</h3><p>Comprueba que GADS PRO inicia correctamente y que la interfaz se muestra sin errores.</p></div><div class="card"><h3>02 · Contenido</h3><p>Revisa que el contenido multimedia se cargue de acuerdo con tu conexión y configuración.</p></div><div class="card"><h3>03 · Reproducción</h3><p>Si una función no responde, reinicia la app y comprueba primero conexión, permisos y versión instalada.</p></div><div class="card"><h3>04 · Rendimiento</h3><p>Observa consumo de batería, memoria, temperatura y fluidez durante el uso normal.</p></div><div class="card"><h3>05 · Actualización</h3><p>Cuando exista una nueva versión oficial, compara sus cambios antes de actualizar.</p></div><div class="card"><h3>06 · Reporte</h3><p>Para pedir ayuda, conserva el modelo del dispositivo, Android y mensaje de error.</p></div></div></div></section>
+<a class="btn" href="#compatibilidad">
+✓ Comprobar compatibilidad
+</a>
 
-<section id="seguridad"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">05 · Seguridad y confianza</div><h2>Instala y utiliza la app de forma responsable</h2><p class="intro">La seguridad depende también de la fuente de descarga, los permisos y las decisiones del usuario.</p></div>
-<div class="cards"><div class="card"><h3>🔐 Fuente de descarga</h3><p>Utiliza el enlace oficial publicado en esta página y verifica que la dirección sea la esperada.</p></div><div class="card"><h3>🛡️ Permisos</h3><p>Lee los permisos solicitados por Android y evita conceder accesos que no entiendas.</p></div><div class="card"><h3>🔄 Actualizaciones</h3><p>Mantén la aplicación y Android actualizados cuando existan versiones oficiales disponibles.</p></div></div>
-<div class="notice"><b>Importante:</b> nunca introduzcas contraseñas, códigos de verificación o datos bancarios en páginas que no reconozcas como oficiales.</div></div></section>
+<a class="btn" href="#web">
+🌐 GADS PRO WEB
+</a>
 
-<section id="capturas"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">06 · Galería ampliada</div><h2>Conoce visualmente GADS PRO</h2><p class="intro">Capturas disponibles dentro del proyecto para conocer la interfaz antes de utilizar la aplicación.</p></div>
-<div class="gallery"><figure><img src="screen1.jpg" alt="Captura 1 de GADS PRO"><figcaption>Vista de la aplicación · captura 1</figcaption></figure><figure><img src="screen2.jpg" alt="Captura 2 de GADS PRO"><figcaption>Vista de la aplicación · captura 2</figcaption></figure><figure><img src="screen3.jpg" alt="Captura 3 de GADS PRO"><figcaption>Vista de la aplicación · captura 3</figcaption></figure></div></div></section>
+<a class="btn" href="#premium">
+⭐ Ver Premium
+</a>
 
-<section id="mapa"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">07 · GADS PRO alrededor del mundo</div><h2>Mapa de uso y alcance</h2><p class="intro">Referencia visual del alcance internacional del proyecto. No representa cobertura de red ni garantiza disponibilidad de funciones en todos los países.</p></div><div class="heroCard"><img src="mapa-mundial.svg" alt="Mapa mundial de referencia de GADS PRO"></div></div></section>
+<a class="btn" href="#ayuda">
+Centro de ayuda
+</a>
 
-<section id="visuales"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">08 · Nuevos visuales</div><h2>Una presentación más visual y profesional</h2><p class="intro">Ilustraciones originales para explicar la app, la instalación, el contenido útil y la futura experiencia GPP.</p></div>
-<div class="gallery"><figure><img src="hero-gads-pro.svg" alt="Ilustración de GADS PRO"><figcaption>Identidad visual de GADS PRO.</figcaption></figure><figure><img src="instalacion-gads-pro.svg" alt="Guía visual de instalación"><figcaption>Instalación visual y requisitos.</figcaption></figure><figure><img src="contenido-valor-gads.svg" alt="Centro de contenido de valor"><figcaption>Contenido útil sobre Android y GPP.</figcaption></figure></div></div></section>
-
-<section id="diagnostico"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">09 · Centro de diagnóstico interactivo</div><h2>Encuentra una ruta de solución</h2><p class="intro">Selecciona el problema que estás teniendo y GADS PRO te llevará a la sección más útil.</p></div>
-<div class="tool"><div class="toolRow"><div><label for="problem">¿Qué problema tienes?</label><select id="problem"><option value="">Selecciona un problema</option><option value="install">No puedo instalar el APK</option><option value="compat">Quiero saber si mi dispositivo es compatible</option><option value="play">La reproducción no funciona correctamente</option><option value="space">Tengo poco almacenamiento</option><option value="security">Tengo dudas sobre seguridad</option></select></div><div><label>Ruta recomendada</label><div id="diagResult" class="result" style="display:block;margin-top:0">Selecciona un problema para recibir una recomendación.</div></div></div><button class="btn primary" style="margin-top:14px" onclick="diagnose()">Diagnosticar</button></div></div></section>
-
-<section id="premium"><div class="wrap"><div class="premium"><div class="eyebrow">10 · GADS PRO PREMIUM</div><h2>GADS PRO PREMIUM <span class="gradient">GPP</span></h2><p class="lead">El proyecto contempla una versión premium con características adicionales y una experiencia ampliada. Las funciones definitivas se anunciarán cuando esté lista.</p>
-<div class="pillrow"><span class="pill">Versión premium</span><span class="pill">Características adicionales</span><span class="pill">Novedades oficiales</span><span class="pill">Google Play próximamente</span></div>
-<div class="cards"><div class="card"><h3>⭐ Más características</h3><p>Las funciones concretas y beneficios se anunciarán oficialmente.</p></div><div class="card"><h3>▶ Google Play</h3><p>La versión premium está prevista para Play Store cuando se complete su publicación.</p></div><div class="card"><h3>💳 Compra informada</h3><p>Antes de pagar, revisa precio, funciones, compatibilidad, privacidad y condiciones.</p></div></div>
-<div class="notice"><b>Estado actual:</b> GPP debe considerarse un proyecto en desarrollo hasta que exista un anuncio oficial de lanzamiento.</div></div></div></section>
-
-<section id="proximamente"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">11 · Próximamente</div><h2>Nuevas aplicaciones en camino</h2><p class="intro">GADS PRO seguirá creciendo. Aquí podrás presentar futuras aplicaciones y proyectos cuando estén listos para publicación.</p></div>
-<div class="cards"><div class="card"><span class="icon">🚀</span><h3>Próxima aplicación</h3><p>Proyecto en preparación. Muy pronto podrás conocer su nombre, funciones y enlace oficial.</p><span class="pill">En desarrollo</span></div><div class="card"><span class="icon">✨</span><h3>Nuevos proyectos</h3><p>Esta sección se actualizará conforme se incorporen nuevas aplicaciones al ecosistema GADS PRO.</p><span class="pill">Próximamente</span></div><div class="card"><span class="icon">📢</span><h3>Mantente atento</h3><p>Consulta las novedades y el sitio oficial para conocer nuevos lanzamientos.</p><span class="pill">Novedades</span></div></div></div></section>
-
-<section id="guias"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">12 · Contenido de valor</div><h2>Guías y recursos para Android</h2><p class="intro">Contenido útil para instalar, mantener y solucionar problemas habituales.</p></div>
-<div class="links"><a class="linkCard" href="guia-antes-de-usar.html"><strong>Antes de usar una app</strong><span>Checklist práctico para empezar.</span></a><a class="linkCard" href="permisos-android.html"><strong>Permisos de Android</strong><span>Entiende qué significan.</span></a><a class="linkCard" href="como-liberar-espacio-android.html"><strong>Liberar espacio</strong><span>Ideas para recuperar almacenamiento.</span></a><a class="linkCard" href="apk-no-se-instala-que-hacer.html"><strong>APK no se instala</strong><span>Pasos de diagnóstico.</span></a><a class="linkCard" href="android-lento-que-revisar.html"><strong>Android lento</strong><span>Revisiones básicas de rendimiento.</span></a><a class="linkCard" href="solucion-problemas.html"><strong>Solución de problemas</strong><span>Guía para errores comunes.</span></a></div></div></section>
-
-<section id="ayuda"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">13 · Centro de ayuda</div><h2>¿Tienes un problema? Empieza aquí</h2><p class="intro">Utiliza estas rutas para identificar el problema antes de buscar una solución.</p></div>
-<div class="cards"><div class="card"><h3>📥 No puedo instalar</h3><p>Ve a la sección de instalación y revisa archivo, permisos, espacio y compatibilidad.</p><a class="btn" href="#instalacion">Ver solución</a></div><div class="card"><h3>📱 ¿Mi teléfono es compatible?</h3><p>Utiliza el comprobador interactivo de esta página como primera referencia.</p><a class="btn" href="#compatibilidad">Comprobar</a></div><div class="card"><h3>⚠️ Algo no funciona</h3><p>Revisa la sección de pruebas y conserva el mensaje exacto del error.</p><a class="btn" href="#pruebas">Ver pruebas</a></div></div></div></section>
-
-<section id="faq"><div class="wrap faq"><div class="sectionTitle"><div class="eyebrow">14 · Preguntas frecuentes</div><h2>Preguntas de nuevos usuarios</h2></div>
-<details><summary>¿Desde qué versión de Android funciona?</summary><p>La información del proyecto indica Android 6.0 o superior. La compatibilidad concreta puede variar según el dispositivo y la versión de la aplicación.</p></details>
-<details><summary>¿Funciona en teléfonos de gama baja?</summary><p>El proyecto está planteado para gama baja, media y alta. El rendimiento puede depender especialmente de RAM, procesador y almacenamiento.</p></details>
-<details><summary>¿Dónde descargo GADS PRO?</summary><p>El enlace oficial de descarga se encuentra al final de esta página.</p></details>
-<details><summary>¿Qué hago si no puedo instalar el APK?</summary><p>Revisa la sección “No puedo instalar el APK GADS PRO”, el espacio disponible, los permisos del sistema y la compatibilidad.</p></details>
-<details><summary>¿GADS PRO PREMIUM GPP ya está disponible?</summary><p>La versión premium se presenta como un proyecto en desarrollo hasta su anuncio oficial.</p></details>
-<details><summary>¿GADS PRO es una aplicación oficial?</summary><p>Para comprobar la fuente de descarga, utiliza el enlace publicado en la sección oficial de descarga de este sitio y revisa siempre la dirección antes de instalar.</p></details>
-</div></section>
-
-<section id="novedades"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">15 · Novedades / Changelog</div><h2>Historial de actualizaciones</h2><p class="intro">Aquí puedes mantener informados a los visitantes sobre los cambios del proyecto.</p></div>
-<div class="timeline"><div class="update"><div class="date">Actual</div><div><b>Centro ampliado</b><br><span class="small">Nuevas secciones de diagnóstico, compatibilidad, pruebas, seguridad, ayuda, FAQ y novedades.</span></div></div><div class="update"><div class="date">GPP</div><div><b>Proyecto premium</b><br><span class="small">Se mantiene como proyecto en desarrollo hasta su lanzamiento oficial.</span></div></div><div class="update"><div class="date">Futuro</div><div><b>Nuevas aplicaciones</b><br><span class="small">Se añadirán aquí los próximos proyectos del ecosistema GADS PRO.</span></div></div></div></div></section>
-
-<section id="opiniones"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">16 · Opiniones</div><h2>Comparte tu experiencia con GADS PRO</h2><p class="intro">Un espacio para recibir comentarios de los visitantes. El formulario abre tu aplicación de correo para que el mensaje llegue al contacto oficial.</p></div>
-<div class="tool"><div class="toolRow"><div><label for="opinionName">Tu nombre</label><input id="opinionName" placeholder="Nombre o alias"></div><div><label for="opinionText">Tu opinión</label><input id="opinionText" placeholder="¿Qué te pareció GADS PRO?"></div></div><a class="btn primary" style="margin-top:14px" href="mailto:kelvinespi1924h@gmail.com?subject=Opinión sobre GADS PRO" onclick="return sendOpinion()">Enviar opinión</a></div></div></section>
-
-<section id="buscador"><div class="wrap"><div class="sectionTitle"><div class="eyebrow">17 · Buscador inteligente</div><h2>Busca dentro de esta página</h2><p class="intro">Escribe una palabra como “APK”, “Android”, “Premium”, “seguridad” o “instalación”.</p></div>
-<div class="tool"><input id="siteSearch" placeholder="🔎 Buscar en GADS PRO..." oninput="searchSite()"><div id="searchResult" class="result" style="display:block">Escribe para encontrar secciones relacionadas.</div></div></div></section>
-
-<section id="descarga-final"><div class="wrap"><div class="premium" style="text-align:center">
-<div class="eyebrow">DESCARGA OFICIAL · GADS PRO</div>
-<h2>Descarga <span class="gradient">GADS PRO</span></h2>
-<p class="lead" style="margin:0 auto 25px">Todo lo que necesitas para comenzar. Una experiencia multimedia sencilla, gratuita y sin interrupciones publicitarias durante tus videos.</p>
-<div class="cards" style="text-align:left;max-width:850px;margin:25px auto">
-<div class="card"><h3>📦 Tamaño</h3><p><b>32 MB</b></p><span class="small">Tamaño aproximado de la aplicación.</span></div>
-<div class="card"><h3>✨ Versión</h3><p><b>1.0</b></p><span class="small">Versión actual disponible.</span></div>
-<div class="card"><h3>💚 Precio</h3><p><b>Gratis</b></p><span class="small">Descarga gratuita.</span></div>
-<div class="card"><h3>▶️ Experiencia</h3><p><b>Sin interrupciones en tus videos</b></p><span class="small">Disfruta del contenido sin interrupciones publicitarias durante la reproducción.</span></div>
 </div>
-<a class="btn primary" href="https://www.appcreator24.com/app4101161-9jzfhn" target="_blank" rel="noopener">🚀 DESCARGAR GADS PRO</a>
-<p class="small" style="margin-top:15px">Versión 1.0 · 32 MB · Gratuita · Enlace oficial de AppCreator24</p>
-</div></div></section>
+
+<p class="small">
+Compatibilidad anunciada: Android 6.0 o superior.
+El rendimiento puede variar según el dispositivo, memoria,
+almacenamiento, conexión y versión del sistema.
+</p>
+
+</div>
+
+
+<div class="heroCard">
+
+<img src="hero-gads-pro.svg" alt="Ilustración creada para GADS PRO">
+
+<div class="stats">
+
+<div class="stat">
+<strong>Android 6+</strong>
+<span>Compatibilidad anunciada</span>
+</div>
+
+<div class="stat">
+<strong>Gama baja → alta</strong>
+<span>Experiencia según hardware</span>
+</div>
+
+<div class="stat">
+<strong>GPP</strong>
+<span>Versión premium</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="instalacion">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+01 · Solución de instalación
+</div>
+
+<h2>No puedo instalar el APK GADS PRO</h2>
+
+<p class="intro">
+Si Android no permite instalar la aplicación,
+sigue estas comprobaciones antes de volver a intentarlo.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<span class="icon">📦</span>
+<h3>Revisa el archivo</h3>
+<p>
+Comprueba que la descarga terminó correctamente
+y que el archivo corresponde a GADS PRO.
+</p>
+</div>
+
+<div class="card">
+<span class="icon">⚙️</span>
+<h3>Permisos del sistema</h3>
+<p>
+Android puede solicitar autorización para instalar
+aplicaciones desde una fuente externa.
+Revisa el aviso que muestra tu dispositivo.
+</p>
+</div>
+
+<div class="card">
+<span class="icon">💾</span>
+<h3>Espacio disponible</h3>
+<p>
+Libera almacenamiento si el teléfono indica
+que no hay espacio suficiente.
+</p>
+</div>
+
+</div>
+
+<div class="notice">
+<b>Si sigue fallando:</b>
+anota el mensaje exacto que aparece en Android.
+Ese mensaje ayuda a identificar si el problema está
+relacionado con el archivo, permisos, espacio o compatibilidad.
+</div>
+
+</div>
+
+</section>
+
+
+<section id="compatibilidad">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+02 · Comprobador de compatibilidad
+</div>
+
+<h2>Comprueba rápidamente tu dispositivo</h2>
+
+<p class="intro">
+Este comprobador es orientativo.
+La compatibilidad real puede depender de la versión concreta
+de la aplicación, fabricante, arquitectura y otros componentes del teléfono.
+</p>
+
+</div>
+
+<div class="tool">
+
+<div class="toolRow">
+
+<div>
+
+<label for="androidVersion">
+Versión de Android
+</label>
+
+<select id="androidVersion">
+
+<option value="">Selecciona</option>
+<option value="5">Android 5.x o anterior</option>
+<option value="6">Android 6.x</option>
+<option value="7">Android 7.x</option>
+<option value="8">Android 8.x</option>
+<option value="9">Android 9.x</option>
+<option value="10">Android 10</option>
+<option value="11">Android 11</option>
+<option value="12">Android 12</option>
+<option value="13">Android 13</option>
+<option value="14">Android 14</option>
+<option value="15">Android 15</option>
+<option value="16">Android 16 o posterior</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="ram">
+RAM aproximada
+</label>
+
+<select id="ram">
+
+<option value="">Selecciona</option>
+<option value="2">2 GB o menos</option>
+<option value="3">3 GB</option>
+<option value="4">4 GB</option>
+<option value="6">6 GB</option>
+<option value="8">8 GB o más</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button class="btn primary"
+style="margin-top:14px"
+onclick="checkCompatibility()">
+Comprobar ahora
+</button>
+
+<div id="compatResult" class="result"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="caracteristicas">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+03 · Características
+</div>
+
+<h2>Qué puedes encontrar en GADS PRO</h2>
+
+<p class="intro">
+Una presentación clara de la aplicación y de la experiencia
+que se busca ofrecer al usuario.
+</p>
+
+</div>
+
+
+<div class="featureGrid">
+
+<div class="feature">
+<div class="big">🎬</div>
+<h3>Contenido multimedia</h3>
+<p class="small">
+Enfocada en ofrecer una experiencia de visualización multimedia.
+</p>
+</div>
+
+<div class="feature">
+<div class="big">📱</div>
+<h3>Experiencia Android</h3>
+<p class="small">
+Pensada para diferentes dispositivos compatibles.
+</p>
+</div>
+
+<div class="feature">
+<div class="big">🔎</div>
+<h3>Navegación sencilla</h3>
+<p class="small">
+Interfaz orientada a facilitar el acceso al contenido.
+</p>
+</div>
+
+<div class="feature">
+<div class="big">🚀</div>
+<h3>Proyecto en evolución</h3>
+<p class="small">
+Las características pueden cambiar mediante futuras actualizaciones.
+</p>
+</div>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<span class="pill">Gama baja</span>
+<h3>Prioriza lo esencial</h3>
+<p>
+Conviene cerrar aplicaciones innecesarias y mantener espacio libre.
+</p>
+</div>
+
+<div class="card">
+<span class="pill">Gama media</span>
+<h3>Equilibrio</h3>
+<p>
+Puede ofrecer un buen equilibrio entre rendimiento,
+batería y almacenamiento.
+</p>
+</div>
+
+<div class="card">
+<span class="pill">Gama alta</span>
+<h3>Más margen</h3>
+<p>
+Mayor margen para multitarea y contenido multimedia,
+según software y conexión.
+</p>
+</div>
+
+</div>
+
+
+<div class="check">
+
+<div><b>✓</b> Android 6.0 o superior</div>
+<div><b>✓</b> Gama baja, media y alta</div>
+<div><b>✓</b> Depende de RAM y procesador</div>
+<div><b>✓</b> Depende del almacenamiento</div>
+<div><b>✓</b> La conexión puede afectar funciones online</div>
+<div><b>✓</b> Las características pueden cambiar</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="pruebas">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+04 · Pruebas de GADS PRO
+</div>
+
+<h2>Revisa el funcionamiento de la aplicación</h2>
+
+<p class="intro">
+Una zona de referencia para comprobar los aspectos básicos
+después de instalar GADS PRO.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<h3>01 · Abrir la app</h3>
+<p>
+Comprueba que GADS PRO inicia correctamente
+y que la interfaz se muestra sin errores.
+</p>
+</div>
+
+<div class="card">
+<h3>02 · Contenido</h3>
+<p>
+Revisa que el contenido multimedia se cargue
+de acuerdo con tu conexión y configuración.
+</p>
+</div>
+
+<div class="card">
+<h3>03 · Reproducción</h3>
+<p>
+Si una función no responde, reinicia la app y comprueba
+primero conexión, permisos y versión instalada.
+</p>
+</div>
+
+<div class="card">
+<h3>04 · Rendimiento</h3>
+<p>
+Observa consumo de batería, memoria, temperatura
+y fluidez durante el uso normal.
+</p>
+</div>
+
+<div class="card">
+<h3>05 · Actualización</h3>
+<p>
+Cuando exista una nueva versión oficial,
+compara sus cambios antes de actualizar.
+</p>
+</div>
+
+<div class="card">
+<h3>06 · Reporte</h3>
+<p>
+Para pedir ayuda, conserva el modelo del dispositivo,
+Android y mensaje de error.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="seguridad">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+05 · Seguridad y confianza
+</div>
+
+<h2>Instala y utiliza la app de forma responsable</h2>
+
+<p class="intro">
+La seguridad depende también de la fuente de descarga,
+los permisos y las decisiones del usuario.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<h3>🔐 Fuente de descarga</h3>
+<p>
+Utiliza el enlace oficial publicado en esta página
+y verifica que la dirección sea la esperada.
+</p>
+</div>
+
+<div class="card">
+<h3>🛡️ Permisos</h3>
+<p>
+Lee los permisos solicitados por Android y evita conceder
+accesos que no entiendas.
+</p>
+</div>
+
+<div class="card">
+<h3>🔄 Actualizaciones</h3>
+<p>
+Mantén la aplicación y Android actualizados cuando
+existan versiones oficiales disponibles.
+</p>
+</div>
+
+</div>
+
+
+<div class="notice">
+<b>Importante:</b>
+nunca introduzcas contraseñas, códigos de verificación
+o datos bancarios en páginas que no reconozcas como oficiales.
+</div>
+
+</div>
+
+</section>
+
+
+<section id="capturas">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+06 · Galería ampliada
+</div>
+
+<h2>Conoce visualmente GADS PRO</h2>
+
+<p class="intro">
+Capturas disponibles dentro del proyecto para conocer
+la interfaz antes de utilizar la aplicación.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<figure>
+<img src="screen1.jpg" alt="Captura 1 de GADS PRO">
+<figcaption>Vista de la aplicación · captura 1</figcaption>
+</figure>
+
+<figure>
+<img src="screen2.jpg" alt="Captura 2 de GADS PRO">
+<figcaption>Vista de la aplicación · captura 2</figcaption>
+</figure>
+
+<figure>
+<img src="screen3.jpg" alt="Captura 3 de GADS PRO">
+<figcaption>Vista de la aplicación · captura 3</figcaption>
+</figure>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="mapa">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+07 · GADS PRO alrededor del mundo
+</div>
+
+<h2>Mapa de uso y alcance</h2>
+
+<p class="intro">
+Referencia visual del alcance internacional del proyecto.
+No representa cobertura de red ni garantiza disponibilidad
+de funciones en todos los países.
+</p>
+
+</div>
+
+<div class="heroCard">
+
+<img src="mapa-mundial.svg"
+alt="Mapa mundial de referencia de GADS PRO">
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="visuales">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+08 · Nuevos visuales
+</div>
+
+<h2>Una presentación más visual y profesional</h2>
+
+<p class="intro">
+Ilustraciones originales para explicar la app,
+la instalación, el contenido útil y la experiencia GPP.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<figure>
+<img src="hero-gads-pro.svg"
+alt="Ilustración de GADS PRO">
+<figcaption>Identidad visual de GADS PRO.</figcaption>
+</figure>
+
+<figure>
+<img src="instalacion-gads-pro.svg"
+alt="Guía visual de instalación">
+<figcaption>Instalación visual y requisitos.</figcaption>
+</figure>
+
+<figure>
+<img src="contenido-valor-gads.svg"
+alt="Centro de contenido de valor">
+<figcaption>Contenido útil sobre Android y GPP.</figcaption>
+</figure>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NUEVO · GADS PRO WEB
+===================================================== -->
+
+<section id="web">
+
+<div class="wrap">
+
+<div class="webFeature">
+
+<div class="webGrid">
+
+<div>
+
+<span class="webBadge">
+GADS PRO WEB
+</span>
+
+<h2>
+GADS PRO WEB: tu experiencia multimedia desde el navegador
+</h2>
+
+<p class="lead">
+GADS PRO WEB es la versión web de GADS PRO diseñada
+para utilizarse directamente desde un navegador compatible.
+Su objetivo es ofrecer una forma práctica de acceder
+a la experiencia multimedia de GADS PRO desde diferentes
+dispositivos y pantallas.
+</p>
+
+<p>
+La versión web es especialmente útil para las personas
+que desean utilizar GADS PRO sin depender de una instalación
+tradicional de Android. En lugar de instalar un APK,
+puedes acceder mediante un navegador compatible y entrar
+directamente a la experiencia web.
+</p>
+
+<p>
+Esto permite que GADS PRO pueda estar presente en más tipos
+de dispositivos. Dependiendo del equipo y del navegador
+disponible, la versión web puede utilizarse desde teléfonos,
+computadoras y determinadas pantallas compatibles con
+navegación web.
+</p>
+
+<p>
+Una de las principales ventajas de una versión web es
+la facilidad de acceso. El usuario puede entrar al sitio
+desde el navegador, sin tener que descargar un archivo APK
+para comenzar a conocer la plataforma.
+</p>
+
+<p>
+Esto resulta práctico cuando se utiliza un dispositivo
+en el que no se desea instalar aplicaciones adicionales.
+También permite consultar la plataforma desde una pantalla
+diferente y conocer el proyecto desde un entorno web.
+</p>
+
+<p>
+La experiencia dependerá de factores como la conexión
+a Internet, el navegador, el sistema operativo, el hardware
+del dispositivo y las funciones disponibles en la versión web.
+</p>
+
+<div class="actions">
+
+<a class="btn primary"
+href="https://gabrielll100.github.io/index.html"
+target="_blank"
+rel="noopener">
+
+🌐 ABRIR GADS PRO WEB
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="webPanel">
+
+<h3>
+¿Para quién puede ser útil?
+</h3>
+
+<div class="webList">
+
+<div>
+<b>📱 Teléfonos:</b>
+Accede desde un navegador compatible sin depender
+de una instalación APK.
+</div>
+
+<div>
+<b>💻 Computadoras:</b>
+Utiliza la experiencia web desde una pantalla más grande.
+</div>
+
+<div>
+<b>📺 Pantallas:</b>
+Puede utilizarse en dispositivos que dispongan
+de navegador compatible.
+</div>
+
+<div>
+<b>🌐 Navegador:</b>
+Entra directamente desde la web y consulta la plataforma.
+</div>
+
+<div>
+<b>🔄 Acceso práctico:</b>
+Una alternativa para acceder desde diferentes dispositivos.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🌐 ¿Qué es GADS PRO WEB?</h3>
+
+<p>
+Es la versión web de GADS PRO. En lugar de instalar
+una aplicación Android, el usuario accede mediante
+un navegador compatible.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>📺 ¿Por qué es importante?</h3>
+
+<p>
+Una versión web permite ampliar las formas de acceso
+al proyecto y facilita que las personas puedan utilizar
+GADS PRO desde diferentes tipos de dispositivos.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>⚡ ¿Qué necesito?</h3>
+
+<p>
+Necesitas un dispositivo compatible, un navegador actualizado
+y una conexión adecuada para las funciones que utilizan Internet.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<b>Consejo:</b>
+Utiliza siempre el enlace oficial de GADS PRO WEB publicado
+en este sitio. La disponibilidad y funcionamiento de determinadas
+características pueden depender del navegador, dispositivo
+y conexión utilizados.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NUEVO · REPRODUCTOR EN SEGUNDO PLANO
+===================================================== -->
+
+<section id="segundo-plano">
+
+<div class="wrap">
+
+<div class="premium">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+REPRODUCTOR EN SEGUNDO PLANO
+</div>
+
+<h2>
+Reproductor en segundo plano
+</h2>
+
+<p class="intro">
+El reproductor en segundo plano es una de las ventajas
+Premium de GADS PRO. Esta función está pensada para que
+puedas continuar con la reproducción mientras realizas
+otras tareas en tu dispositivo, siempre que el sistema
+y el contenido sean compatibles.
+</p>
+
+</div>
+
+
+<div class="two">
+
+<div>
+
+<p>
+El reproductor en segundo plano es importante porque
+no siempre queremos mantener la pantalla abierta durante
+toda la reproducción.
+</p>
+
+<p>
+Por ejemplo, puedes estar escuchando contenido mientras
+consultas otra aplicación, revisas mensajes, navegas por
+Internet, lees información o realizas otras tareas
+en tu dispositivo.
+</p>
+
+<p>
+Esta característica está pensada para ofrecer mayor
+flexibilidad durante el uso de GADS PRO y aprovechar mejor
+el dispositivo cuando el usuario no necesita permanecer
+constantemente dentro de la pantalla principal de reproducción.
+</p>
+
+<p>
+El reproductor en segundo plano forma parte de las ventajas
+de <b>GADS PRO Premium</b> y se desbloquea mediante
+la versión Premium de la aplicación.
+</p>
+
+<p>
+El precio indicado para obtener GADS PRO Premium es de
+<b>$1.99 USD</b>.
+</p>
+
+</div>
+
+
+<div class="webPanel">
+
+<h3>
+⭐ ¿Qué obtienes con Premium?
+</h3>
+
+<div class="webList">
+
+<div>
+<b>🎧 Segundo plano:</b>
+Utiliza otras funciones del dispositivo mientras
+la reproducción continúa cuando sea compatible.
+</div>
+
+<div>
+<b>⭐ Función Premium:</b>
+El reproductor en segundo plano forma parte
+de las ventajas de GADS PRO Premium.
+</div>
+
+<div>
+<b>💳 Precio:</b>
+El precio indicado para GADS PRO Premium es de
+<b>$1.99 USD</b>.
+</div>
+
+<div>
+<b>📲 Google Play:</b>
+La versión Premium se obtiene mediante
+la ficha oficial de Google Play Store.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<b>Importante:</b>
+El funcionamiento del segundo plano puede depender de Android,
+ahorro de batería, permisos del sistema, conexión, navegador
+y restricciones del contenido. La versión Premium desbloquea
+la función ofrecida por GADS PRO, pero el funcionamiento final
+también puede depender del dispositivo y del contenido utilizado.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="diagnostico">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+09 · Centro de diagnóstico interactivo
+</div>
+
+<h2>Encuentra una ruta de solución</h2>
+
+<p class="intro">
+Selecciona el problema que estás teniendo y GADS PRO
+te llevará a la sección más útil.
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<div class="toolRow">
+
+<div>
+
+<label for="problem">
+¿Qué problema tienes?
+</label>
+
+<select id="problem">
+
+<option value="">
+Selecciona un problema
+</option>
+
+<option value="install">
+No puedo instalar el APK
+</option>
+
+<option value="compat">
+Quiero saber si mi dispositivo es compatible
+</option>
+
+<option value="play">
+La reproducción no funciona correctamente
+</option>
+
+<option value="space">
+Tengo poco almacenamiento
+</option>
+
+<option value="security">
+Tengo dudas sobre seguridad
+</option>
+
+<option value="background">
+Quiero información sobre el reproductor en segundo plano
+</option>
+
+<option value="premium">
+Quiero información sobre GADS PRO Premium
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>
+Ruta recomendada
+</label>
+
+<div id="diagResult"
+class="result"
+style="display:block;margin-top:0">
+
+Selecciona un problema para recibir una recomendación.
+
+</div>
+
+</div>
+
+</div>
+
+
+<button class="btn primary"
+style="margin-top:14px"
+onclick="diagnose()">
+
+Diagnosticar
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ACTUALIZADO · GADS PRO PREMIUM
+===================================================== -->
+
+<section id="premium">
+
+<div class="wrap">
+
+<div class="premium">
+
+<div class="eyebrow">
+10 · GADS PRO PREMIUM
+</div>
+
+<h2>
+GADS PRO PREMIUM
+<span class="gradient">GPP</span>
+</h2>
+
+<p class="lead">
+GADS PRO Premium es la versión de pago de GADS PRO
+que incorpora funciones adicionales para ampliar
+la experiencia de uso.
+</p>
+
+<p>
+Una de sus principales ventajas es el
+<b>reproductor en segundo plano</b>, una función pensada
+para ofrecer mayor flexibilidad durante la reproducción
+cuando el dispositivo y el contenido son compatibles.
+</p>
+
+<div class="price">
+$1.99
+<small>USD · precio de referencia</small>
+</div>
+
+
+<div class="pillrow">
+
+<span class="pill">
+⭐ Versión Premium
+</span>
+
+<span class="pill">
+🎧 Reproductor en segundo plano
+</span>
+
+<span class="pill">
+💳 $1.99 USD
+</span>
+
+<span class="pill">
+▶ Google Play Store
+</span>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+🎧 Reproductor en segundo plano
+</h3>
+
+<p>
+Es una de las ventajas principales de GADS PRO Premium.
+Permite utilizar otras funciones del dispositivo mientras
+la reproducción continúa cuando sea compatible.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+📲 Google Play Store
+</h3>
+
+<p>
+La versión Premium se obtiene mediante la ficha oficial
+de GADS PRO Premium en Google Play Store.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+💰 Precio Premium
+</h3>
+
+<p>
+El precio indicado para GADS PRO Premium es de
+<b>$1.99 USD</b>.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+<b>Antes de adquirir Premium:</b>
+Revisa en Google Play el precio que aparezca para tu país,
+las funciones disponibles, los requisitos y las condiciones
+de compra correspondientes.
+
+</div>
+
+
+<div class="actions">
+
+<a
+class="btn primary"
+href="GOOGLE_PLAY_PREMIUM_URL"
+target="_blank"
+rel="noopener">
+
+⭐ OBTENER GADS PRO PREMIUM EN GOOGLE PLAY
+
+</a>
+
+</div>
+
+
+<p class="small">
+El botón está preparado para el enlace directo de Google Play.
+Cuando tengas la URL oficial de GADS PRO Premium, sustituye
+<b>GOOGLE_PLAY_PREMIUM_URL</b> por ese enlace.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NUEVO · CÓMO OBTENER PREMIUM
+===================================================== -->
+
+<section id="como-obtener-premium">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+CÓMO OBTENER PREMIUM
+</div>
+
+<h2>
+¿Cómo desbloquear el reproductor en segundo plano?
+</h2>
+
+<p class="intro">
+La versión Premium se obtiene mediante Google Play Store.
+Desde allí podrás consultar la información oficial,
+el precio disponible para tu región y las condiciones
+correspondientes.
+</p>
+
+</div>
+
+
+<div class="stepGrid">
+
+
+<div class="step">
+
+<div class="stepNum">
+PASO 01
+</div>
+
+<h3>
+📱 Entra a Google Play
+</h3>
+
+<p>
+Busca GADS PRO Premium en Google Play Store
+o utiliza el enlace oficial publicado en esta página.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="stepNum">
+PASO 02
+</div>
+
+<h3>
+⭐ Revisa Premium
+</h3>
+
+<p>
+Comprueba que estás entrando en la aplicación oficial
+y revisa la información disponible en su ficha.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="stepNum">
+PASO 03
+</div>
+
+<h3>
+💳 Adquiere Premium
+</h3>
+
+<p>
+El precio indicado para GADS PRO Premium es de
+<b>$1.99 USD</b>.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="stepNum">
+PASO 04
+</div>
+
+<h3>
+🎧 Utiliza segundo plano
+</h3>
+
+<p>
+Una vez disponible y adquirida la versión Premium,
+podrás utilizar la función de reproducción en segundo plano
+cuando sea compatible.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+<b>Importante:</b>
+Realiza la compra únicamente mediante el canal oficial
+de Google Play Store. No envíes dinero ni datos bancarios
+a personas que ofrezcan desbloqueos fuera del canal oficial.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="proximamente">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+11 · Próximamente
+</div>
+
+<h2>Nuevas aplicaciones en camino</h2>
+
+<p class="intro">
+GADS PRO seguirá creciendo. Aquí podrás presentar futuras
+aplicaciones y proyectos cuando estén listos para publicación.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<span class="icon">🚀</span>
+
+<h3>
+Próxima aplicación
+</h3>
+
+<p>
+Proyecto en preparación. Muy pronto podrás conocer su nombre,
+funciones y enlace oficial.
+</p>
+
+<span class="pill">
+En desarrollo
+</span>
+
+</div>
+
+
+<div class="card">
+
+<span class="icon">✨</span>
+
+<h3>
+Nuevos proyectos
+</h3>
+
+<p>
+Esta sección se actualizará conforme se incorporen nuevas
+aplicaciones al ecosistema GADS PRO.
+</p>
+
+<span class="pill">
+Próximamente
+</span>
+
+</div>
+
+
+<div class="card">
+
+<span class="icon">📢</span>
+
+<h3>
+Mantente atento
+</h3>
+
+<p>
+Consulta las novedades y el sitio oficial para conocer
+nuevos lanzamientos.
+</p>
+
+<span class="pill">
+Novedades
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="guias">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+12 · Contenido de valor
+</div>
+
+<h2>
+Guías y recursos para Android
+</h2>
+
+<p class="intro">
+Contenido útil para instalar, mantener y solucionar
+problemas habituales.
+</p>
+
+</div>
+
+
+<div class="links">
+
+<a class="linkCard" href="guia-antes-de-usar.html">
+<strong>Antes de usar una app</strong>
+<span>Checklist práctico para empezar.</span>
+</a>
+
+<a class="linkCard" href="permisos-android.html">
+<strong>Permisos de Android</strong>
+<span>Entiende qué significan.</span>
+</a>
+
+<a class="linkCard" href="como-liberar-espacio-android.html">
+<strong>Liberar espacio</strong>
+<span>Ideas para recuperar almacenamiento.</span>
+</a>
+
+<a class="linkCard" href="apk-no-se-instala-que-hacer.html">
+<strong>APK no se instala</strong>
+<span>Pasos de diagnóstico.</span>
+</a>
+
+<a class="linkCard" href="android-lento-que-revisar.html">
+<strong>Android lento</strong>
+<span>Revisiones básicas de rendimiento.</span>
+</a>
+
+<a class="linkCard" href="solucion-problemas.html">
+<strong>Solución de problemas</strong>
+<span>Guía para errores comunes.</span>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="ayuda">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+13 · Centro de ayuda
+</div>
+
+<h2>
+¿Tienes un problema? Empieza aquí
+</h2>
+
+<p class="intro">
+Utiliza estas rutas para identificar el problema
+antes de buscar una solución.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+📥 No puedo instalar
+</h3>
+
+<p>
+Ve a la sección de instalación y revisa archivo,
+permisos, espacio y compatibilidad.
+</p>
+
+<a class="btn" href="#instalacion">
+Ver solución
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+📱 ¿Mi teléfono es compatible?
+</h3>
+
+<p>
+Utiliza el comprobador interactivo de esta página
+como primera referencia.
+</p>
+
+<a class="btn" href="#compatibilidad">
+Comprobar
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+⚠️ Algo no funciona
+</h3>
+
+<p>
+Revisa la sección de pruebas y conserva
+el mensaje exacto del error.
+</p>
+
+<a class="btn" href="#pruebas">
+Ver pruebas
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="faq">
+
+<div class="wrap faq">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+14 · Preguntas frecuentes
+</div>
+
+<h2>
+Preguntas de nuevos usuarios
+</h2>
+
+</div>
+
+
+<details>
+<summary>
+¿Desde qué versión de Android funciona?
+</summary>
+
+<p>
+La información del proyecto indica Android 6.0 o superior.
+La compatibilidad concreta puede variar según el dispositivo
+y la versión de la aplicación.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿Funciona en teléfonos de gama baja?
+</summary>
+
+<p>
+El proyecto está planteado para gama baja, media y alta.
+El rendimiento puede depender especialmente de RAM,
+procesador y almacenamiento.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿Dónde descargo GADS PRO?
+</summary>
+
+<p>
+El enlace oficial de descarga se encuentra al final de esta página.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿Qué hago si no puedo instalar el APK?
+</summary>
+
+<p>
+Revisa la sección “No puedo instalar el APK GADS PRO”,
+el espacio disponible, los permisos del sistema y la compatibilidad.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿Qué es GADS PRO WEB?
+</summary>
+
+<p>
+GADS PRO WEB es la versión web de GADS PRO.
+Permite acceder a la experiencia desde un navegador compatible
+sin depender de una instalación tradicional de Android.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿Qué es el reproductor en segundo plano?
+</summary>
+
+<p>
+Es una función de GADS PRO Premium pensada para continuar
+la reproducción mientras realizas otras tareas en el dispositivo,
+cuando el sistema y el contenido sean compatibles.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿Cuánto cuesta GADS PRO Premium?
+</summary>
+
+<p>
+El precio indicado para GADS PRO Premium es de
+<b>$1.99 USD</b>. El precio mostrado finalmente en Google Play
+puede depender de la región y de las condiciones aplicables.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿Cómo obtengo GADS PRO Premium?
+</summary>
+
+<p>
+La versión Premium se obtiene mediante Google Play Store.
+Utiliza únicamente el enlace oficial publicado en esta página
+y revisa la información de la ficha antes de realizar cualquier compra.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿GADS PRO PREMIUM GPP ya está disponible?
+</summary>
+
+<p>
+La información Premium de esta página se presenta de acuerdo
+con la versión y disponibilidad indicadas oficialmente.
+La disponibilidad puede depender de su publicación en Google Play.
+</p>
+
+</details>
+
+
+<details>
+<summary>
+¿GADS PRO es una aplicación oficial?
+</summary>
+
+<p>
+Para comprobar la fuente de descarga, utiliza el enlace publicado
+en la sección oficial de descarga de este sitio y revisa siempre
+la dirección antes de instalar.
+</p>
+
+</details>
+
+</div>
+
+</section>
+
+
+<section id="novedades">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+15 · Novedades / Changelog
+</div>
+
+<h2>
+Historial de actualizaciones
+</h2>
+
+<p class="intro">
+Aquí puedes mantener informados a los visitantes
+sobre los cambios del proyecto.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="update">
+
+<div class="date">
+Actual
+</div>
+
+<div>
+<b>
+Centro ampliado
+</b>
+<br>
+
+<span class="small">
+Nuevas secciones de diagnóstico, compatibilidad,
+pruebas, seguridad, ayuda, FAQ y novedades.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="update">
+
+<div class="date">
+WEB
+</div>
+
+<div>
+
+<b>
+GADS PRO WEB
+</b>
+
+<br>
+
+<span class="small">
+Información ampliada sobre la versión web y sus formas de acceso.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="update">
+
+<div class="date">
+Premium
+</div>
+
+<div>
+
+<b>
+Reproductor en segundo plano
+</b>
+
+<br>
+
+<span class="small">
+Información sobre la función Premium, precio de $1.99 USD
+y forma de obtenerla mediante Google Play.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="update">
+
+<div class="date">
+Futuro
+</div>
+
+<div>
+
+<b>
+Nuevas aplicaciones
+</b>
+
+<br>
+
+<span class="small">
+Se añadirán aquí los próximos proyectos del ecosistema GADS PRO.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="opiniones">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+16 · Opiniones
+</div>
+
+<h2>
+Comparte tu experiencia con GADS PRO
+</h2>
+
+<p class="intro">
+Un espacio para recibir comentarios de los visitantes.
+El formulario abre tu aplicación de correo para que
+el mensaje llegue al contacto oficial.
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<div class="toolRow">
+
+<div>
+
+<label for="opinionName">
+Tu nombre
+</label>
+
+<input id="opinionName"
+placeholder="Nombre o alias">
+
+</div>
+
+
+<div>
+
+<label for="opinionText">
+Tu opinión
+</label>
+
+<input id="opinionText"
+placeholder="¿Qué te pareció GADS PRO?">
+
+</div>
+
+</div>
+
+
+<a class="btn primary"
+style="margin-top:14px"
+href="mailto:kelvinespi1924h@gmail.com?subject=Opinión sobre GADS PRO"
+onclick="return sendOpinion()">
+
+Enviar opinión
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="buscador">
+
+<div class="wrap">
+
+<div class="sectionTitle">
+
+<div class="eyebrow">
+17 · Buscador inteligente
+</div>
+
+<h2>
+Busca dentro de esta página
+</h2>
+
+<p class="intro">
+Escribe una palabra como “APK”, “Android”, “Premium”,
+“seguridad”, “WEB” o “segundo plano”.
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<input
+id="siteSearch"
+placeholder="🔎 Buscar en GADS PRO..."
+oninput="searchSite()">
+
+<div id="searchResult"
+class="result"
+style="display:block">
+
+Escribe para encontrar secciones relacionadas.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="descarga-final">
+
+<div class="wrap">
+
+<div class="premium"
+style="text-align:center">
+
+<div class="eyebrow">
+DESCARGA OFICIAL · GADS PRO
+</div>
+
+<h2>
+Descarga <span class="gradient">GADS PRO</span>
+</h2>
+
+<p class="lead"
+style="margin:0 auto 25px">
+
+Todo lo que necesitas para comenzar.
+Una experiencia multimedia sencilla, gratuita
+y sin interrupciones publicitarias durante tus videos.
+
+</p>
+
+
+<div class="cards"
+style="text-align:left;max-width:850px;margin:25px auto">
+
+
+<div class="card">
+
+<h3>📦 Tamaño</h3>
+
+<p>
+<b>32 MB</b>
+</p>
+
+<span class="small">
+Tamaño aproximado de la aplicación.
+</span>
+
+</div>
+
+
+<div class="card">
+
+<h3>✨ Versión</h3>
+
+<p>
+<b>1.0</b>
+</p>
+
+<span class="small">
+Versión actual disponible.
+</span>
+
+</div>
+
+
+<div class="card">
+
+<h3>💚 Precio</h3>
+
+<p>
+<b>Gratis</b>
+</p>
+
+<span class="small">
+Descarga gratuita.
+</span>
+
+</div>
+
+
+<div class="card">
+
+<h3>▶️ Experiencia</h3>
+
+<p>
+<b>
+Sin interrupciones en tus videos
+</b>
+</p>
+
+<span class="small">
+Disfruta del contenido sin interrupciones
+publicitarias durante la reproducción.
+</span>
+
+</div>
+
+
+</div>
+
+
+<a class="btn primary"
+href="https://www.appcreator24.com/app4101161-9jzfhn"
+target="_blank"
+rel="noopener">
+
+🚀 DESCARGAR GADS PRO
+
+</a>
+
+
+<p class="small"
+style="margin-top:15px">
+
+Versión 1.0 · 32 MB · Gratuita ·
+Enlace oficial de AppCreator24
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
 </main>
 
-<footer class="footer"><div class="wrap footGrid"><div><b>GADS PRO</b><p class="small">Centro de información sobre la aplicación, instalación, compatibilidad, características, guías, ayuda y novedades de GADS PRO PREMIUM GPP.</p><p class="small"><b>Contacto:</b><br><a href="mailto:kelvinespi1924@gmail.com">kelvinespi1924@gmail.com</a></p></div>
-<div><b>Información</b><a href="#caracteristicas">Características</a><a href="#compatibilidad">Compatibilidad</a><a href="#diagnostico">Diagnóstico</a><a href="#guias">Guías</a><a href="#novedades">Novedades</a></div>
-<div><b>Legal</b><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a><a href="aviso-legal.html">Aviso legal</a><a href="contacto.html">Contacto</a></div></div>
-<div class="wrap" style="padding-bottom:25px"><p class="small">© GADS PRO · Información sujeta a actualización. Enlaces externos pertenecen a sus respectivos servicios.</p></div></footer>
-<a class="backtop" href="#">↑</a>
+
+<footer class="footer">
+
+<div class="wrap footGrid">
+
+
+<div>
+
+<b>GADS PRO</b>
+
+<p class="small">
+Centro de información sobre la aplicación,
+instalación, compatibilidad, características,
+guías, ayuda y novedades de GADS PRO PREMIUM GPP.
+</p>
+
+<p class="small">
+
+<b>Contacto:</b>
+<br>
+
+<a href="mailto:kelvinespi1924h@gmail.com">
+kelvinespi1924h@gmail.com
+</a>
+
+</p>
+
+</div>
+
+
+<div>
+
+<b>Información</b>
+
+<a href="#caracteristicas">
+Características
+</a>
+
+<a href="#compatibilidad">
+Compatibilidad
+</a>
+
+<a href="#web">
+GADS PRO WEB
+</a>
+
+<a href="#segundo-plano">
+Segundo plano
+</a>
+
+<a href="#diagnostico">
+Diagnóstico
+</a>
+
+<a href="#guias">
+Guías
+</a>
+
+<a href="#novedades">
+Novedades
+</a>
+
+</div>
+
+
+<div>
+
+<b>Legal</b>
+
+<a href="privacidad.html">
+Privacidad
+</a>
+
+<a href="terminos.html">
+Términos
+</a>
+
+<a href="aviso-legal.html">
+Aviso legal
+</a>
+
+<a href="contacto.html">
+Contacto
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="wrap"
+style="padding-bottom:25px">
+
+<p class="small">
+© GADS PRO · Información sujeta a actualización.
+Enlaces externos pertenecen a sus respectivos servicios.
+</p>
+
+</div>
+
+</footer>
+
+
+<a class="backtop" href="#">
+↑
+</a>
+
 
 <script>
+
 function checkCompatibility(){
- const v=document.getElementById('androidVersion').value,ram=document.getElementById('ram').value,r=document.getElementById('compatResult');r.style.display='block';
- if(!v||!ram){r.innerHTML='<b>Completa los dos campos.</b> Selecciona tu versión de Android y la RAM aproximada.';return}
- if(Number(v)<6){r.innerHTML='<b>⚠️ Compatibilidad no recomendada.</b> El proyecto indica Android 6.0 o superior. Tu versión seleccionada es anterior.';return}
- let msg='<b>✅ Requisitos básicos cumplidos.</b> Tu versión de Android está dentro del mínimo anunciado.';
- if(Number(ram)<=2)msg+=' Con poca RAM, el rendimiento puede variar y conviene cerrar aplicaciones innecesarias.';
- else if(Number(ram)>=6)msg+=' Tu cantidad de RAM ofrece un margen mayor para multitarea, aunque no garantiza el rendimiento.';
- r.innerHTML=msg;
+
+const v=document.getElementById('androidVersion').value;
+const ram=document.getElementById('ram').value;
+const r=document.getElementById('compatResult');
+
+r.style.display='block';
+
+if(!v||!ram){
+
+r.innerHTML=
+'<b>Completa los dos campos.</b> '+
+'Selecciona tu versión de Android y la RAM aproximada.';
+
+return;
+
 }
+
+if(Number(v)<6){
+
+r.innerHTML=
+'<b>⚠️ Compatibilidad no recomendada.</b> '+
+'El proyecto indica Android 6.0 o superior. '+
+'Tu versión seleccionada es anterior.';
+
+return;
+
+}
+
+let msg=
+'<b>✅ Requisitos básicos cumplidos.</b> '+
+'Tu versión de Android está dentro del mínimo anunciado.';
+
+if(Number(ram)<=2){
+
+msg+=
+' Con poca RAM, el rendimiento puede variar '+
+'y conviene cerrar aplicaciones innecesarias.';
+
+}else if(Number(ram)>=6){
+
+msg+=
+' Tu cantidad de RAM ofrece un margen mayor '+
+'para multitarea, aunque no garantiza el rendimiento.';
+
+}
+
+r.innerHTML=msg;
+
+}
+
+
 function diagnose(){
- const v=document.getElementById('problem').value,r=document.getElementById('diagResult');
- const routes={install:['Problema de instalación','Ve a la sección de instalación para revisar archivo, permisos y espacio.','#instalacion'],compat:['Compatibilidad','Usa el comprobador de compatibilidad con tu Android y RAM.','#compatibilidad'],play:['Reproducción','Revisa la sección de pruebas y conserva el mensaje exacto del error.','#pruebas'],space:['Almacenamiento','Consulta la guía de liberar espacio y vuelve a intentar la instalación.','#guias'],security:['Seguridad','Revisa la sección de seguridad y utiliza únicamente fuentes reconocidas.','#seguridad']};
- if(!v){r.innerHTML='Selecciona un problema para recibir una recomendación.';return}
- const x=routes[v];r.innerHTML='<b>'+x[0]+':</b> '+x[1]+' <a href="'+x[2]+'">Ir a la sección →</a>';
+
+const v=document.getElementById('problem').value;
+const r=document.getElementById('diagResult');
+
+const routes={
+
+install:[
+'Problema de instalación',
+'Ve a la sección de instalación para revisar archivo, permisos y espacio.',
+'#instalacion'
+],
+
+compat:[
+'Compatibilidad',
+'Usa el comprobador de compatibilidad con tu Android y RAM.',
+'#compatibilidad'
+],
+
+play:[
+'Reproducción',
+'Revisa la sección de pruebas y conserva el mensaje exacto del error.',
+'#pruebas'
+],
+
+space:[
+'Almacenamiento',
+'Consulta la guía de liberar espacio y vuelve a intentar la instalación.',
+'#guias'
+],
+
+security:[
+'Seguridad',
+'Revisa la sección de seguridad y utiliza únicamente fuentes reconocidas.',
+'#seguridad'
+],
+
+background:[
+'Reproductor en segundo plano',
+'Revisa la información sobre la función de reproducción en segundo plano.',
+'#segundo-plano'
+],
+
+premium:[
+'GADS PRO Premium',
+'Revisa el precio de $1.99 USD, las ventajas Premium y la información para obtenerlo.',
+'#premium'
+]
+
+};
+
+
+if(!v){
+
+r.innerHTML=
+'Selecciona un problema para recibir una recomendación.';
+
+return;
+
 }
+
+const x=routes[v];
+
+r.innerHTML=
+'<b>'+x[0]+':</b> '+
+x[1]+
+' <a href="'+x[2]+'">Ir a la sección →</a>';
+
+}
+
+
 function searchSite(){
- const q=document.getElementById('siteSearch').value.toLowerCase().trim(),r=document.getElementById('searchResult');
- if(!q){r.innerHTML='Escribe para encontrar secciones relacionadas.';return}
- const sections=[['Instalación','#instalacion','APK, permisos y espacio'],['Compatibilidad','#compatibilidad','Android y RAM'],['Características','#caracteristicas','Funciones y experiencia'],['Seguridad','#seguridad','Fuente, permisos y actualizaciones'],['GADS PRO Premium','#premium','GPP y futuras funciones'],['Guías','#guias','Recursos para Android'],['Ayuda','#ayuda','Problemas comunes'],['FAQ','#faq','Preguntas frecuentes'],['Novedades','#novedades','Historial de cambios'],['Opiniones','#opiniones','Comentarios'],['Diagnóstico','#diagnostico','Soluciones interactivas']];
- const found=sections.filter(x=>(x[0]+' '+x[2]).toLowerCase().includes(q));
- r.innerHTML=found.length?found.map(x=>'• <a href="'+x[1]+'"><b>'+x[0]+'</b></a> — '+x[2]).join('<br>'):'No encontramos una sección exacta. Prueba con APK, Android, seguridad, Premium o instalación.';
+
+const q=
+document.getElementById('siteSearch')
+.value
+.toLowerCase()
+.trim();
+
+const r=
+document.getElementById('searchResult');
+
+if(!q){
+
+r.innerHTML=
+'Escribe para encontrar secciones relacionadas.';
+
+return;
+
 }
+
+
+const sections=[
+
+[
+'Instalación',
+'#instalacion',
+'APK, permisos y espacio'
+],
+
+[
+'Compatibilidad',
+'#compatibilidad',
+'Android y RAM'
+],
+
+[
+'Características',
+'#caracteristicas',
+'Funciones y experiencia'
+],
+
+[
+'Seguridad',
+'#seguridad',
+'Fuente, permisos y actualizaciones'
+],
+
+[
+'GADS PRO WEB',
+'#web',
+'Versión web, navegador y dispositivos'
+],
+
+[
+'Reproductor en segundo plano',
+'#segundo-plano',
+'Función Premium y reproducción'
+],
+
+[
+'GADS PRO Premium',
+'#premium',
+'Premium, $1.99 USD y Google Play'
+],
+
+[
+'Cómo obtener Premium',
+'#como-obtener-premium',
+'Pasos para obtener la versión Premium'
+],
+
+[
+'Guías',
+'#guias',
+'Recursos para Android'
+],
+
+[
+'Ayuda',
+'#ayuda',
+'Problemas comunes'
+],
+
+[
+'FAQ',
+'#faq',
+'Preguntas frecuentes'
+],
+
+[
+'Novedades',
+'#novedades',
+'Historial de cambios'
+],
+
+[
+'Opiniones',
+'#opiniones',
+'Comentarios'
+],
+
+[
+'Diagnóstico',
+'#diagnostico',
+'Soluciones interactivas'
+]
+
+];
+
+
+const found=
+sections.filter(x=>
+(x[0]+' '+x[2])
+.toLowerCase()
+.includes(q)
+);
+
+
+r.innerHTML=
+found.length
+?
+found.map(x=>
+'• <a href="'+x[1]+'"><b>'+
+x[0]+
+'</b></a> — '+
+x[2]
+).join('<br>')
+:
+'No encontramos una sección exacta. Prueba con APK, Android, seguridad, Premium, WEB o segundo plano.';
+
+}
+
+
 function sendOpinion(){
- const n=document.getElementById('opinionName').value.trim(),t=document.getElementById('opinionText').value.trim();
- if(!n||!t){alert('Escribe tu nombre o alias y tu opinión antes de enviar.');return false}
- this.href='mailto:kelvinespi1924@gmail.com?subject=Opinión sobre GADS PRO&body='+encodeURIComponent('Nombre: '+n+'\\n\\nOpinión:\\n'+t);return true;
+
+const n=
+document.getElementById('opinionName')
+.value
+.trim();
+
+const t=
+document.getElementById('opinionText')
+.value
+.trim();
+
+
+if(!n||!t){
+
+alert(
+'Escribe tu nombre o alias y tu opinión antes de enviar.'
+);
+
+return false;
+
 }
+
+
+this.href=
+'mailto:kelvinespi1924h@gmail.com?subject=Opinión sobre GADS PRO&body='+
+encodeURIComponent(
+'Nombre: '+n+
+'\n\nOpinión:\n'+t
+);
+
+return true;
+
+}
+
 </script>
+
 </body>
-</html>
+ </html>
