@@ -1,0 +1,1228 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="GADS PRO WEB: explora videos desde tu navegador.">
+<title>GADS PRO WEB</title>
+
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --panel: #111c2d;
+  --panel2: #17253a;
+  --text: #f4f7fb;
+  --muted: #a8b6c9;
+  --accent: #22c7a5;
+  --blue: #43b9f5;
+  --line: #28384e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding-bottom: 30px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #0b1220;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.logo span { color: var(--accent); }
+
+.search {
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  max-width: 850px;
+  margin-left: auto;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 15px;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  background: var(--panel);
+  color: white;
+}
+
+.btn {
+  border: 0;
+  border-radius: 25px;
+  padding: 11px 17px;
+  font-weight: bold;
+  background: var(--accent);
+  color: #07131b;
+}
+
+.btn.secondary {
+  background: var(--panel2);
+  color: white;
+  border: 1px solid var(--line);
+}
+
+main {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.hero { padding: 30px 0 20px; }
+
+.hero small {
+  color: var(--accent);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: clamp(28px, 4vw, 46px);
+  margin: 10px 0;
+}
+
+.hero p {
+  max-width: 750px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.notice {
+  padding: 13px;
+  margin: 15px 0;
+  border: 1px solid #2b826f;
+  border-radius: 12px;
+  background: #10352f;
+  line-height: 1.5;
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px 0 18px;
+}
+
+.chip {
+  flex: 0 0 auto;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  background: var(--panel);
+  color: white;
+}
+
+.chip:hover, .chip.active {
+  background: var(--accent);
+  color: #07131b;
+}
+
+.premium {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 8px 0 25px;
+  padding: 22px;
+  border: 1px solid #326c79;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #112c3c, #192342);
+}
+
+.premium h2 {
+  margin-top: 0;
+  color: #8cebd8;
+}
+
+.premium p {
+  color: #d2dfec;
+  line-height: 1.5;
+}
+
+.premium-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.section-head h2 { font-size: 22px; }
+
+.muted { color: var(--muted); }
+
+#status {
+  min-height: 24px;
+  color: var(--muted);
+}
+
+#videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.card:hover { outline: 1px solid var(--accent); }
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #050a12;
+}
+
+.card h3 {
+  margin: 0;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+}
+
+#player {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: auto;
+  background: #05080e;
+}
+
+.player-top {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px;
+  background: #0b1220;
+}
+
+.player-top button {
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel2);
+  color: white;
+}
+
+.frame-wrap {
+  width: 100%;
+  max-width: 1400px;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+  background: black;
+}
+
+#frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-info {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.video-info h2 { font-size: 22px; }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actions button {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel2);
+  color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  overflow: auto;
+  padding: 20px;
+  background: #030711ee;
+}
+
+.modal-box {
+  max-width: 650px;
+  margin: 5vh auto;
+  padding: 22px;
+  border: 1px solid #36516b;
+  border-radius: 18px;
+  background: var(--panel);
+}
+
+.modal-box p {
+  line-height: 1.7;
+  color: #d0dbea;
+}
+
+footer {
+  margin-top: 35px;
+  padding: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+footer a { color: var(--blue); }
+
+@media (max-width: 720px) {
+  header { flex-wrap: wrap; }
+  .logo { width: 100%; }
+  .search { width: 100%; }
+  main { padding: 0 12px; }
+  .premium { padding: 16px; }
+  #videos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+  .card h3 { padding: 8px; font-size: 12px; }
+}
+
+@media (min-width: 1300px) {
+  #videos { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* Correcciones de GADS PRO WEB */
+
+#videos .video-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+#videos .video-card:hover {
+  outline: 1px solid var(--accent);
+}
+
+#videos .video-thumbnail {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: #050a12;
+}
+
+#videos .video-thumbnail img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+#videos .play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #000b;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+#videos .video-info {
+  margin: 0;
+  padding: 12px;
+}
+
+#videos .video-info h3 {
+  margin: 0 0 8px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+#videos .video-channel,
+#videos .video-date {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#player.is-open {
+  display: block;
+}
+
+#player.mini {
+  inset: auto 16px 16px auto;
+  width: min(420px, calc(100vw - 24px));
+  height: auto;
+  max-height: 85vh;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 35px #0009;
+}
+
+#player.mini .player-top {
+  position: relative;
+  padding: 6px;
+}
+
+#player.mini .frame-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+#player.mini .video-info {
+  padding: 10px;
+}
+
+#player.mini .video-info h2 {
+  font-size: 14px;
+}
+
+#modal.is-open {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  #player.mini {
+    right: 8px;
+    bottom: 8px;
+    width: calc(100vw - 16px);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">▶ GADS PRO <span>WEB</span></div>
+
+  <div class="search">
+    <input id="search" type="search"
+      placeholder="Buscar videos..."
+      aria-label="Buscar videos">
+
+    <button id="searchButton" class="btn" type="button">
+      Buscar
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <small>ENTRETENIMIENTO MULTIMEDIA</small>
+    <h1>Bienvenido a GADS PRO WEB</h1>
+
+    <p>
+      Explora videos desde tu computadora, laptop, tablet,
+      celular o Smart TV con navegador compatible.
+      Accede directamente desde Internet sin instalar el APK.
+    </p>
+
+    <div class="notice">
+      Selecciona un video para reproducirlo. La compatibilidad
+      depende del navegador, el dispositivo y los servicios de video.
+    </div>
+  </section>
+
+  <nav class="menu" aria-label="Menú principal">
+    <button class="chip active" data-category="popular">Inicio</button>
+    <button class="chip" data-category="gaming">🎮 Gaming</button>
+    <button class="chip" data-category="music">🎵 Música</button>
+    <button class="chip" id="favoritesButton">⭐ Favoritos</button>
+    <button class="chip" id="historyButton">🕒 Historial</button>
+    <button class="chip" id="premiumButton">💎 Premium</button>
+    <button class="chip" id="aboutButton">ℹ Acerca de</button>
+    <button class="chip" id="privacyButton">📄 Privacidad</button>
+  </nav>
+
+  <section class="premium">
+    <div>
+      <h2>💎 GADS PRO PREMIUM</h2>
+      <p id="premiumDescription">
+        Consulta las opciones Premium de GADS PRO.
+      </p>
+      <strong>$1.99 USD</strong>
+    </div>
+
+    <div class="premium-actions">
+      <button id="googlePlayButton" class="btn secondary">
+        Google Play
+      </button>
+
+      <button id="paypalButton" class="btn">
+        Pagar con PayPal
+      </button>
+    </div>
+
+    <div id="premiumStatus" style="display:none">
+      ✓ Premium activo verificado
+    </div>
+  </section>
+
+  <div class="section-head">
+    <h2 id="feedTitle">Videos populares</h2>
+    <span id="resultCount" class="muted"></span>
+  </div>
+
+  <p id="status" role="status">Preparando catálogo...</p>
+
+  <section id="videos" aria-label="Catálogo de videos"></section>
+
+  <p style="text-align:center;padding:20px">
+    <button id="loadMore" class="btn secondary">
+      Cargar más videos
+    </button>
+  </p>
+
+</main>
+
+<section id="player" role="dialog" aria-modal="true">
+  <div class="player-top">
+    <button id="miniButton" type="button">Minimizar</button>
+    <button id="closePlayerButton" type="button">✕ Cerrar</button>
+  </div>
+
+  <div class="frame-wrap">
+    <iframe id="frame"
+      title="Reproductor de YouTube"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="video-info">
+    <h2 id="videoTitle"></h2>
+
+    <div class="actions">
+      <button id="likeButton">▶ Ver en YouTube</button>
+      <button id="favoriteButton">⭐ Guardar favorito</button>
+      <button id="nextButton">⏭ Siguiente video</button>
+    </div>
+
+    <p class="muted">
+      La reproducción en segundo plano depende del navegador
+      y de las políticas del reproductor de YouTube.
+    </p>
+  </div>
+</section>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <h2 id="modalTitle">GADS PRO</h2>
+    <div id="modalContent"></div>
+    <button id="closeModalButton" class="btn secondary">Cerrar</button>
+  </div>
+</div>
+
+<footer>
+  <p>GADS PRO WEB · Aplicación multimedia para navegadores compatibles.</p>
+  <p>
+    <a href="https://policies.google.com/privacy"
+       target="_blank" rel="noopener noreferrer">
+      Privacidad de Google
+    </a>
+    ·
+    <a href="https://www.appcreator24.com/app4101161-9jzfhn"
+       target="_blank" rel="noopener noreferrer">
+      Aplicación Android
+    </a>
+    ·
+    <a href="https://gabrielll100.github.io/contacto.html">
+      Contacto
+    </a>
+  </p>
+</footer>
+
+
+<script>
+
+const API_KEY = "AIzaSyA0fv75LJxZGRsRSlpkSX0OO1Dw0FP3NNs";
+
+const YOUTUBE_API = "https://www.googleapis.com/youtube/v3";
+
+let nextPageToken = "";
+let currentQuery = "videos populares";
+let currentMode = "popular";
+let currentList = [];
+let currentVideo = null;
+let currentIndex = -1;
+let loading = false;
+
+const videosContainer = document.getElementById("videos");
+const searchInput = document.getElementById("search");
+const statusElement = document.getElementById("status");
+const feedTitle = document.getElementById("feedTitle");
+const resultCount = document.getElementById("resultCount");
+const loadMoreButton = document.getElementById("loadMore");
+
+function setStatus(message) {
+  if (statusElement) statusElement.textContent = message;
+}
+
+function setFeedTitle(message) {
+  if (feedTitle) feedTitle.textContent = message;
+}
+
+function escapeText(value) {
+  return String(value ?? "");
+}
+
+function formatDate(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  return date.toLocaleDateString("es", {
+    year: "numeric",
+    month: "short",
+    day: "numeric"
+  });
+}
+
+// 2. CONSULTAR VIDEOS EN YOUTUBE
+async function fetchVideos(query = currentQuery, append = false) {
+  if (loading) return;
+
+  if (!API_KEY || API_KEY === "PEGA_AQUI_TU_CLAVE_DE_YOUTUBE_API") {
+    setStatus("⚠️ Falta configurar tu clave de YouTube Data API.");
+    return;
+  }
+
+  loading = true;
+  if (loadMoreButton) loadMoreButton.disabled = true;
+  setStatus(append ? "Cargando más videos..." : "Buscando videos...");
+
+  try {
+    const params = new URLSearchParams({
+      part: "snippet",
+      type: "video",
+      maxResults: "18",
+      q: query,
+      safeSearch: "moderate",
+      key: API_KEY
+    });
+
+    if (append && nextPageToken) {
+      params.set("pageToken", nextPageToken);
+    }
+
+    const response = await fetch(
+      `${YOUTUBE_API}/search?${params.toString()}`
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      const apiReason = data?.error?.errors?.[0]?.reason || "";
+      let message = data?.error?.message || "No se pudo consultar YouTube.";
+      if (apiReason === "quotaExceeded") {
+        message = "Se agotó la cuota diaria de YouTube Data API. Vuelve a intentarlo cuando se restablezca.";
+      } else if (apiReason === "keyInvalid" || response.status === 401) {
+        message = "La clave de YouTube Data API no es válida. Revisa la clave en Google Cloud Console.";
+      } else if (response.status === 403) {
+        message = "YouTube rechazó la solicitud. Comprueba que YouTube Data API v3 esté habilitada y que la clave no tenga restricciones incompatibles.";
+      }
+      throw new Error(message);
+    }
+
+    const results = (data.items || [])
+      .filter(item => item.id && item.id.videoId)
+      .map(item => ({
+        id: item.id.videoId,
+        title: item.snippet?.title || "Video sin título",
+        description: item.snippet?.description || "",
+        thumbnail:
+          item.snippet?.thumbnails?.high?.url ||
+          item.snippet?.thumbnails?.medium?.url ||
+          item.snippet?.thumbnails?.default?.url ||
+          "",
+        channel: item.snippet?.channelTitle || "Canal de YouTube",
+        publishedAt: item.snippet?.publishedAt || ""
+      }));
+
+    currentList = append ? currentList.concat(results) : results;
+    nextPageToken = data.nextPageToken || "";
+
+    renderVideos(append);
+
+    if (currentList.length === 0) {
+      setStatus("No encontramos videos. Prueba con otra búsqueda.");
+    } else {
+      setStatus("");
+    }
+
+    if (resultCount) {
+      resultCount.textContent = `${currentList.length} videos`;
+    }
+
+    if (loadMoreButton) {
+      loadMoreButton.hidden = !nextPageToken;
+    }
+  } catch (error) {
+    console.error("Error de YouTube:", error);
+    setStatus(
+      error?.message
+        ? `No se pudieron cargar los videos: ${error.message}`
+        : "No se pudieron cargar los videos. Revisa tu conexión y la configuración de YouTube Data API."
+    );
+    if (loadMoreButton) loadMoreButton.hidden = true;
+  } finally {
+    loading = false;
+    if (loadMoreButton) loadMoreButton.disabled = false;
+  }
+}
+
+// 3. MOSTRAR LAS TARJETAS DE VIDEO
+function renderVideos(append = false) {
+  if (!videosContainer) return;
+
+  if (!append) videosContainer.replaceChildren();
+
+  const startIndex = append
+    ? videosContainer.children.length
+    : 0;
+
+  currentList.slice(startIndex).forEach((video) => {
+    const card = document.createElement("article");
+    card.className = "video-card";
+
+    const thumbnailButton = document.createElement("button");
+    thumbnailButton.type = "button";
+    thumbnailButton.className = "video-thumbnail";
+    thumbnailButton.setAttribute("aria-label", `Reproducir ${video.title}`);
+
+    const image = document.createElement("img");
+    image.src = video.thumbnail;
+    image.alt = video.title;
+    image.loading = "lazy";
+    image.referrerPolicy = "strict-origin-when-cross-origin";
+
+    const playLabel = document.createElement("span");
+    playLabel.className = "play-overlay";
+    playLabel.textContent = "▶";
+
+    thumbnailButton.append(image, playLabel);
+
+    const info = document.createElement("div");
+    info.className = "video-info";
+
+    const title = document.createElement("h3");
+    title.textContent = video.title;
+
+    const channel = document.createElement("p");
+    channel.className = "video-channel";
+    channel.textContent = video.channel;
+
+    const date = document.createElement("p");
+    date.className = "video-date";
+    date.textContent = formatDate(video.publishedAt);
+
+    info.append(title, channel, date);
+    card.append(thumbnailButton, info);
+
+    thumbnailButton.addEventListener("click", () => {
+      openPlayer(video);
+    });
+
+    title.addEventListener("click", () => {
+      openPlayer(video);
+    });
+
+    videosContainer.appendChild(card);
+  });
+}
+
+// 4. BUSCADOR
+function searchVideos() {
+  const term = searchInput?.value.trim();
+
+  if (!term) {
+    setStatus("Escribe el nombre de un video o tema para buscar.");
+    searchInput?.focus();
+    return;
+  }
+
+  currentMode = "search";
+  currentQuery = term;
+  nextPageToken = "";
+  setFeedTitle(`Resultados para: ${term}`);
+  fetchVideos(currentQuery, false);
+}
+
+document.getElementById("searchButton")?.addEventListener(
+  "click",
+  searchVideos
+);
+
+searchInput?.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") searchVideos();
+});
+
+// 5. CATEGORÍAS
+function setCategory(category) {
+  const categories = {
+    popular: {
+      title: "Videos populares",
+      query: "videos populares"
+    },
+    gaming: {
+      title: "Gaming y videojuegos",
+      query: "gaming videojuegos"
+    },
+    music: {
+      title: "Música",
+      query: "música"
+    }
+  };
+
+  const selected = categories[category];
+  if (!selected) return;
+
+  currentMode = category;
+  currentQuery = selected.query;
+  nextPageToken = "";
+
+  if (searchInput) searchInput.value = "";
+  setFeedTitle(selected.title);
+
+  document.querySelectorAll("[data-category]").forEach((button) => {
+    const active = button.dataset.category === category;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  fetchVideos(currentQuery, false);
+}
+
+document.querySelectorAll("[data-category]").forEach((button) => {
+  button.addEventListener("click", () => {
+    setCategory(button.dataset.category);
+  });
+});
+
+// 6. CARGAR MÁS RESULTADOS
+loadMoreButton?.addEventListener("click", () => {
+  if (nextPageToken) fetchVideos(currentQuery, true);
+});
+
+// Cargar la sección inicial
+setCategory("popular");
+
+
+/* ==========================================
+   GADS PRO WEB — PARTE 3
+   Reproductor, favoritos e historial
+   ========================================== */
+
+const playerElement = document.getElementById("player");
+const frameElement = document.getElementById("frame");
+const videoTitleElement = document.getElementById("videoTitle");
+const miniButton = document.getElementById("miniButton");
+
+const FAVORITES_KEY = "gadspro_web_favorites_v1";
+const HISTORY_KEY = "gadspro_web_history_v1";
+
+function readStorage(key) {
+  try {
+    const data = JSON.parse(localStorage.getItem(key) || "[]");
+    return Array.isArray(data) ? data : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeStorage(key, data) {
+  try {
+    localStorage.setItem(key, JSON.stringify(data));
+    return true;
+  } catch (error) {
+    console.warn("No se pudo guardar en este navegador:", error);
+    return false;
+  }
+}
+
+function getFavorites() {
+  return readStorage(FAVORITES_KEY);
+}
+
+function getHistory() {
+  return readStorage(HISTORY_KEY);
+}
+
+function openPlayer(video) {
+  if (!video || !/^[a-zA-Z0-9_-]{11}$/.test(video.id || "")) {
+    setStatus("No se pudo abrir este video.");
+    return;
+  }
+
+  currentVideo = video;
+  currentIndex = currentList.findIndex(item => item.id === video.id);
+
+  if (videoTitleElement) {
+    videoTitleElement.textContent = video.title || "Reproduciendo";
+  }
+
+  if (frameElement) {
+    frameElement.src =
+      "https://www.youtube.com/embed/" +
+      encodeURIComponent(video.id) +
+      "?autoplay=1&playsinline=1&rel=0&enablejsapi=1";
+  }
+
+  
+
+
+if (playerElement) {
+  playerElement.hidden = false;
+  playerElement.classList.add("is-open");
+  playerElement.classList.remove("mini");
+}
+
+if (miniButton) {
+  miniButton.textContent = "▣ Modo mini";
+}
+
+
+
+  if (miniButton) miniButton.textContent = "▣ Modo mini";
+
+  const history = getHistory().filter(item => item.id !== video.id);
+  history.unshift({
+    id: video.id,
+    title: video.title || "Video",
+    thumbnail: video.thumbnail || "",
+    channel: video.channel || "",
+    publishedAt: video.publishedAt || "",
+    watchedAt: new Date().toISOString()
+  });
+
+  writeStorage(HISTORY_KEY, history.slice(0, 100));
+}
+
+
+function closePlayer() {
+  if (!playerElement) return;
+
+  // Vaciar el iframe detiene la reproducción al cerrar el reproductor.
+  if (frameElement) frameElement.src = "about:blank";
+  playerElement.classList.remove("is-open", "mini");
+  playerElement.hidden = true;
+  if (miniButton) miniButton.textContent = "▣ Modo mini";
+  currentVideo = null;
+  currentIndex = -1;
+}
+
+function toggleMini() {
+  if (!playerElement || playerElement.hidden) return;
+
+  const isMini = playerElement.classList.toggle("mini");
+
+  if (miniButton) {
+    miniButton.textContent = isMini
+      ? "□ Pantalla completa"
+      : "▣ Modo mini";
+  }
+}
+
+
+function nextVideo() {
+  if (!currentList.length) {
+    setStatus("Primero carga algunos videos.");
+    return;
+  }
+
+  let index = currentIndex + 1;
+
+  if (index < 0 || index >= currentList.length) {
+    index = 0;
+  }
+
+  openPlayer(currentList[index]);
+}
+
+function like() {
+  if (!currentVideo) {
+    setStatus("Abre un video primero.");
+    return;
+  }
+
+  const url = "https://www.youtube.com/watch?v=" +
+    encodeURIComponent(currentVideo.id);
+
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
+function saveFav() {
+  if (!currentVideo) {
+    setStatus("Abre un video primero para guardarlo en favoritos.");
+    return;
+  }
+
+  const favorites = getFavorites();
+  const exists = favorites.some(item => item.id === currentVideo.id);
+
+  if (exists) {
+    setStatus("Este video ya está en tus favoritos.");
+    return;
+  }
+
+  favorites.unshift({
+    id: currentVideo.id,
+    title: currentVideo.title || "Video",
+    thumbnail: currentVideo.thumbnail || "",
+    channel: currentVideo.channel || "",
+    publishedAt: currentVideo.publishedAt || ""
+  });
+
+  writeStorage(FAVORITES_KEY, favorites.slice(0, 200));
+  setStatus("❤️ Video guardado en favoritos.");
+}
+
+function showSavedVideos(type) {
+  const saved = type === "favorites" ? getFavorites() : getHistory();
+
+  currentMode = type;
+  currentList = saved;
+  nextPageToken = "";
+
+  setFeedTitle(type === "favorites" ? "❤️ Mis favoritos" : "🕘 Historial");
+  if (resultCount) resultCount.textContent = `${saved.length} videos`;
+  if (loadMoreButton) loadMoreButton.hidden = true;
+
+  if (!videosContainer) return;
+  videosContainer.replaceChildren();
+
+  if (!saved.length) {
+    setStatus(
+      type === "favorites"
+        ? "Todavía no tienes favoritos. Abre un video y guárdalo."
+        : "Tu historial está vacío. Reproduce un video para verlo aquí."
+    );
+    return;
+  }
+
+  setStatus("");
+  renderVideos(false);
+}
+
+function showFavorites() {
+  showSavedVideos("favorites");
+}
+
+function showHistory() {
+  showSavedVideos("history");
+}
+
+document.getElementById("closePlayerButton")?.addEventListener(
+  "click",
+  closePlayer
+);
+
+miniButton?.addEventListener("click", toggleMini);
+
+document.getElementById("likeButton")?.addEventListener("click", like);
+
+document.getElementById("favoriteButton")?.addEventListener(
+  "click",
+  saveFav
+);
+
+document.getElementById("nextButton")?.addEventListener("click", nextVideo);
+
+document.getElementById("favoritesButton")?.addEventListener(
+  "click",
+  showFavorites
+);
+
+document.getElementById("historyButton")?.addEventListener(
+  "click",
+  showHistory
+);
+
+// Permite cerrar el reproductor con Escape
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && playerElement && !playerElement.hidden) {
+    closePlayer();
+  }
+});
+
+/* La parte 4 continúa debajo de este comentario. */
+
+/* ==========================================
+   GADS PRO WEB — PARTE 4
+   Ventanas, información y cierre
+   ========================================== */
+
+const modalElement = document.getElementById("modal");
+const modalTitleElement = document.getElementById("modalTitle");
+const modalContentElement = document.getElementById("modalContent");
+
+function showModal(title, message) {
+  if (!modalElement || !modalTitleElement || !modalContentElement) {
+    alert(title + "\n\n" + message);
+    return;
+  }
+
+  modalTitleElement.textContent = title;
+  modalContentElement.replaceChildren();
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = message;
+  modalContentElement.appendChild(paragraph);
+
+  
+modalElement.hidden = false;
+modalElement.classList.add("is-open");
+
+}
+
+
+function closeModal() {
+  if (modalElement) {
+    modalElement.classList.remove("is-open");
+    modalElement.hidden = true;
+  }
+}
+
+
+document.getElementById("closeModalButton")?.addEventListener(
+  "click",
+  closeModal
+);
+
+modalElement?.addEventListener("click", (event) => {
+  if (event.target === modalElement) closeModal();
+});
+
+// INFORMACIÓN DE GADS PRO WEB
+document.getElementById("aboutButton")?.addEventListener("click", () => {
+  showModal(
+    "Acerca de GADS PRO WEB",
+    "GADS PRO WEB es la versión para navegador de GADS PRO. Permite buscar videos y reproducir contenido disponible en YouTube desde dispositivos compatibles. La reproducción depende de YouTube, del navegador, del dispositivo y de las restricciones de cada video."
+  );
+});
+
+// PRIVACIDAD
+document.getElementById("privacyButton")?.addEventListener("click", () => {
+  showModal(
+    "Privacidad",
+    "GADS PRO WEB utiliza la API de YouTube para consultar videos. Los favoritos y el historial se guardan localmente en este navegador. YouTube puede recopilar datos cuando reproduces contenido. No guardes información sensible en este sitio. Consulta también la política de privacidad oficial de GADS PRO antes de publicar."
+  );
+});
+
+// GOOGLE PLAY
+document.getElementById("googlePlayButton")?.addEventListener("click", () => {
+  const googlePlayUrl = ""; // Añade aquí el enlace oficial cuando esté disponible.
+
+  if (googlePlayUrl && googlePlayUrl.startsWith("https://")) {
+    window.open(googlePlayUrl, "_blank", "noopener,noreferrer");
+  } else {
+    showModal(
+      "GADS PRO para Android",
+      "El enlace de Google Play todavía no está configurado. Puedes consultar la versión Android desde la página oficial de GADS PRO."
+    );
+  }
+});
+
+// ESTADO DE PREMIUM
+function checkPremiumStatus() {
+  const status = document.getElementById("premiumStatus");
+
+  if (status) {
+    status.textContent =
+      "Premium: pagos y activación automática pendientes de configurar";
+  }
+}
+
+function updatePremiumUI() {
+  const description = document.getElementById("premiumDescription");
+
+  if (description) {
+    description.textContent =
+      "GADS PRO Premium — precio previsto: $1.99 USD. El pago real y la activación deben conectarse a un servidor seguro.";
+  }
+}
+
+// BOTÓN PREMIUM
+document.getElementById("premiumButton")?.addEventListener("click", () => {
+  showModal(
+    "💎 GADS PRO Premium",
+    "El precio previsto es $1.99 USD. La compra y la activación automática todavía no están habilitadas. Para aceptar pagos reales necesitamos configurar PayPal con un servidor seguro y verificar cada pago antes de desbloquear Premium."
+  );
+});
+
+// BOTÓN PAYPAL
+document.getElementById("paypalButton")?.addEventListener("click", () => {
+  showModal(
+    "Pagos con PayPal",
+    "PayPal todavía no está conectado a un sistema de pagos funcional. No se ha realizado ningún cobro y Premium no se ha activado. La integración requiere un backend que cree y verifique las órdenes de pago."
+  );
+});
+
+// INICIAR ESTADO DE LA INTERFAZ
+checkPremiumStatus();
+updatePremiumUI();
+
+// FINAL DEL JAVASCRIPT Y DEL DOCUMENTO
+</script>
+</body>
+</html>
+
