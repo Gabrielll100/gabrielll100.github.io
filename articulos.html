@@ -77,4 +77,35 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:#9fb0c0}.footgrid{d
 <div class="card"><h3>Cómo se desarrolla una aplicación móvil</h3><p>Conoce las etapas de planificación, diseño, desarrollo, pruebas y publicación de una aplicación.</p><a href="como-se-desarrolla-una-aplicacion-movil.html">Leer →</a></div>
 
 <div class="card"><h3>La historia y el propósito de GADS PRO</h3><p>Descubre el propósito del proyecto GADS PRO y la idea de ofrecer una experiencia multimedia práctica para sus usuarios.</p><a href="historia-y-proposito-de-gads-pro.html">Leer →</a></div>  
-</div></div></section></main><footer><div class="wrap footgrid"><div><b>GADS PRO</b><p class="small">Proyecto independiente creado desde cero por Kelvin Gabriel Hernandez para ofrecer una experiencia multimedia sencilla, clara y cómoda.</p></div><div><b>Información</b><p class="small"><a href="aviso-legal.html">Aviso legal</a><br><a href="terminos.html">Términos</a><br><a href="cookies.html">Cookies</a><br><a href="privacidad.html">Privacidad</a></p></div><div><b>Contacto</b><p class="small"><a href="mailto:kelvinespi1924h@gmail.com">kelvinespi1924h@gmail.com</a><br>Kelvin Gabriel Hernandez<br>Propietario</p></div></div></footer></body></html>
+</div></div></section></main><footer><div class="wrap footgrid"><div><b>GADS PRO</b><p class="small">Proyecto independiente creado desde cero por Kelvin Gabriel Hernandez para ofrecer una experiencia multimedia sencilla, clara y cómoda.</p></div><div><b>Información</b><p class="small"><a href="aviso-legal.html">Aviso legal</a><br><a href="terminos.html">Términos</a><br><a href="cookies.html">Cookies</a><br><a href="privacidad.html">Privacidad</a></p></div><div><b>Contacto</b><p class="small"><a href="mailto:kelvinespi1924h@gmail.com">kelvinespi1924h@gmail.com</a><br>Kelvin Gabriel Hernandez<br>Propietario</p></div></div></footer> 
+<script>
+(function () {
+  const buscador = document.getElementById('buscar-articulo');
+  const mensaje = document.getElementById('resultado-busqueda');
+  const tarjetas = Array.from(document.querySelectorAll('.grid .card'));
+
+  if (!buscador || !mensaje || !tarjetas.length) return;
+
+  buscador.addEventListener('input', function () {
+    const consulta = buscador.value.trim().toLocaleLowerCase('es');
+    let visibles = 0;
+
+    tarjetas.forEach(function (tarjeta) {
+      const coincide = tarjeta.textContent
+        .toLocaleLowerCase('es')
+        .includes(consulta);
+
+      tarjeta.hidden = !coincide;
+
+      if (coincide) visibles++;
+    });
+
+    mensaje.textContent = consulta
+      ? visibles + (visibles === 1
+          ? ' artículo encontrado.'
+          : ' artículos encontrados.')
+      : 'Explora los ' + tarjetas.length + ' artículos disponibles.';
+  });
+})();
+</script>
+ </body></html>
