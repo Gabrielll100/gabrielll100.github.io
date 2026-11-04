@@ -1,0 +1,42 @@
+GADS PRO — PAQUETE DE ARTÍCULOS PARA GITHUB PAGES
+=================================================
+
+CONTENIDO
+- 10 archivos HTML de artículos independientes.
+- fragmento-tarjetas-articulos.html.txt: tarjetas para añadir manualmente a articulos.html.
+- Este archivo de instrucciones.
+
+IMPORTANTE: NO reemplaces index.html ni articulos.html con los archivos de este paquete.
+Los nombres de los diez artículos son nuevos y distintos de los tres artículos que ya indicaste que existen.
+
+CÓMO SUBIR LOS ARTÍCULOS
+1. Descarga y descomprime este ZIP en tu Mac.
+2. Abre el repositorio de GitHub:
+   https://github.com/gabrielll100/gabrielll100.github.io
+3. En la pestaña Code, pulsa Add file > Upload files.
+4. Arrastra SOLO los diez archivos que terminan en .html de este paquete.
+   No arrastres el archivo README ni el fragmento .txt como si fueran artículos.
+5. Espera a que GitHub muestre la lista de archivos. Comprueba que no estés subiendo un archivo existente con el mismo nombre.
+6. Escribe un mensaje de commit, por ejemplo: "Añadir artículos originales del blog GADS PRO".
+7. Pulsa Commit changes.
+8. Cuando GitHub Pages publique los cambios, abre uno de los enlaces nuevos para verificar que carga.
+
+CÓMO AÑADIR LAS TARJETAS A articulos.html
+1. Primero publica los diez artículos y confirma que al menos dos abren bien.
+2. En GitHub, abre articulos.html y pulsa el lápiz Edit.
+3. Busca la sección <div class="grid"> que contiene las tres tarjetas actuales.
+4. Abre fragmento-tarjetas-articulos.html.txt en tu Mac y copia su contenido.
+5. Pega el fragmento DESPUÉS de las tres tarjetas actuales y ANTES del cierre </div> que termina esa cuadrícula.
+   Asegúrate de elegir el cierre correcto de la cuadrícula; no pegues el fragmento fuera de la sección.
+6. Revisa el diff de GitHub y confirma que solo agregaste tarjetas. No reemplaces el archivo completo.
+7. Guarda con Commit changes.
+
+ENLACES Y SEO
+- Cada artículo incluye title, meta description, canonical, Open Graph básico y encabezados semánticos.
+- Los enlaces internos apuntan a páginas que ya mencionaste (articulos.html, guias.html, ayuda.html, privacidad.html, aviso-legal.html, contacto.html) y a artículos del paquete.
+- Comprueba que las páginas enlazadas existan y que la URL canónica coincida con la URL pública definitiva.
+- Si usas sitemap.xml, añade las diez URL nuevas después de publicar. No inventes fechas de última modificación.
+- El SEO y la publicación de contenido no garantizan la aprobación de Google AdSense.
+
+NOTA EDITORIAL
+Revisa los artículos antes de publicar para confirmar que describen con precisión las funciones actuales de GADS PRO. El artículo de historia evita afirmar que funciones Premium en desarrollo ya están disponibles. Ajusta autoría, fechas y detalles del producto para que coincidan con información verificable.

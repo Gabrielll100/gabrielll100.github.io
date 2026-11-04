@@ -1,0 +1,12 @@
+<!-- INICIO: tarjetas nuevas del blog GADS PRO -->
+<div class="card"><h3>Solucionar problemas de reproducción</h3><p>Pasos para revisar conexión, contenido y errores de reproducción.</p><a href="solucionar-problemas-reproduccion-videos.html">Leer →</a></div>
+<div class="card"><h3>Cuando una aplicación no carga</h3><p>Cómo diagnosticar pantallas vacías y contenido que no aparece.</p><a href="que-hacer-cuando-una-aplicacion-no-carga-contenido.html">Leer →</a></div>
+<div class="card"><h3>Mejorar el rendimiento de Android</h3><p>Consejos prudentes para usar el teléfono con más fluidez.</p><a href="mejorar-rendimiento-android.html">Leer →</a></div>
+<div class="card"><h3>HD, Full HD y 4K</h3><p>Entiende las resoluciones y elige según tu pantalla y conexión.</p><a href="hd-full-hd-4k-diferencias.html">Leer →</a></div>
+<div class="card"><h3>Ahorrar datos móviles</h3><p>Controla el consumo al reproducir videos desde el celular.</p><a href="ahorrar-datos-moviles-videos.html">Leer →</a></div>
+<div class="card"><h3>Instalar aplicaciones con seguridad</h3><p>Comprueba el origen, los permisos y las señales de confianza.</p><a href="instalar-aplicaciones-android-seguro.html">Leer →</a></div>
+<div class="card"><h3>Permisos de Android</h3><p>Qué significan y cómo decidir cuáles conceder.</p><a href="permisos-android-que-significan.html">Leer →</a></div>
+<div class="card"><h3>Proteger tu privacidad</h3><p>Hábitos prácticos para tener más control de tus datos.</p><a href="proteger-privacidad-aplicaciones.html">Leer →</a></div>
+<div class="card"><h3>Cómo se desarrolla una app</h3><p>Planificación, diseño, pruebas, publicación y mantenimiento.</p><a href="como-se-desarrolla-una-aplicacion-movil.html">Leer →</a></div>
+<div class="card"><h3>La historia de GADS PRO</h3><p>Propósito del proyecto y comunicación transparente de sus funciones.</p><a href="historia-y-proposito-de-gads-pro.html">Leer →</a></div>
+<!-- FIN: tarjetas nuevas del blog GADS PRO -->
