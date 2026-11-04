@@ -1,83 +1,641 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Artículos | GADS PRO</title><meta name="description" content="Artículos originales sobre tecnología multimedia y el desarrollo de GADS PRO."><style>
-:root{--bg:#090b10;--panel:#111722;--panel2:#0d131d;--text:#eef7ff;--muted:#9fb0c0;--cyan:#00b7ff;--cyan2:#62d8ff;--line:#223040;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0%,#102333 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7}
-a{color:var(--cyan2);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(92%,var(--max));margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(9,11,16,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:20px;min-height:72px}.brand{font-weight:900;font-size:24px;color:white;letter-spacing:.5px}.brand span{color:var(--cyan)}
-nav{display:flex;gap:16px;flex-wrap:wrap;margin-left:auto}nav a{color:#d7e5ef;font-size:14px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border:1px solid #24516a;border-radius:12px;background:#0e1b26;color:white;font-weight:700}.btn.primary{background:linear-gradient(135deg,#00b7ff,#0876b6);border:0}
-.hero{padding:78px 0 55px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}.eyebrow{color:var(--cyan2);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:13px}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.04;margin:12px 0 20px}h2{font-size:32px;line-height:1.15;margin:0 0 14px}h3{font-size:21px;margin:0 0 8px}.lead{font-size:19px;color:#c9d8e3}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.visual{border:1px solid #234154;background:linear-gradient(145deg,#102131,#0b111a);border-radius:24px;padding:18px;box-shadow:0 20px 70px #0008}.visual img{display:block;width:100%;height:330px;object-fit:cover;border-radius:17px}
-section{padding:62px 0}.section-head{max-width:780px;margin-bottom:25px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:22px}.card p{color:#b7c7d3;margin-bottom:0}.icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#092b3a;color:var(--cyan2);font-weight:900;margin-bottom:15px}
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.feature img{width:100%;height:290px;object-fit:cover;border-radius:20px;border:1px solid var(--line)}
-.rating{font-size:26px;letter-spacing:4px;color:#7ddcff}.quote{border-left:3px solid var(--cyan);padding:12px 18px;background:#0d151e;border-radius:0 12px 12px 0}
-.searchbox{display:flex;gap:10px}.searchbox input{flex:1;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:#070b10;color:white;font-size:16px}
-.results{margin-top:20px;display:grid;gap:12px}.result{padding:18px;border:1px solid var(--line);border-radius:14px;background:#0d141d}
-footer{border-top:1px solid var(--line);padding:40px 0;color:#9fb0c0}.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}.small{font-size:13px}
-@media(max-width:850px){.hero-grid,.feature,.grid,.footgrid{grid-template-columns:1fr}nav{display:none}.hero{padding-top:50px}.visual img{height:250px}}
-</style></head><body>
-<header><div class="wrap nav"><a class="brand" href="index.html">▶ GADS <span>PRO</span></a><nav>
-<a href="index.html">Inicio</a><a href="ayuda.html">Ayuda</a><a href="guias.html">Guías</a><a href="articulos.html">Artículos</a><a href="buscador.html">Buscar</a><a href="privacidad.html">Privacidad</a><a href="contacto.html">Contacto</a></nav></div></header>
-<main><section><div class="wrap"><div class="section-head"><div class="eyebrow">Lectura</div><h1>Artículos y conocimiento</h1><p class="lead">Explicaciones extensas y prácticas sobre temas que afectan la experiencia multimedia.</p></div> 
-<script>
-(function () {
-  const buscador = document.getElementById('buscar-articulo');
-  const mensaje = document.getElementById('resultado-busqueda');
-  const tarjetas = Array.from(document.querySelectorAll('.grid .card'));
 
-  if (!buscador || !mensaje || !tarjetas.length) return;
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Artículos | GADS PRO</title>
+<meta name="description" content="Artículos originales sobre tecnología multimedia y el desarrollo de GADS PRO.">
 
-  buscador.addEventListener('input', function () {
-    const consulta = buscador.value
-      .trim()
-      .toLocaleLowerCase('es');
+<style>
+:root {
+  --bg: #090b10;
+  --panel: #111722;
+  --panel2: #0d131d;
+  --text: #eef7ff;
+  --muted: #9fb0c0;
+  --cyan: #00b7ff;
+  --cyan2: #62d8ff;
+  --line: #223040;
+  --max: 1180px;
+}
 
-    let visibles = 0;
+* {
+  box-sizing: border-box;
+}
 
-    tarjetas.forEach(function (tarjeta) {
-      const coincide = tarjeta.textContent
-        .toLocaleLowerCase('es')
-        .includes(consulta);
+html {
+  scroll-behavior: smooth;
+}
 
-      tarjeta.hidden = !coincide;
+body {
+  margin: 0;
+  background: radial-gradient(circle at 10% 0%, #102333 0, transparent 32%), var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.7;
+}
 
-      if (coincide) visibles++;
-    });
+a {
+  color: var(--cyan2);
+  text-decoration: none;
+}
 
-    mensaje.textContent = consulta
-      ? visibles + (visibles === 1
-          ? ' artículo encontrado.'
-          : ' artículos encontrados.')
-      : 'Explora los ' + tarjetas.length + ' artículos disponibles.';
-  });
-})();
-</script>
- <div class="grid">
-<div class="card"><h3>Qué es un reproductor multimedia</h3><p>Entiende el concepto y los componentes de una experiencia de reproducción.</p><a href="que-es-un-reproductor-multimedia.html">Leer →</a></div>
-<div class="card"><h3>Resolución de vídeo</h3><p>HD, Full HD y 4K explicados sin tecnicismos innecesarios.</p><a href="resolucion-de-video.html">Leer →</a></div>
-<div class="card"><h3>Privacidad en aplicaciones</h3><p>Permisos, datos y decisiones que conviene conocer antes de instalar una app.</p><a href="privacidad-en-aplicaciones.html">Leer →</a></div>
-<div class="card"><h3>Cómo solucionar problemas al reproducir vídeos</h3><p>Aprende qué revisar cuando un vídeo no carga, se congela o muestra errores de reproducción.</p><a href="solucionar-problemas-reproduccion-videos.html">Leer →</a></div>
+a:hover {
+  text-decoration: underline;
+}
 
-<div class="card"><h3>Qué hacer cuando una aplicación no carga contenido</h3><p>Descubre cómo comprobar la conexión, las actualizaciones y la caché cuando una aplicación no muestra contenido.</p><a href="que-hacer-cuando-una-aplicacion-no-carga-contenido.html">Leer →</a></div>
+.wrap {
+  width: min(92%, var(--max));
+  margin: auto;
+}
 
-<div class="card"><h3>Cómo mejorar el rendimiento de Android</h3><p>Consejos prácticos para organizar el almacenamiento, revisar las aplicaciones y mejorar el funcionamiento del dispositivo.</p><a href="mejorar-rendimiento-android.html">Leer →</a></div>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(9, 11, 16, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
 
-<div class="card"><h3>HD, Full HD y 4K: diferencias</h3><p>Comprende las resoluciones de vídeo y cómo influyen en la nitidez, el consumo de datos y la pantalla.</p><a href="hd-full-hd-4k-diferencias.html">Leer →</a></div>
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 72px;
+}
 
-<div class="card"><h3>Cómo ahorrar datos móviles al ver vídeos</h3><p>Aprende a controlar el consumo de internet y elegir una calidad de reproducción adecuada para tu conexión.</p><a href="ahorrar-datos-moviles-videos.html">Leer →</a></div>
+.brand {
+  font-weight: 900;
+  font-size: 24px;
+  color: white;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
 
-<div class="card"><h3>Cómo instalar aplicaciones Android de forma segura</h3><p>Conoce recomendaciones para comprobar las fuentes de descarga y reducir riesgos al instalar aplicaciones.</p><a href="instalar-aplicaciones-android-seguro.html">Leer →</a></div>
+.brand span {
+  color: var(--cyan);
+}
 
-<div class="card"><h3>Permisos de Android: qué significan</h3><p>Descubre para qué sirven los permisos de cámara, micrófono, ubicación y archivos, y cuándo revisarlos.</p><a href="permisos-android-que-significan.html">Leer →</a></div>
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
 
-<div class="card"><h3>Cómo proteger tu privacidad en las aplicaciones</h3><p>Hábitos útiles para revisar permisos, cuidar tus datos personales y conocer las opciones de privacidad.</p><a href="proteger-privacidad-aplicaciones.html">Leer →</a></div>
+nav a {
+  color: #d7e5ef;
+  font-size: 14px;
+}
 
-<div class="card"><h3>Cómo se desarrolla una aplicación móvil</h3><p>Conoce las etapas de planificación, diseño, desarrollo, pruebas y publicación de una aplicación.</p><a href="como-se-desarrolla-una-aplicacion-movil.html">Leer →</a></div>
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 17px;
+  border: 1px solid #24516a;
+  border-radius: 12px;
+  background: #0e1b26;
+  color: white;
+  font-weight: 700;
+}
 
-<div class="card"><h3>La historia y el propósito de GADS PRO</h3><p>Descubre el propósito del proyecto GADS PRO y la idea de ofrecer una experiencia multimedia práctica para sus usuarios.</p><a href="historia-y-proposito-de-gads-pro.html">Leer →</a></div>  
-</div></div></section></main><footer><div class="wrap footgrid"><div><b>GADS PRO</b><p class="small">Proyecto independiente creado desde cero por Kelvin Gabriel Hernandez para ofrecer una experiencia multimedia sencilla, clara y cómoda.</p></div><div><b>Información</b><p class="small"><a href="aviso-legal.html">Aviso legal</a><br><a href="terminos.html">Términos</a><br><a href="cookies.html">Cookies</a><br><a href="privacidad.html">Privacidad</a></p></div><div><b>Contacto</b><p class="small"><a href="mailto:kelvinespi1924h@gmail.com">kelvinespi1924h@gmail.com</a><br>Kelvin Gabriel Hernandez<br>Propietario</p></div></div></footer> 
+.btn.primary {
+  background: linear-gradient(135deg, #00b7ff, #0876b6);
+  border: 0;
+}
+
+.hero {
+  padding: 78px 0 55px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--cyan2);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1.04;
+  margin: 12px 0 20px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+h3 {
+  font-size: 21px;
+  margin: 0 0 8px;
+}
+
+.lead {
+  font-size: 19px;
+  color: #c9d8e3;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.visual {
+  border: 1px solid #234154;
+  background: linear-gradient(145deg, #102131, #0b111a);
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 20px 70px #0008;
+}
+
+.visual img {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 17px;
+}
+
+section {
+  padding: 62px 0;
+}
+
+.section-head {
+  max-width: 780px;
+  margin-bottom: 25px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* CUADRÍCULA DE ARTÍCULOS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* TARJETAS PROFESIONALES GADS PRO */
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 27px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(0, 183, 255, 0.11), transparent 45%),
+    linear-gradient(145deg, #131e2b, #0b111a);
+  border: 1px solid #263b4e;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 22px;
+  right: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00b7ff, #62d8ff, transparent);
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(0, 183, 255, 0.65);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32), 0 0 22px rgba(0, 183, 255, 0.08);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h3 {
+  color: #f1f8ff;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 13px;
+  letter-spacing: -0.35px;
+  transition: color 0.25s ease;
+}
+
+.card:hover h3 {
+  color: #62d8ff;
+}
+
+.card p {
+  color: #afc0d0;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 23px;
+}
+
+.card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding: 9px 15px;
+  color: #72dcff;
+  background: rgba(0, 183, 255, 0.08);
+  border: 1px solid rgba(0, 183, 255, 0.25);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.card a:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #00a9ed, #0876b6);
+  border-color: transparent;
+  transform: translateX(3px);
+  text-decoration: none;
+}
+
+.icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border: 1px solid rgba(0, 183, 255, 0.2);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #103044, #09202e);
+  color: #62d8ff;
+  font-weight: 900;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.feature img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+.rating {
+  font-size: 26px;
+  letter-spacing: 4px;
+  color: #7ddcff;
+}
+
+.quote {
+  border-left: 3px solid var(--cyan);
+  padding: 12px 18px;
+  background: #0d151e;
+  border-radius: 0 12px 12px 0;
+}
+
+/* BUSCADOR */
+.article-search {
+  margin: 0 0 30px;
+  padding: 22px;
+  background: linear-gradient(145deg, #111c29, #0b111a);
+  border: 1px solid #263b4e;
+  border-radius: 18px;
+}
+
+.article-search label {
+  display: block;
+  margin-bottom: 10px;
+  color: #eef7ff;
+  font-weight: 800;
+}
+
+.article-search input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #2b465b;
+  background: #070b10;
+  color: white;
+  font: inherit;
+  outline: none;
+}
+
+.article-search input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 183, 255, 0.12);
+}
+
+.article-search p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card[hidden] {
+  display: none !important;
+}
+
+.searchbox {
+  display: flex;
+  gap: 10px;
+}
+
+.searchbox input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #070b10;
+  color: white;
+  font-size: 16px;
+}
+
+.results {
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.result {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #0d141d;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  color: #9fb0c0;
+}
+
+.footgrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 25px;
+}
+
+.small {
+  font-size: 13px;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px;
+  }
+
+  .card {
+    padding: 23px;
+  }
+}
+
+/* TABLET PEQUEÑA Y MÓVIL */
+@media (max-width: 850px) {
+  .hero-grid,
+  .feature,
+  .footgrid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 50px;
+  }
+
+  .visual img {
+    height: 250px;
+  }
+}
+
+/* MÓVILES */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .card {
+    padding: 23px;
+    border-radius: 17px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+  }
+
+  .article-search {
+    padding: 18px;
+  }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::before,
+  .card h3,
+  .card a {
+    transition: none;
+  }
+
+  .card:hover,
+  .card a:hover {
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">▶ GADS <span>PRO</span></a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="ayuda.html">Ayuda</a>
+      <a href="guias.html">Guías</a>
+      <a href="articulos.html">Artículos</a>
+      <a href="buscador.html">Buscar</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section>
+<div class="wrap">
+
+  <div class="section-head">
+    <div class="eyebrow">Lectura</div>
+    <h1>Artículos y conocimiento</h1>
+    <p class="lead">Explicaciones extensas y prácticas sobre temas que afectan la experiencia multimedia.</p>
+  </div>
+
+  <div class="article-search">
+    <label for="buscar-articulo">⌕ Buscar artículos</label>
+    <input
+      id="buscar-articulo"
+      type="search"
+      placeholder="Busca Android, privacidad, vídeos..."
+      autocomplete="off"
+    >
+    <p id="resultado-busqueda" aria-live="polite">
+      Explora los 13 artículos de GADS PRO.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Qué es un reproductor multimedia</h3>
+      <p>Entiende el concepto y los componentes de una experiencia de reproducción.</p>
+      <a href="que-es-un-reproductor-multimedia.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Resolución de vídeo</h3>
+      <p>HD, Full HD y 4K explicados sin tecnicismos innecesarios.</p>
+      <a href="resolucion-de-video.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Privacidad en aplicaciones</h3>
+      <p>Permisos, datos y decisiones que conviene conocer antes de instalar una app.</p>
+      <a href="privacidad-en-aplicaciones.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Cómo solucionar problemas al reproducir vídeos</h3>
+      <p>Aprende qué revisar cuando un vídeo no carga, se congela o muestra errores de reproducción.</p>
+      <a href="solucionar-problemas-reproduccion-videos.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Qué hacer cuando una aplicación no carga contenido</h3>
+      <p>Descubre cómo comprobar la conexión, las actualizaciones y la caché cuando una aplicación no muestra contenido.</p>
+      <a href="que-hacer-cuando-una-aplicacion-no-carga-contenido.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Cómo mejorar el rendimiento de Android</h3>
+      <p>Consejos prácticos para organizar el almacenamiento, revisar las aplicaciones y mejorar el funcionamiento del dispositivo.</p>
+      <a href="mejorar-rendimiento-android.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>HD, Full HD y 4K: diferencias</h3>
+      <p>Comprende las resoluciones de vídeo y cómo influyen en la nitidez, el consumo de datos y la pantalla.</p>
+      <a href="hd-full-hd-4k-diferencias.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Cómo ahorrar datos móviles al ver vídeos</h3>
+      <p>Aprende a controlar el consumo de internet y elegir una calidad de reproducción adecuada para tu conexión.</p>
+      <a href="ahorrar-datos-moviles-videos.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Cómo instalar aplicaciones Android de forma segura</h3>
+      <p>Conoce recomendaciones para comprobar las fuentes de descarga y reducir riesgos al instalar aplicaciones.</p>
+      <a href="instalar-aplicaciones-android-seguro.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Permisos de Android: qué significan</h3>
+      <p>Descubre para qué sirven los permisos de cámara, micrófono, ubicación y archivos, y cuándo revisarlos.</p>
+      <a href="permisos-android-que-significan.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Cómo proteger tu privacidad en las aplicaciones</h3>
+      <p>Hábitos útiles para revisar permisos, cuidar tus datos personales y conocer las opciones de privacidad.</p>
+      <a href="proteger-privacidad-aplicaciones.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Cómo se desarrolla una aplicación móvil</h3>
+      <p>Conoce las etapas de planificación, diseño, desarrollo, pruebas y publicación de una aplicación.</p>
+      <a href="como-se-desarrolla-una-aplicacion-movil.html">Leer →</a>
+    </div>
+
+    <div class="card">
+      <h3>La historia y el propósito de GADS PRO</h3>
+      <p>Descubre el propósito del proyecto GADS PRO y la idea de ofrecer una experiencia multimedia práctica para sus usuarios.</p>
+      <a href="historia-y-proposito-de-gads-pro.html">Leer →</a>
+    </div>
+
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footgrid">
+    <div>
+      <b>GADS PRO</b>
+      <p class="small">Proyecto independiente creado desde cero por Kelvin Gabriel Hernandez para ofrecer una experiencia multimedia sencilla, clara y cómoda.</p>
+    </div>
+
+    <div>
+      <b>Información</b>
+      <p class="small">
+        <a href="aviso-legal.html">Aviso legal</a><br>
+        <a href="terminos.html">Términos</a><br>
+        <a href="cookies.html">Cookies</a><br>
+        <a href="privacidad.html">Privacidad</a>
+      </p>
+    </div>
+
+    <div>
+      <b>Contacto</b>
+      <p class="small">
+        <a href="mailto:kelvinespi1924h@gmail.com">kelvinespi1924h@gmail.com</a><br>
+        Kelvin Gabriel Hernandez<br>
+        Propietario
+      </p>
+    </div>
+  </div>
+</footer>
+
 <script>
 (function () {
   const buscador = document.getElementById('buscar-articulo');
@@ -108,4 +666,6 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:#9fb0c0}.footgrid{d
   });
 })();
 </script>
- </body></html>
+
+</body>
+</html>
