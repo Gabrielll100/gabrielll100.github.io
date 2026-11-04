@@ -20,7 +20,41 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:#9fb0c0}.footgrid{d
 </style></head><body>
 <header><div class="wrap nav"><a class="brand" href="index.html">▶ GADS <span>PRO</span></a><nav>
 <a href="index.html">Inicio</a><a href="ayuda.html">Ayuda</a><a href="guias.html">Guías</a><a href="articulos.html">Artículos</a><a href="buscador.html">Buscar</a><a href="privacidad.html">Privacidad</a><a href="contacto.html">Contacto</a></nav></div></header>
-<main><section><div class="wrap"><div class="section-head"><div class="eyebrow">Lectura</div><h1>Artículos y conocimiento</h1><p class="lead">Explicaciones extensas y prácticas sobre temas que afectan la experiencia multimedia.</p></div><div class="grid">
+<main><section><div class="wrap"><div class="section-head"><div class="eyebrow">Lectura</div><h1>Artículos y conocimiento</h1><p class="lead">Explicaciones extensas y prácticas sobre temas que afectan la experiencia multimedia.</p></div> 
+<script>
+(function () {
+  const buscador = document.getElementById('buscar-articulo');
+  const mensaje = document.getElementById('resultado-busqueda');
+  const tarjetas = Array.from(document.querySelectorAll('.grid .card'));
+
+  if (!buscador || !mensaje || !tarjetas.length) return;
+
+  buscador.addEventListener('input', function () {
+    const consulta = buscador.value
+      .trim()
+      .toLocaleLowerCase('es');
+
+    let visibles = 0;
+
+    tarjetas.forEach(function (tarjeta) {
+      const coincide = tarjeta.textContent
+        .toLocaleLowerCase('es')
+        .includes(consulta);
+
+      tarjeta.hidden = !coincide;
+
+      if (coincide) visibles++;
+    });
+
+    mensaje.textContent = consulta
+      ? visibles + (visibles === 1
+          ? ' artículo encontrado.'
+          : ' artículos encontrados.')
+      : 'Explora los ' + tarjetas.length + ' artículos disponibles.';
+  });
+})();
+</script>
+ <div class="grid">
 <div class="card"><h3>Qué es un reproductor multimedia</h3><p>Entiende el concepto y los componentes de una experiencia de reproducción.</p><a href="que-es-un-reproductor-multimedia.html">Leer →</a></div>
 <div class="card"><h3>Resolución de vídeo</h3><p>HD, Full HD y 4K explicados sin tecnicismos innecesarios.</p><a href="resolucion-de-video.html">Leer →</a></div>
 <div class="card"><h3>Privacidad en aplicaciones</h3><p>Permisos, datos y decisiones que conviene conocer antes de instalar una app.</p><a href="privacidad-en-aplicaciones.html">Leer →</a></div>
