@@ -142,35 +142,6 @@ h1 {
   color: #07131b;
 }
 
-.premium {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  margin: 8px 0 25px;
-  padding: 22px;
-  border: 1px solid #326c79;
-  border-radius: 18px;
-  background: linear-gradient(120deg, #112c3c, #192342);
-}
-
-.premium h2 {
-  margin-top: 0;
-  color: #8cebd8;
-}
-
-.premium p {
-  color: #d2dfec;
-  line-height: 1.5;
-}
-
-.premium-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 .section-head {
   display: flex;
   align-items: center;
@@ -327,7 +298,6 @@ footer a { color: var(--blue); }
   .logo { width: 100%; }
   .search { width: 100%; }
   main { padding: 0 12px; }
-  .premium { padding: 16px; }
   #videos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 9px;
@@ -489,34 +459,9 @@ footer a { color: var(--blue); }
     <button class="chip" data-category="music">🎵 Música</button>
     <button class="chip" id="favoritesButton">⭐ Favoritos</button>
     <button class="chip" id="historyButton">🕒 Historial</button>
-    <button class="chip" id="premiumButton">💎 Premium</button>
     <button class="chip" id="aboutButton">ℹ Acerca de</button>
     <button class="chip" id="privacyButton">📄 Privacidad</button>
   </nav>
-
-  <section class="premium">
-    <div>
-      <h2>💎 GADS PRO PREMIUM</h2>
-      <p id="premiumDescription">
-        Consulta las opciones Premium de GADS PRO.
-      </p>
-      <strong>$1.99 USD</strong>
-    </div>
-
-    <div class="premium-actions">
-      <button id="googlePlayButton" class="btn secondary">
-        Google Play
-      </button>
-
-      <button id="paypalButton" class="btn">
-        Pagar con PayPal
-      </button>
-    </div>
-
-    <div id="premiumStatus" style="display:none">
-      ✓ Premium activo verificado
-    </div>
-  </section>
 
   <div class="section-head">
     <h2 id="feedTitle">Videos populares</h2>
@@ -1167,59 +1112,6 @@ document.getElementById("privacyButton")?.addEventListener("click", () => {
     "GADS PRO WEB utiliza la API de YouTube para consultar videos. Los favoritos y el historial se guardan localmente en este navegador. YouTube puede recopilar datos cuando reproduces contenido. No guardes información sensible en este sitio. Consulta también la política de privacidad oficial de GADS PRO antes de publicar."
   );
 });
-
-// GOOGLE PLAY
-document.getElementById("googlePlayButton")?.addEventListener("click", () => {
-  const googlePlayUrl = ""; // Añade aquí el enlace oficial cuando esté disponible.
-
-  if (googlePlayUrl && googlePlayUrl.startsWith("https://")) {
-    window.open(googlePlayUrl, "_blank", "noopener,noreferrer");
-  } else {
-    showModal(
-      "GADS PRO para Android",
-      "El enlace de Google Play todavía no está configurado. Puedes consultar la versión Android desde la página oficial de GADS PRO."
-    );
-  }
-});
-
-// ESTADO DE PREMIUM
-function checkPremiumStatus() {
-  const status = document.getElementById("premiumStatus");
-
-  if (status) {
-    status.textContent =
-      "Premium: pagos y activación automática pendientes de configurar";
-  }
-}
-
-function updatePremiumUI() {
-  const description = document.getElementById("premiumDescription");
-
-  if (description) {
-    description.textContent =
-      "GADS PRO Premium — precio previsto: $1.99 USD. El pago real y la activación deben conectarse a un servidor seguro.";
-  }
-}
-
-// BOTÓN PREMIUM
-document.getElementById("premiumButton")?.addEventListener("click", () => {
-  showModal(
-    "💎 GADS PRO Premium",
-    "El precio previsto es $1.99 USD. La compra y la activación automática todavía no están habilitadas. Para aceptar pagos reales necesitamos configurar PayPal con un servidor seguro y verificar cada pago antes de desbloquear Premium."
-  );
-});
-
-// BOTÓN PAYPAL
-document.getElementById("paypalButton")?.addEventListener("click", () => {
-  showModal(
-    "Pagos con PayPal",
-    "PayPal todavía no está conectado a un sistema de pagos funcional. No se ha realizado ningún cobro y Premium no se ha activado. La integración requiere un backend que cree y verifique las órdenes de pago."
-  );
-});
-
-// INICIAR ESTADO DE LA INTERFAZ
-checkPremiumStatus();
-updatePremiumUI();
 
 // FINAL DEL JAVASCRIPT Y DEL DOCUMENTO
 </script>
