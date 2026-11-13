@@ -1,0 +1,26 @@
+GADS PRO — CAMBIOS DE DISEÑO Y CORRECCIONES
+
+Cambios realizados en los archivos principales:
+- index.html: paleta más sobria (gris claro, blanco y verde azulado), botones más limpios y tarjetas de capturas con marcos uniformes.
+- index.html: eliminadas las secciones con ilustraciones generadas (mapa mundial y visuales ilustrativos). Se conservan las capturas reales de la aplicación.
+- index.html: eliminada la galería duplicada y corregida la presentación adaptable de las capturas.
+- index.html: corregido un fragmento JavaScript sobrante que impedía que el script completo se ejecutara. El comprobador de compatibilidad ahora tiene un listener de clic explícito y un área de resultado accesible.
+- index.html: el CTA ya no afirma que la aplicación esté públicamente disponible en Google Play. Indica que Android está en prueba cerrada y enlaza a las instrucciones de instalación.
+- reproductor.html: retirados los botones, paneles y textos de Premium, precios y acciones de pago que no estaban implementados.
+- terminos.html e historia-y-proposito-de-gads-pro.html: retiradas las menciones promocionales de GADS PRO PREMIUM.
+- assets/gads-pro-gallery/: retiradas las capturas que mostraban pantallas de Premium y precios.
+- Eliminados los SVG ilustrativos que se mostraban en la página principal.
+
+Comprobaciones:
+- Las imágenes usadas por index.html existen.
+- El archivo de vídeo GADS_PRO_Play_Store_Promo.mp4 está incluido.
+- Los scripts JavaScript de index.html y reproductor.html pasan la comprobación sintáctica.
+
+Publicación:
+1. Descomprime el ZIP.
+2. Revisa index.html localmente y prueba el botón “Comprobar ahora” con Android 5 + 3 GB y Android 6 + 3 GB.
+3. Sube los archivos modificados y las eliminaciones al repositorio de GitHub Pages conservando la estructura de carpetas.
+4. Prueba la web publicada en móvil y computadora.
+
+Nota:
+Las carpetas de respaldo y copias históricas del repositorio se conservaron para evitar borrar material de trabajo. Los cambios de diseño descritos se aplicaron a los archivos principales publicados en la raíz.
