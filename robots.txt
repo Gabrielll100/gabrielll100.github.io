@@ -1,5 +1,12 @@
 
+
 User-agent: *
 Allow: /
-Sitemap: https://gabrielll100.github.io/sitemap.xml
 
+User-agent: Google-adstxt
+Disallow:
+
+User-agent: Mediapartners-Google
+Disallow:
+
+Sitemap: https://gabrielll100.github.io/sitemap.xml
